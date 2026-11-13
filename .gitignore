@@ -1,0 +1,15 @@
+# Gradle & Build
+.gradle/
+build/
+app/build/
+*.apk
+*.ap_
+*.aab
+
+# Local environment
+local.properties
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+.DS_Store

@@ -1,0 +1,107 @@
+package com.majstro.tv.domain
+
+import com.majstro.tv.data.DefaultQuestionGenerator
+import com.majstro.tv.data.InMemoryRepertoireSource
+import com.majstro.tv.domain.engine.QuizEngine
+import com.majstro.tv.domain.model.ClassicalWork
+import com.majstro.tv.domain.model.PlaybackMode
+import com.majstro.tv.domain.model.PlaybackStatus
+import com.majstro.tv.domain.model.QuizPhase
+import com.majstro.tv.domain.port.MusicPlayerGateway
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.test.runTest
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertNull
+import org.junit.Assert.assertTrue
+import org.junit.Test
+import kotlin.random.Random
+
+class QuizEngineTest {
+
+    private class FakeMusicPlayerGateway : MusicPlayerGateway {
+        private val _status = MutableStateFlow(PlaybackStatus(PlaybackMode.DEMO))
+        override val status: StateFlow<PlaybackStatus> = _status.asStateFlow()
+
+        val playedWorks = mutableListOf<ClassicalWork>()
+        var pauseCount = 0
+
+        override suspend fun play(work: ClassicalWork): Result<Unit> {
+            playedWorks += work
+            _status.value = PlaybackStatus(PlaybackMode.DEMO, isPlaying = true, message = work.title)
+            return Result.success(Unit)
+        }
+
+        override suspend fun pause(): Result<Unit> {
+            pauseCount++
+            _status.value = PlaybackStatus(PlaybackMode.DEMO, isPlaying = false, message = "Paused")
+            return Result.success(Unit)
+        }
+    }
+
+    @Test
+    fun `full quiz lifecycle scores players and controls music playback`() = runTest {
+        val gateway = FakeMusicPlayerGateway()
+        val engine = QuizEngine(
+            repertoireSource = InMemoryRepertoireSource(),
+            questionGenerator = DefaultQuestionGenerator(Random(42)),
+            playerGateway = gateway
+        )
+
+        engine.registerPlayer("p1", "Clara")
+        engine.registerPlayer("p2", "Johannes")
+        assertEquals(QuizPhase.LOBBY, engine.state.value.phase)
+        assertEquals(2, engine.state.value.players.size)
+
+        engine.startGame(roundCount = 2)
+        assertEquals(QuizPhase.QUESTION, engine.state.value.phase)
+        val q1 = engine.state.value.currentQuestion
+        assertNotNull(q1)
+        assertEquals(1, q1!!.roundNumber)
+        assertEquals(2, q1.totalRounds)
+        assertEquals(1, gateway.playedWorks.size)
+
+        val wrongIndex = (q1.correctIndex + 1) % q1.options.size
+        engine.submitAnswer("p1", q1.correctIndex)
+        engine.submitAnswer("p2", wrongIndex)
+
+        engine.revealAnswer()
+        assertEquals(QuizPhase.REVEAL, engine.state.value.phase)
+        assertEquals(1, gateway.pauseCount)
+
+        val claraAfterR1 = engine.state.value.players.first { it.id == "p1" }
+        val johannesAfterR1 = engine.state.value.players.first { it.id == "p2" }
+        assertEquals(QuizEngine.POINTS_PER_CORRECT_ANSWER, claraAfterR1.score)
+        assertEquals(0, johannesAfterR1.score)
+
+        engine.nextRound()
+        assertEquals(QuizPhase.QUESTION, engine.state.value.phase)
+        val q2 = engine.state.value.currentQuestion!!
+        assertEquals(2, q2.roundNumber)
+        assertEquals(2, gateway.playedWorks.size)
+
+        engine.submitAnswer("p2", q2.correctIndex)
+        engine.revealAnswer()
+        engine.nextRound()
+
+        assertEquals(QuizPhase.GAME_OVER, engine.state.value.phase)
+        assertNull(engine.state.value.currentQuestion)
+        assertTrue(engine.state.value.players.all { it.score == QuizEngine.POINTS_PER_CORRECT_ANSWER })
+    }
+
+    @Test
+    fun `starting with no phone players creates default TV Couch player`() = runTest {
+        val gateway = FakeMusicPlayerGateway()
+        val engine = QuizEngine(
+            repertoireSource = InMemoryRepertoireSource(),
+            questionGenerator = DefaultQuestionGenerator(Random(1)),
+            playerGateway = gateway
+        )
+
+        engine.startGame(roundCount = 1)
+        assertEquals(1, engine.state.value.players.size)
+        assertEquals(QuizEngine.TV_PLAYER_ID, engine.state.value.players.first().id)
+    }
+}
