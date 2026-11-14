@@ -10,9 +10,13 @@ interface RepertoireSource {
     suspend fun loadWorks(): List<ClassicalWork>
 }
 
-/** Builds multiple-choice or multi-part quiz questions from a list of works. */
+/** Builds multiple-choice or write-in quiz questions from a list of works. */
 interface QuestionGenerator {
-    fun generateQuestions(works: List<ClassicalWork>, count: Int): List<QuizQuestion>
+    fun generateQuestions(
+        works: List<ClassicalWork>,
+        count: Int,
+        difficultyLevel: Int = 2
+    ): List<QuizQuestion>
 }
 
 /** Controls audio playback on Spotify Connect, local demo mode, or future backends. */

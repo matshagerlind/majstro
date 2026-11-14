@@ -4,21 +4,35 @@ import com.majstro.tv.domain.model.ClassicalWork
 import com.majstro.tv.domain.model.QuestionCategory
 import com.majstro.tv.domain.model.QuizQuestion
 import com.majstro.tv.domain.port.QuestionGenerator
+import kotlin.math.abs
 import kotlin.random.Random
 
 /**
- * Generates 4-option multiple-choice questions rotating across Composer/Style, Era/Form,
- * and Work Identification so rounds test different facets of classical knowledge.
+ * Selects works prioritizing the chosen difficulty level (1..5), pulling nearest levels
+ * when [count] exceeds the number of works at that exact level, and builds 4-option prompts.
  */
 class DefaultQuestionGenerator(
     private val random: Random = Random.Default
 ) : QuestionGenerator {
 
-    override fun generateQuestions(works: List<ClassicalWork>, count: Int): List<QuizQuestion> {
+    override fun generateQuestions(
+        works: List<ClassicalWork>,
+        count: Int,
+        difficultyLevel: Int
+    ): List<QuizQuestion> {
         require(works.isNotEmpty()) { "Cannot generate questions from an empty repertoire." }
 
-        val targetCount = count.coerceAtMost(works.size)
-        val selectedWorks = works.shuffled(random).take(targetCount)
+        val targetCount = count.coerceIn(1, works.size)
+        val clampedDifficulty = difficultyLevel.coerceIn(1, 5)
+
+        // Group works by distance to selected difficulty and shuffle within each bucket.
+        val selectedWorks = works
+            .groupBy { abs(it.difficultyLevel - clampedDifficulty) }
+            .toSortedMap()
+            .values
+            .flatMap { bucket -> bucket.shuffled(random) }
+            .take(targetCount)
+
         val categories = QuestionCategory.entries
 
         return selectedWorks.mapIndexed { index, work ->

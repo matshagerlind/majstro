@@ -1,6 +1,8 @@
 package com.majstro.tv.server
 
 import com.majstro.tv.domain.engine.QuizEngine
+import com.majstro.tv.domain.model.AnswerMode
+import com.majstro.tv.domain.model.AwardField
 import com.majstro.tv.domain.model.GameState
 import com.majstro.tv.domain.model.PlaybackStatus
 import com.majstro.tv.domain.model.Player
@@ -41,7 +43,7 @@ import java.util.concurrent.CopyOnWriteArraySet
  * Embedded Ktor HTTP + WebSocket server running on the TV/Tablet host.
  * - `GET /`: Jackbox-style mobile web controller for phones on the same Wi-Fi.
  * - `GET /spotify`: Phone-friendly Spotify Client ID + OAuth PKCE setup flow.
- * - `WS /ws`: Real-time game state broadcast & player answer channel.
+ * - `WS /ws`: Real-time game state broadcast & player answer/judging channel.
  */
 class KtorControllerServer(
     private val port: Int = DEFAULT_PORT,
@@ -171,10 +173,29 @@ class KtorControllerServer(
                 val playerId = msg.playerId?.takeIf { it.isNotBlank() } ?: return
                 quizEngine.registerPlayer(playerId, msg.name.orEmpty())
             }
+            "setConfig" -> {
+                msg.roundCount?.let { quizEngine.setRoundCount(it) }
+                msg.difficultyLevel?.let { quizEngine.setDifficultyLevel(it) }
+                msg.answerMode?.let { quizEngine.setAnswerMode(it) }
+            }
             "answer" -> {
                 val playerId = msg.playerId?.takeIf { it.isNotBlank() } ?: return
                 val optionIndex = msg.optionIndex ?: return
                 quizEngine.submitAnswer(playerId, optionIndex)
+            }
+            "writeAnswer" -> {
+                val playerId = msg.playerId?.takeIf { it.isNotBlank() } ?: return
+                quizEngine.submitWrittenAnswer(
+                    playerId = playerId,
+                    composer = msg.composerGuess.orEmpty(),
+                    piece = msg.pieceGuess.orEmpty(),
+                    year = msg.yearGuess
+                )
+            }
+            "toggleAward" -> {
+                val targetPlayerId = msg.targetPlayerId?.takeIf { it.isNotBlank() } ?: return
+                val field = msg.awardField ?: return
+                quizEngine.togglePlayerAward(targetPlayerId, field)
             }
             "start" -> scope.launch(Dispatchers.IO) { quizEngine.startGame() }
             "reveal" -> scope.launch(Dispatchers.IO) { quizEngine.revealAnswer() }
@@ -196,6 +217,9 @@ class KtorControllerServer(
         val isReveal = state.phase == QuizPhase.REVEAL
         val view = PhoneGameState(
             phase = state.phase,
+            selectedRoundCount = state.selectedRoundCount,
+            selectedDifficulty = state.selectedDifficulty,
+            selectedAnswerMode = state.selectedAnswerMode,
             players = state.players,
             playbackStatus = state.playbackStatus,
             roundNumber = question?.roundNumber ?: 0,
@@ -206,6 +230,7 @@ class KtorControllerServer(
             correctIndex = if (isReveal) question?.correctIndex else null,
             revealedTitle = if (isReveal) question?.work?.title else null,
             revealedComposer = if (isReveal) question?.work?.composer else null,
+            revealedYearWritten = if (isReveal) question?.work?.yearWritten else null,
             revealedEra = if (isReveal) question?.work?.era?.label else null,
             revealedForm = if (isReveal) question?.work?.styleOrForm else null,
             revealedCatalog = if (isReveal) question?.work?.catalogNumber else null
@@ -223,12 +248,23 @@ class KtorControllerServer(
         val type: String,
         val playerId: String? = null,
         val name: String? = null,
-        val optionIndex: Int? = null
+        val optionIndex: Int? = null,
+        val roundCount: Int? = null,
+        val difficultyLevel: Int? = null,
+        val answerMode: AnswerMode? = null,
+        val composerGuess: String? = null,
+        val pieceGuess: String? = null,
+        val yearGuess: Int? = null,
+        val targetPlayerId: String? = null,
+        val awardField: AwardField? = null
     )
 
     @Serializable
     private data class PhoneGameState(
         val phase: QuizPhase,
+        val selectedRoundCount: Int,
+        val selectedDifficulty: Int,
+        val selectedAnswerMode: AnswerMode,
         val players: List<Player>,
         val playbackStatus: PlaybackStatus,
         val roundNumber: Int,
@@ -239,6 +275,7 @@ class KtorControllerServer(
         val correctIndex: Int? = null,
         val revealedTitle: String? = null,
         val revealedComposer: String? = null,
+        val revealedYearWritten: Int? = null,
         val revealedEra: String? = null,
         val revealedForm: String? = null,
         val revealedCatalog: String? = null
@@ -308,21 +345,27 @@ class KtorControllerServer(
               <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
               <title>Majstro · Controller</title>
               <style>
-                :root { --bg: #0d1117; --card: #161b22; --gold: #d4af37; --text: #f0f4f8; --muted: #9da7b3; --border: #30363d; }
+                :root { --bg: #0d1117; --card: #161b22; --gold: #d4af37; --green: #2ea043; --text: #f0f4f8; --muted: #9da7b3; --border: #30363d; }
                 body { font-family: system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 16px; }
                 .wrap { max-width: 520px; margin: 0 auto; }
                 .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
                 .brand { font-size: 1.35rem; font-weight: 700; color: var(--gold); letter-spacing: 0.04em; }
                 .pill { font-size: 0.78rem; padding: 4px 10px; border-radius: 999px; background: #21262d; color: var(--muted); }
-                .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px; margin-bottom: 14px; }
-                input { width: 100%; box-sizing: border-box; padding: 12px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); color: #fff; font-size: 1rem; margin-bottom: 12px; }
-                button { width: 100%; padding: 14px; border-radius: 12px; border: 1px solid var(--border); background: #21262d; color: var(--text); font-size: 1rem; font-weight: 600; cursor: pointer; margin-bottom: 10px; text-align: left; }
+                .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 16px; margin-bottom: 12px; }
+                label { display: block; font-size: 0.8rem; color: var(--muted); margin: 8px 0 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+                input { width: 100%; box-sizing: border-box; padding: 11px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); color: #fff; font-size: 1rem; margin-bottom: 8px; }
+                button { width: 100%; padding: 13px; border-radius: 12px; border: 1px solid var(--border); background: #21262d; color: var(--text); font-size: 0.98rem; font-weight: 600; cursor: pointer; margin-bottom: 8px; text-align: left; }
                 button.primary { background: var(--gold); color: #111; border-color: var(--gold); text-align: center; }
                 button.selected { border-color: var(--gold); background: #d4af3726; color: #ffe58f; }
-                button.correct { border-color: #2ea043; background: #2ea04333; color: #7ee787; }
-                .clue { font-size: 0.9rem; color: #cbd5e1; border-left: 3px solid var(--gold); padding-left: 10px; margin: 10px 0 14px; }
+                button.awarded { border-color: var(--green); background: #2ea04333; color: #7ee787; text-align: center; }
+                .chip-row { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+                .chip { width: auto; flex: 1; min-width: 44px; padding: 9px 10px; margin: 0; text-align: center; font-size: 0.88rem; border-radius: 9px; }
+                .clue { font-size: 0.9rem; color: #cbd5e1; border-left: 3px solid var(--gold); padding-left: 10px; margin: 10px 0 12px; }
                 .row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #21262d; }
                 .row:last-child { border-bottom: none; }
+                .guess-box { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 10px; margin-bottom: 10px; }
+                .judge-row { display: flex; gap: 6px; margin-top: 8px; }
+                .judge-btn { flex: 1; padding: 9px 6px; margin: 0; text-align: center; font-size: 0.8rem; border-radius: 8px; }
                 a { color: var(--gold); font-size: 0.85rem; }
               </style>
             </head>
@@ -347,6 +390,10 @@ class KtorControllerServer(
                 let joined = false;
                 let state = null;
                 let ws = null;
+                let renderedWriteRound = null;
+                let draftComposer = "";
+                let draftPiece = "";
+                let draftYear = "";
 
                 function connect() {
                   const proto = location.protocol === "https:" ? "wss://" : "ws://";
@@ -381,10 +428,23 @@ class KtorControllerServer(
                   render();
                 }
 
+                function submitWritten() {
+                  const yTrim = (draftYear || "").trim();
+                  const parsedYear = yTrim && /^\d+$/.test(yTrim) ? parseInt(yTrim, 10) : null;
+                  send({
+                    type: "writeAnswer",
+                    playerId: playerId,
+                    composerGuess: draftComposer,
+                    pieceGuess: draftPiece,
+                    yearGuess: parsedYear
+                  });
+                }
+
                 function render() {
                   const root = document.getElementById("app");
-                  if (!state) { root.innerHTML = "<div class='card'>Waiting for TV…</div>"; return; }
+                  if (!state) { root.innerHTML = "<div class='card'>Waiting for TV/Tablet…</div>"; return; }
                   if (!joined) {
+                    renderedWriteRound = null;
                     root.innerHTML =
                       '<div class="card">' +
                         '<h3 style="margin-top:0">Join the Concert Quiz</h3>' +
@@ -396,48 +456,118 @@ class KtorControllerServer(
 
                   const me = state.players.find(function(p) { return p.id === playerId; });
                   if (state.phase === "LOBBY") {
+                    renderedWriteRound = null;
+                    const counts = [3, 5, 8, 10, 15].map(function(n) {
+                      const cls = state.selectedRoundCount === n ? 'chip selected' : 'chip';
+                      return '<button class="' + cls + '" onclick="send({type:\'setConfig\', roundCount:' + n + '})">' + n + '</button>';
+                    }).join("");
+                    const diffs = [1, 2, 3, 4, 5].map(function(d) {
+                      const cls = state.selectedDifficulty === d ? 'chip selected' : 'chip';
+                      return '<button class="' + cls + '" onclick="send({type:\'setConfig\', difficultyLevel:' + d + '})">' + d + '</button>';
+                    }).join("");
+                    const wCls = state.selectedAnswerMode === "WRITE_IN" ? 'chip selected' : 'chip';
+                    const mCls = state.selectedAnswerMode === "MULTIPLE_CHOICE" ? 'chip selected' : 'chip';
                     const rows = state.players.map(function(p) {
                       return '<div class="row"><span>' + escapeHtml(p.name) + '</span><span>' + p.score + ' pts</span></div>';
                     }).join("");
                     root.innerHTML =
                       '<div class="card">' +
                         '<h3 style="margin-top:0">Lobby · ' + escapeHtml(state.playbackStatus.mode) + '</h3>' +
-                        '<p style="color:var(--muted);font-size:0.9rem;">' + escapeHtml(state.playbackStatus.message) + '</p>' +
-                        rows +
+                        '<label>Songs</label><div class="chip-row">' + counts + '</div>' +
+                        '<label>Difficulty (1–5)</label><div class="chip-row">' + diffs + '</div>' +
+                        '<label>Mode</label><div class="chip-row">' +
+                          '<button class="' + wCls + '" onclick="send({type:\'setConfig\', answerMode:\'WRITE_IN\'})">Everyone Writes</button>' +
+                          '<button class="' + mCls + '" onclick="send({type:\'setConfig\', answerMode:\'MULTIPLE_CHOICE\'})">Multiple Choice</button>' +
+                        '</div>' +
+                        '<label>Players (' + state.players.length + ')</label>' + rows +
                       '</div>' +
-                      '<button class="primary" onclick="send({type:\'start\'})">Start 5-Round Quiz</button>';
+                      '<button class="primary" onclick="send({type:\'start\'})">Start ' + state.selectedRoundCount + '-Song Quiz</button>';
                   } else if (state.phase === "QUESTION") {
-                    const labels = ["A", "B", "C", "D"];
-                    const opts = state.options.map(function(opt, i) {
-                      const cls = (me && me.selectedOptionIndex === i) ? 'selected' : '';
-                      return '<button class="' + cls + '" onclick="send({type:\'answer\', playerId: playerId, optionIndex:' + i + '})">' +
-                        '<strong>' + labels[i] + '.</strong> ' + escapeHtml(opt) + '</button>';
-                    }).join("");
-                    root.innerHTML =
-                      '<div class="card">' +
-                        '<div style="color:var(--gold);font-size:0.85rem;font-weight:600;">ROUND ' + state.roundNumber + ' / ' + state.totalRounds + '</div>' +
-                        '<h3 style="margin:6px 0 8px;">' + escapeHtml(state.prompt) + '</h3>' +
-                        '<div class="clue">' + escapeHtml(state.stylisticClue) + '</div>' +
-                        opts +
-                      '</div>' +
-                      '<button onclick="send({type:\'reveal\'})" style="text-align:center;">Reveal Answer on TV</button>';
+                    if (state.selectedAnswerMode === "WRITE_IN") {
+                      const submitted = me && me.writtenAnswer;
+                      const statusLine = submitted
+                        ? 'Submitted: ' + escapeHtml((submitted.composerGuess || "—") + ' · ' + (submitted.pieceGuess || "—") + ' · ' + (submitted.yearGuess || "—"))
+                        : 'Not submitted yet';
+                      if (renderedWriteRound === state.roundNumber && document.getElementById("writeStatus")) {
+                        document.getElementById("writeStatus").innerHTML = statusLine;
+                        return;
+                      }
+                      renderedWriteRound = state.roundNumber;
+                      draftComposer = submitted ? (submitted.composerGuess || "") : "";
+                      draftPiece = submitted ? (submitted.pieceGuess || "") : "";
+                      draftYear = (submitted && submitted.yearGuess != null) ? String(submitted.yearGuess) : "";
+                      root.innerHTML =
+                        '<div class="card">' +
+                          '<div style="color:var(--gold);font-size:0.85rem;font-weight:600;">SONG ' + state.roundNumber + ' / ' + state.totalRounds + ' · WRITE-IN</div>' +
+                          '<div class="clue">' + escapeHtml(state.stylisticClue) + '</div>' +
+                          '<label>Composer (+1 pt)</label>' +
+                          '<input id="inComposer" placeholder="e.g. Mozart" value="' + escapeHtml(draftComposer) + '" oninput="draftComposer=this.value" />' +
+                          '<label>Piece (+2 pts)</label>' +
+                          '<input id="inPiece" placeholder="e.g. Symphony No. 40" value="' + escapeHtml(draftPiece) + '" oninput="draftPiece=this.value" />' +
+                          '<label>Year Written (+1 pt closest)</label>' +
+                          '<input id="inYear" type="number" inputmode="numeric" placeholder="e.g. 1788" value="' + escapeHtml(draftYear) + '" oninput="draftYear=this.value" />' +
+                          '<button class="primary" onclick="submitWritten()">Submit Guess</button>' +
+                          '<div id="writeStatus" style="font-size:0.85rem;color:var(--muted);margin-top:6px;">' + statusLine + '</div>' +
+                        '</div>' +
+                        '<button onclick="send({type:\'reveal\'})" style="text-align:center;">Reveal Answer on TV/Tablet</button>';
+                    } else {
+                      renderedWriteRound = null;
+                      const labels = ["A", "B", "C", "D"];
+                      const opts = state.options.map(function(opt, i) {
+                        const cls = (me && me.selectedOptionIndex === i) ? 'selected' : '';
+                        return '<button class="' + cls + '" onclick="send({type:\'answer\', playerId: playerId, optionIndex:' + i + '})">' +
+                          '<strong>' + labels[i] + '.</strong> ' + escapeHtml(opt) + '</button>';
+                      }).join("");
+                      root.innerHTML =
+                        '<div class="card">' +
+                          '<div style="color:var(--gold);font-size:0.85rem;font-weight:600;">SONG ' + state.roundNumber + ' / ' + state.totalRounds + '</div>' +
+                          '<h3 style="margin:6px 0 8px;">' + escapeHtml(state.prompt) + '</h3>' +
+                          '<div class="clue">' + escapeHtml(state.stylisticClue) + '</div>' +
+                          opts +
+                        '</div>' +
+                        '<button onclick="send({type:\'reveal\'})" style="text-align:center;">Reveal Answer on TV/Tablet</button>';
+                    }
                   } else if (state.phase === "REVEAL") {
+                    renderedWriteRound = null;
                     const cat = state.revealedCatalog ? ' (' + escapeHtml(state.revealedCatalog) + ')' : '';
-                    const rows = state.players.map(function(p) {
+                    const yearTxt = state.revealedYearWritten ? ' · Written ' + state.revealedYearWritten : '';
+                    const isWriteIn = state.selectedAnswerMode === "WRITE_IN";
+                    const playersHtml = state.players.map(function(p) {
                       const delta = p.lastRoundDelta > 0 ? ' (+' + p.lastRoundDelta + ')' : '';
-                      return '<div class="row"><span>' + escapeHtml(p.name) + '</span><span>' + p.score + ' pts' + delta + '</span></div>';
+                      if (!isWriteIn) {
+                        return '<div class="row"><span>' + escapeHtml(p.name) + '</span><span>' + p.score + ' pts' + delta + '</span></div>';
+                      }
+                      const wa = p.writtenAnswer;
+                      const aw = p.roundAward || {};
+                      const guessLine = wa
+                        ? escapeHtml((wa.composerGuess || "—") + ' · ' + (wa.pieceGuess || "—") + ' · ' + (wa.yearGuess != null ? wa.yearGuess : "—"))
+                        : 'No written entry (oral/paper)';
+                      const cCls = aw.composerCorrect ? 'judge-btn awarded' : 'judge-btn';
+                      const pCls = aw.pieceCorrect ? 'judge-btn awarded' : 'judge-btn';
+                      const yCls = aw.closestYear ? 'judge-btn awarded' : 'judge-btn';
+                      return '<div class="guess-box">' +
+                        '<div class="row" style="border:none;padding:0 0 4px;"><strong>' + escapeHtml(p.name) + '</strong><span>' + p.score + ' pts' + delta + '</span></div>' +
+                        '<div style="font-size:0.85rem;color:var(--muted);">' + guessLine + '</div>' +
+                        '<div class="judge-row">' +
+                          '<button class="' + cCls + '" onclick="send({type:\'toggleAward\', targetPlayerId:\'' + escapeHtml(p.id) + '\', awardField:\'COMPOSER\'})">Composer +1</button>' +
+                          '<button class="' + pCls + '" onclick="send({type:\'toggleAward\', targetPlayerId:\'' + escapeHtml(p.id) + '\', awardField:\'PIECE\'})">Piece +2</button>' +
+                          '<button class="' + yCls + '" onclick="send({type:\'toggleAward\', targetPlayerId:\'' + escapeHtml(p.id) + '\', awardField:\'CLOSEST_YEAR\'})">Year +1</button>' +
+                        '</div>' +
+                      '</div>';
                     }).join("");
                     root.innerHTML =
                       '<div class="card">' +
                         '<div style="color:var(--gold);font-size:0.85rem;font-weight:600;">ANSWER REVEALED</div>' +
                         '<h3 style="margin:6px 0 4px;">' + escapeHtml(state.revealedTitle || "") + '</h3>' +
-                        '<div style="color:var(--muted);margin-bottom:10px;">' +
-                          escapeHtml(state.revealedComposer || "") + ' · ' + escapeHtml(state.revealedEra || "") + ' · ' + escapeHtml(state.revealedForm || "") + cat +
+                        '<div style="color:var(--gold);font-weight:600;margin-bottom:4px;">' + escapeHtml(state.revealedComposer || "") + yearTxt + '</div>' +
+                        '<div style="color:var(--muted);margin-bottom:12px;font-size:0.88rem;">' +
+                          escapeHtml(state.revealedEra || "") + ' · ' + escapeHtml(state.revealedForm || "") + cat +
                         '</div>' +
-                        rows +
+                        playersHtml +
                       '</div>' +
-                      '<button class="primary" onclick="send({type:\'next\'})">Next Round</button>';
+                      '<button class="primary" onclick="send({type:\'next\'})">' + (state.roundNumber >= state.totalRounds ? 'Final Standings' : 'Next Song') + '</button>';
                   } else {
+                    renderedWriteRound = null;
                     const rows = state.players.map(function(p, idx) {
                       return '<div class="row"><span>#' + (idx + 1) + ' ' + escapeHtml(p.name) + '</span><span>' + p.score + ' pts</span></div>';
                     }).join("");
