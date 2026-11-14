@@ -35,7 +35,7 @@ class SharedPrefsKeyValueStore(context: Context) : KeyValueStore {
 }
 
 /** Stores Spotify OAuth 2.0 PKCE state, Client ID, and active access/refresh tokens. */
-class SpotifyAuthStore(private val store: KeyValueStore) {
+internal class SpotifyAuthStore(private val store: KeyValueStore) {
 
     var clientId: String?
         get() = store.getString(KEY_CLIENT_ID)?.takeIf { it.isNotBlank() }

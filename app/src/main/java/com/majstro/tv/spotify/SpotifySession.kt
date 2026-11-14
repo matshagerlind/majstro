@@ -21,25 +21,44 @@ import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.RequestBody.Companion.toRequestBody
+import java.net.URLEncoder
 import java.util.concurrent.ConcurrentHashMap
 
 /**
- * [MusicPlayerGateway] backed by Spotify Web API (Connect) when authenticated,
- * with a zero-config Demo Mode fallback so the quiz always runs cleanly out of the box.
+ * Seam for Spotify OAuth 2.0 PKCE setup and session management from the local web setup UI.
  */
-class SpotifyPlayerGateway(
-    private val authStore: SpotifyAuthStore,
+interface SpotifyAuthSession {
+    val clientId: String?
+    val isConnected: Boolean
+    fun beginAuth(clientId: String, redirectUri: String): String
+    suspend fun completeAuth(code: String, redirectUri: String): Result<Unit>
+    fun disconnect()
+}
+
+/**
+ * Deep module owning Spotify OAuth 2.0 PKCE, token persistence/refresh,
+ * Connect playback, Demo Mode fallback, and the single authoritative [status] flow.
+ */
+class SpotifySession(
+    store: KeyValueStore,
     private val wakeSpotifyApp: () -> Boolean = { false },
     private val httpClient: OkHttpClient = OkHttpClient()
-) : MusicPlayerGateway {
+) : MusicPlayerGateway, SpotifyAuthSession {
 
+    private val authStore = SpotifyAuthStore(store)
     private val json = Json { ignoreUnknownKeys = true }
     private val uriCache = ConcurrentHashMap<String, String>()
 
-    private val _status = MutableStateFlow(initialStatus())
+    private val _status = MutableStateFlow(computeStatus())
     override val status: StateFlow<PlaybackStatus> = _status.asStateFlow()
 
-    private fun initialStatus(): PlaybackStatus =
+    override val clientId: String?
+        get() = authStore.clientId
+
+    override val isConnected: Boolean
+        get() = authStore.isConfigured
+
+    private fun computeStatus(): PlaybackStatus =
         if (authStore.isConfigured) {
             PlaybackStatus(
                 mode = PlaybackMode.SPOTIFY_CONNECT,
@@ -54,13 +73,22 @@ class SpotifyPlayerGateway(
             )
         }
 
-    /** Refreshes the displayed status after OAuth completes on the phone setup page. */
-    fun refreshStatusFromAuth() {
-        _status.value = initialStatus()
+    override fun beginAuth(clientId: String, redirectUri: String): String {
+        val trimmed = clientId.trim()
+        authStore.clientId = trimmed
+        val challenge = authStore.createPkceChallenge()
+        return buildString {
+            append("https://accounts.spotify.com/authorize")
+            append("?response_type=code")
+            append("&client_id=").append(urlEncode(trimmed))
+            append("&scope=").append(urlEncode(SPOTIFY_SCOPES))
+            append("&redirect_uri=").append(urlEncode(redirectUri))
+            append("&code_challenge_method=S256")
+            append("&code_challenge=").append(urlEncode(challenge))
+        }
     }
 
-    /** Exchanges an OAuth PKCE authorization code for Spotify access/refresh tokens. */
-    suspend fun exchangeCodeForToken(code: String, redirectUri: String): Result<Unit> =
+    override suspend fun completeAuth(code: String, redirectUri: String): Result<Unit> =
         withContext(Dispatchers.IO) {
             val clientId = authStore.clientId
                 ?: return@withContext Result.failure(IllegalStateException("Spotify Client ID not set"))
@@ -89,10 +117,15 @@ class SpotifyPlayerGateway(
                     val token = json.decodeFromString<SpotifyTokenResponse>(raw)
                     authStore.saveTokens(token.accessToken, token.refreshToken, token.expiresIn)
                     authStore.pendingCodeVerifier = null
-                    refreshStatusFromAuth()
+                    _status.value = computeStatus()
                 }
             }
         }
+
+    override fun disconnect() {
+        authStore.clearTokens()
+        _status.value = computeStatus()
+    }
 
     override suspend fun play(work: ClassicalWork): Result<Unit> = withContext(Dispatchers.IO) {
         if (!authStore.isConfigured) {
@@ -267,6 +300,9 @@ class SpotifyPlayerGateway(
         }.getOrNull()
     }
 
+    private fun urlEncode(value: String): String =
+        URLEncoder.encode(value, Charsets.UTF_8.name())
+
     @Serializable
     private data class SpotifyTokenResponse(
         @SerialName("access_token") val accessToken: String,
@@ -292,4 +328,9 @@ class SpotifyPlayerGateway(
         val name: String,
         @SerialName("is_active") val isActive: Boolean = false
     )
+
+    companion object {
+        private const val SPOTIFY_SCOPES =
+            "user-modify-playback-state user-read-playback-state user-read-currently-playing"
+    }
 }

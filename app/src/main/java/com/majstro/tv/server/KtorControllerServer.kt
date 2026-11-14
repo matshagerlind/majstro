@@ -7,8 +7,7 @@ import com.majstro.tv.domain.model.GameState
 import com.majstro.tv.domain.model.PlaybackStatus
 import com.majstro.tv.domain.model.Player
 import com.majstro.tv.domain.model.QuizPhase
-import com.majstro.tv.spotify.SpotifyAuthStore
-import com.majstro.tv.spotify.SpotifyPlayerGateway
+import com.majstro.tv.spotify.SpotifyAuthSession
 import io.ktor.http.ContentType
 import io.ktor.server.application.ApplicationCall
 import io.ktor.server.application.call
@@ -49,8 +48,7 @@ class KtorControllerServer(
     private val port: Int = DEFAULT_PORT,
     private val hostIpProvider: () -> String,
     private val quizEngine: QuizEngine,
-    private val authStore: SpotifyAuthStore,
-    private val spotifyGateway: SpotifyPlayerGateway,
+    private val spotifyAuth: SpotifyAuthSession,
     private val scope: CoroutineScope
 ) {
     private val json = Json { ignoreUnknownKeys = true }
@@ -80,9 +78,9 @@ class KtorControllerServer(
                     val currentRedirect = "http://${resolveHostAuthority(call)}/spotify/callback"
                     call.respondText(
                         buildSpotifySetupHtml(
-                            clientId = authStore.clientId.orEmpty(),
+                            clientId = spotifyAuth.clientId.orEmpty(),
                             redirectUri = currentRedirect,
-                            isConnected = authStore.isConfigured,
+                            isConnected = spotifyAuth.isConnected,
                             message = call.request.queryParameters["msg"]
                         ),
                         ContentType.Text.Html
@@ -96,26 +94,13 @@ class KtorControllerServer(
                         call.respondRedirect("/spotify?msg=Please+enter+a+Client+ID")
                         return@post
                     }
-                    authStore.clientId = clientId
-                    val challenge = authStore.createPkceChallenge()
                     val redirectUri = "http://${resolveHostAuthority(call)}/spotify/callback"
-                    val scopes = "user-modify-playback-state user-read-playback-state user-read-currently-playing"
-                    val authUrl = buildString {
-                        append("https://accounts.spotify.com/authorize")
-                        append("?response_type=code")
-                        append("&client_id=").append(urlEncode(clientId))
-                        append("&scope=").append(urlEncode(scopes))
-                        append("&redirect_uri=").append(urlEncode(redirectUri))
-                        append("&code_challenge_method=S256")
-                        append("&code_challenge=").append(urlEncode(challenge))
-                    }
+                    val authUrl = spotifyAuth.beginAuth(clientId, redirectUri)
                     call.respondRedirect(authUrl)
                 }
 
                 post("/spotify/disconnect") {
-                    authStore.clearTokens()
-                    spotifyGateway.refreshStatusFromAuth()
-                    quizEngine.updatePlaybackStatus(spotifyGateway.status.value)
+                    spotifyAuth.disconnect()
                     call.respondRedirect("/spotify?msg=Disconnected+Spotify")
                 }
 
@@ -127,9 +112,8 @@ class KtorControllerServer(
                         return@get
                     }
                     val redirectUri = "http://${resolveHostAuthority(call)}/spotify/callback"
-                    val result = spotifyGateway.exchangeCodeForToken(code, redirectUri)
+                    val result = spotifyAuth.completeAuth(code, redirectUri)
                     if (result.isSuccess) {
-                        quizEngine.updatePlaybackStatus(spotifyGateway.status.value)
                         call.respondRedirect("/spotify?msg=Spotify+Connected!")
                     } else {
                         val errMsg = result.exceptionOrNull()?.message ?: "Token exchange failed"

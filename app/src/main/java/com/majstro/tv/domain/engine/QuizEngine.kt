@@ -3,7 +3,6 @@ package com.majstro.tv.domain.engine
 import com.majstro.tv.domain.model.AnswerMode
 import com.majstro.tv.domain.model.AwardField
 import com.majstro.tv.domain.model.GameState
-import com.majstro.tv.domain.model.PlaybackStatus
 import com.majstro.tv.domain.model.Player
 import com.majstro.tv.domain.model.QuizPhase
 import com.majstro.tv.domain.model.QuizQuestion
@@ -31,7 +30,7 @@ class QuizEngine(
     private val repertoireSource: RepertoireSource,
     private val questionGenerator: QuestionGenerator,
     private val playerGateway: MusicPlayerGateway,
-    scope: CoroutineScope? = null
+    scope: CoroutineScope
 ) {
     private val mutex = Mutex()
     private val _state = MutableStateFlow(GameState(playbackStatus = playerGateway.status.value))
@@ -41,16 +40,9 @@ class QuizEngine(
     private var currentIndex: Int = -1
 
     init {
-        if (scope != null) {
-            playerGateway.status
-                .onEach { updatePlaybackStatus(it) }
-                .launchIn(scope)
-        }
-    }
-
-    /** Updates the playback status displayed on the Tablet and phone controllers. */
-    fun updatePlaybackStatus(playbackStatus: PlaybackStatus) {
-        _state.update { it.copy(playbackStatus = playbackStatus) }
+        playerGateway.status
+            .onEach { status -> _state.update { it.copy(playbackStatus = status) } }
+            .launchIn(scope)
     }
 
     /** Records the Tablet's local LAN URLs for QR code display. */
@@ -141,13 +133,11 @@ class QuizEngine(
                 selectedRoundCount = generated.size,
                 selectedDifficulty = targetDifficulty,
                 players = activePlayers,
-                currentQuestion = firstQuestion,
-                playbackStatus = playerGateway.status.value
+                currentQuestion = firstQuestion
             )
         }
 
         playerGateway.play(firstQuestion.work)
-        _state.update { it.copy(playbackStatus = playerGateway.status.value) }
     }
 
     /** Records a player's multiple-choice pick (0..3) during an active QUESTION round. */
@@ -253,8 +243,7 @@ class QuizEngine(
         _state.update {
             it.copy(
                 phase = QuizPhase.REVEAL,
-                players = updatedPlayers,
-                playbackStatus = playerGateway.status.value
+                players = updatedPlayers
             )
         }
     }
@@ -328,7 +317,6 @@ class QuizEngine(
         }
 
         playerGateway.play(nextQuestion.work)
-        _state.update { it.copy(playbackStatus = playerGateway.status.value) }
     }
 
     /** Returns everyone to the lobby while keeping connected players' names and settings. */
@@ -348,8 +336,7 @@ class QuizEngine(
                         writtenAnswer = null,
                         roundAward = RoundAward()
                     )
-                },
-                playbackStatus = playerGateway.status.value
+                }
             )
         }
     }

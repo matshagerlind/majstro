@@ -11,8 +11,7 @@ import com.majstro.tv.data.InMemoryRepertoireSource
 import com.majstro.tv.domain.engine.QuizEngine
 import com.majstro.tv.server.KtorControllerServer
 import com.majstro.tv.spotify.SharedPrefsKeyValueStore
-import com.majstro.tv.spotify.SpotifyAuthStore
-import com.majstro.tv.spotify.SpotifyPlayerGateway
+import com.majstro.tv.spotify.SpotifySession
 import com.majstro.tv.ui.MajstroTvApp
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -30,23 +29,21 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val authStore = SpotifyAuthStore(SharedPrefsKeyValueStore(applicationContext))
-        val spotifyGateway = SpotifyPlayerGateway(
-            authStore = authStore,
+        val spotifySession = SpotifySession(
+            store = SharedPrefsKeyValueStore(applicationContext),
             wakeSpotifyApp = ::tryLaunchSpotifyApp
         )
         val quizEngine = QuizEngine(
             repertoireSource = InMemoryRepertoireSource(),
             questionGenerator = DefaultQuestionGenerator(),
-            playerGateway = spotifyGateway,
+            playerGateway = spotifySession,
             scope = lifecycleScope
         )
 
         ktorServer = KtorControllerServer(
             hostIpProvider = ::resolveLanIpAddress,
             quizEngine = quizEngine,
-            authStore = authStore,
-            spotifyGateway = spotifyGateway,
+            spotifyAuth = spotifySession,
             scope = lifecycleScope
         )
         ktorServer.start()

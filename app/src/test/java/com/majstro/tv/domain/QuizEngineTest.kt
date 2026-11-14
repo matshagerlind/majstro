@@ -10,9 +10,12 @@ import com.majstro.tv.domain.model.PlaybackMode
 import com.majstro.tv.domain.model.PlaybackStatus
 import com.majstro.tv.domain.model.QuizPhase
 import com.majstro.tv.domain.port.MusicPlayerGateway
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.test.UnconfinedTestDispatcher
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -42,6 +45,10 @@ class QuizEngineTest {
             _status.value = PlaybackStatus(PlaybackMode.DEMO, isPlaying = false, message = "Paused")
             return Result.success(Unit)
         }
+
+        fun emitStatus(newStatus: PlaybackStatus) {
+            _status.value = newStatus
+        }
     }
 
     @Test
@@ -50,7 +57,8 @@ class QuizEngineTest {
         val engine = QuizEngine(
             repertoireSource = InMemoryRepertoireSource(),
             questionGenerator = DefaultQuestionGenerator(Random(11)),
-            playerGateway = gateway
+            playerGateway = gateway,
+            scope = backgroundScope
         )
 
         engine.setRoundCount(3)
@@ -105,7 +113,8 @@ class QuizEngineTest {
         val engine = QuizEngine(
             repertoireSource = InMemoryRepertoireSource(),
             questionGenerator = DefaultQuestionGenerator(Random(42)),
-            playerGateway = gateway
+            playerGateway = gateway,
+            scope = backgroundScope
         )
 
         engine.setAnswerMode(AnswerMode.MULTIPLE_CHOICE)
@@ -148,12 +157,36 @@ class QuizEngineTest {
         val engine = QuizEngine(
             repertoireSource = InMemoryRepertoireSource(),
             questionGenerator = DefaultQuestionGenerator(Random(1)),
-            playerGateway = gateway
+            playerGateway = gateway,
+            scope = backgroundScope
         )
 
         engine.startGame(roundCount = 1)
         assertEquals(1, engine.state.value.players.size)
         assertEquals(QuizEngine.HOST_PLAYER_ID, engine.state.value.players.first().id)
         assertEquals("Tablet", engine.state.value.players.first().name)
+    }
+
+    @OptIn(ExperimentalCoroutinesApi::class)
+    @Test
+    fun `playback status updates reactively from player gateway flow`() = runTest {
+        val gateway = FakeMusicPlayerGateway()
+        val engine = QuizEngine(
+            repertoireSource = InMemoryRepertoireSource(),
+            questionGenerator = DefaultQuestionGenerator(Random(1)),
+            playerGateway = gateway,
+            scope = CoroutineScope(UnconfinedTestDispatcher(testScheduler))
+        )
+
+        assertEquals(PlaybackMode.DEMO, engine.state.value.playbackStatus.mode)
+
+        val linked = PlaybackStatus(
+            mode = PlaybackMode.SPOTIFY_CONNECT,
+            isPlaying = false,
+            message = "Spotify linked — ready to play"
+        )
+        gateway.emitStatus(linked)
+
+        assertEquals(linked, engine.state.value.playbackStatus)
     }
 }
