@@ -143,7 +143,7 @@ class QuizEngineTest {
     }
 
     @Test
-    fun `starting with no phone players creates default TV Couch player`() = runTest {
+    fun `starting with no phone players creates default Tablet player`() = runTest {
         val gateway = FakeMusicPlayerGateway()
         val engine = QuizEngine(
             repertoireSource = InMemoryRepertoireSource(),
@@ -153,6 +153,7 @@ class QuizEngineTest {
 
         engine.startGame(roundCount = 1)
         assertEquals(1, engine.state.value.players.size)
-        assertEquals(QuizEngine.TV_PLAYER_ID, engine.state.value.players.first().id)
+        assertEquals(QuizEngine.HOST_PLAYER_ID, engine.state.value.players.first().id)
+        assertEquals("Tablet", engine.state.value.players.first().name)
     }
 }

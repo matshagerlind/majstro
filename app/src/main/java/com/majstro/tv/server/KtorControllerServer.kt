@@ -40,7 +40,7 @@ import java.net.URLEncoder
 import java.util.concurrent.CopyOnWriteArraySet
 
 /**
- * Embedded Ktor HTTP + WebSocket server running on the TV/Tablet host.
+ * Embedded Ktor HTTP + WebSocket server running on the Tablet host.
  * - `GET /`: Jackbox-style mobile web controller for phones on the same Wi-Fi.
  * - `GET /spotify`: Phone-friendly Spotify Client ID + OAuth PKCE setup flow.
  * - `WS /ws`: Real-time game state broadcast & player answer/judging channel.
@@ -442,7 +442,7 @@ class KtorControllerServer(
 
                 function render() {
                   const root = document.getElementById("app");
-                  if (!state) { root.innerHTML = "<div class='card'>Waiting for TV/Tablet…</div>"; return; }
+                  if (!state) { root.innerHTML = "<div class='card'>Waiting for Tablet…</div>"; return; }
                   if (!joined) {
                     renderedWriteRound = null;
                     root.innerHTML =
@@ -509,7 +509,7 @@ class KtorControllerServer(
                           '<button class="primary" onclick="submitWritten()">Submit Guess</button>' +
                           '<div id="writeStatus" style="font-size:0.85rem;color:var(--muted);margin-top:6px;">' + statusLine + '</div>' +
                         '</div>' +
-                        '<button onclick="send({type:\'reveal\'})" style="text-align:center;">Reveal Answer on TV/Tablet</button>';
+                        '<button onclick="send({type:\'reveal\'})" style="text-align:center;">Reveal Answer on Tablet</button>';
                     } else {
                       renderedWriteRound = null;
                       const labels = ["A", "B", "C", "D"];
@@ -525,7 +525,7 @@ class KtorControllerServer(
                           '<div class="clue">' + escapeHtml(state.stylisticClue) + '</div>' +
                           opts +
                         '</div>' +
-                        '<button onclick="send({type:\'reveal\'})" style="text-align:center;">Reveal Answer on TV/Tablet</button>';
+                        '<button onclick="send({type:\'reveal\'})" style="text-align:center;">Reveal Answer on Tablet</button>';
                     }
                   } else if (state.phase === "REVEAL") {
                     renderedWriteRound = null;

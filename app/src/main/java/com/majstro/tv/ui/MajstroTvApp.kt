@@ -27,13 +27,9 @@ import androidx.compose.material3.darkColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -57,7 +53,7 @@ private val ConcertSpotify = Color(0xFF1DB954)
 private val ConcertText = Color(0xFFF0F4F8)
 private val ConcertMuted = Color(0xFF9DA7B3)
 
-/** Unified Landscape UI supporting both Android TV (D-pad) and Tablets (touch). */
+/** Landscape Tablet UI for Majstro. */
 @Composable
 fun MajstroTvApp(
     engine: QuizEngine,
@@ -101,7 +97,7 @@ fun MajstroTvApp(
                         QuizPhase.QUESTION -> QuestionScreen(
                             state = state,
                             onSelectOption = { index ->
-                                engine.submitAnswer(QuizEngine.TV_PLAYER_ID, index)
+                                engine.submitAnswer(QuizEngine.HOST_PLAYER_ID, index)
                             },
                             onRevealAnswer = onRevealAnswer
                         )
@@ -122,9 +118,9 @@ fun MajstroTvApp(
     }
 }
 
-/** Material 3 button with a visible gold focus ring for TV D-pad navigation and instant touch response on tablets. */
+/** Material 3 touch button styled for the Concert Hall palette. */
 @Composable
-private fun HybridButton(
+private fun MajstroButton(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
     containerColor: Color = ConcertCard,
@@ -134,17 +130,12 @@ private fun HybridButton(
     contentPadding: PaddingValues = PaddingValues(horizontal = 16.dp, vertical = 12.dp),
     content: @Composable () -> Unit
 ) {
-    var isFocused by remember { mutableStateOf(false) }
-
     val effectiveContainer = when {
-        isFocused && containerColor == ConcertGold -> ConcertGoldBright
-        isFocused -> ConcertGold.copy(alpha = 0.25f)
         awarded -> ConcertGreen.copy(alpha = 0.28f)
         selected -> ConcertGold.copy(alpha = 0.22f)
         else -> containerColor
     }
     val borderColor = when {
-        isFocused -> ConcertGoldBright
         awarded -> ConcertGreen
         selected -> ConcertGold
         containerColor == ConcertGold -> ConcertGold
@@ -153,9 +144,9 @@ private fun HybridButton(
 
     Button(
         onClick = onClick,
-        modifier = modifier.onFocusChanged { isFocused = it.isFocused },
+        modifier = modifier,
         shape = RoundedCornerShape(12.dp),
-        border = BorderStroke(width = if (isFocused) 2.5.dp else 1.dp, color = borderColor),
+        border = BorderStroke(width = 1.dp, color = borderColor),
         contentPadding = contentPadding,
         colors = ButtonDefaults.buttonColors(
             containerColor = effectiveContainer,
@@ -313,7 +304,7 @@ private fun LobbyScreen(
                         horizontalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
                         songOptions.forEach { count ->
-                            HybridButton(
+                            MajstroButton(
                                 onClick = { onSelectRoundCount(count) },
                                 modifier = Modifier.weight(1f),
                                 selected = state.selectedRoundCount == count,
@@ -337,7 +328,7 @@ private fun LobbyScreen(
                         horizontalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
                         difficultyLevels.forEach { level ->
-                            HybridButton(
+                            MajstroButton(
                                 onClick = { onSelectDifficulty(level) },
                                 modifier = Modifier.weight(1f),
                                 selected = state.selectedDifficulty == level,
@@ -361,7 +352,7 @@ private fun LobbyScreen(
                         horizontalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
                         AnswerMode.entries.forEach { mode ->
-                            HybridButton(
+                            MajstroButton(
                                 onClick = { onSelectAnswerMode(mode) },
                                 modifier = Modifier.weight(1f),
                                 selected = state.selectedAnswerMode == mode,
@@ -396,7 +387,7 @@ private fun LobbyScreen(
 
             Spacer(modifier = Modifier.height(12.dp))
 
-            HybridButton(
+            MajstroButton(
                 onClick = onStartGame,
                 modifier = Modifier
                     .fillMaxWidth()
@@ -451,7 +442,7 @@ private fun LobbyScreen(
                     color = ConcertText
                 )
                 Spacer(modifier = Modifier.height(10.dp))
-                HybridButton(
+                MajstroButton(
                     onClick = onOpenSpotifySetup,
                     modifier = Modifier.fillMaxWidth(),
                     containerColor = ConcertSpotify.copy(alpha = 0.2f),
@@ -483,7 +474,7 @@ private fun QuestionScreen(
 ) {
     val question: QuizQuestion = state.currentQuestion ?: return
     val labels = listOf("A", "B", "C", "D")
-    val tvChoice = state.players.find { it.id == QuizEngine.TV_PLAYER_ID }?.selectedOptionIndex
+    val hostChoice = state.players.find { it.id == QuizEngine.HOST_PLAYER_ID }?.selectedOptionIndex
     val isWriteIn = state.selectedAnswerMode == AnswerMode.WRITE_IN
 
     Row(
@@ -569,8 +560,8 @@ private fun QuestionScreen(
             if (!isWriteIn) {
                 Spacer(modifier = Modifier.height(14.dp))
                 question.options.forEachIndexed { index, option ->
-                    val isSelected = tvChoice == index
-                    HybridButton(
+                    val isSelected = hostChoice == index
+                    MajstroButton(
                         onClick = { onSelectOption(index) },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -646,7 +637,7 @@ private fun QuestionScreen(
 
             Spacer(modifier = Modifier.height(14.dp))
 
-            HybridButton(
+            MajstroButton(
                 onClick = onRevealAnswer,
                 modifier = Modifier
                     .fillMaxWidth()
@@ -822,7 +813,7 @@ private fun RevealScreen(
 
             Spacer(modifier = Modifier.height(12.dp))
 
-            HybridButton(
+            MajstroButton(
                 onClick = onNextRound,
                 modifier = Modifier
                     .fillMaxWidth()
@@ -908,7 +899,7 @@ private fun PlayerJudgeCard(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                HybridButton(
+                MajstroButton(
                     onClick = { onToggleAward(AwardField.COMPOSER) },
                     modifier = Modifier.weight(1f),
                     awarded = player.roundAward.composerCorrect,
@@ -916,7 +907,7 @@ private fun PlayerJudgeCard(
                 ) {
                     Text(text = "Composer +1", fontSize = 12.sp, fontWeight = FontWeight.SemiBold)
                 }
-                HybridButton(
+                MajstroButton(
                     onClick = { onToggleAward(AwardField.PIECE) },
                     modifier = Modifier.weight(1f),
                     awarded = player.roundAward.pieceCorrect,
@@ -924,7 +915,7 @@ private fun PlayerJudgeCard(
                 ) {
                     Text(text = "Piece +2", fontSize = 12.sp, fontWeight = FontWeight.SemiBold)
                 }
-                HybridButton(
+                MajstroButton(
                     onClick = { onToggleAward(AwardField.CLOSEST_YEAR) },
                     modifier = Modifier.weight(1f),
                     awarded = player.roundAward.closestYear,
@@ -992,7 +983,7 @@ private fun GameOverScreen(
         Spacer(modifier = Modifier.height(20.dp))
 
         Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
-            HybridButton(
+            MajstroButton(
                 onClick = onPlayAgain,
                 containerColor = ConcertGold,
                 contentColor = Color(0xFF111111)
@@ -1000,7 +991,7 @@ private fun GameOverScreen(
                 Text("Play Again", fontSize = 17.sp, fontWeight = FontWeight.Bold)
             }
 
-            HybridButton(
+            MajstroButton(
                 onClick = onBackToLobby,
                 containerColor = ConcertCard,
                 contentColor = ConcertText

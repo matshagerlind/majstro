@@ -78,16 +78,10 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun tryLaunchSpotifyApp(): Boolean {
-        val candidates = listOf("com.spotify.tv.android", "com.spotify.music")
-        for (pkg in candidates) {
-            val intent = packageManager.getLaunchIntentForPackage(pkg)
-            if (intent != null) {
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                startActivity(intent)
-                return true
-            }
-        }
-        return false
+        val intent = packageManager.getLaunchIntentForPackage("com.spotify.music") ?: return false
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        startActivity(intent)
+        return true
     }
 
     private fun resolveLanIpAddress(): String =

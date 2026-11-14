@@ -153,7 +153,7 @@ class SpotifyPlayerGateway(
                         mode = PlaybackMode.SPOTIFY_CONNECT,
                         isPlaying = false,
                         activeDeviceName = device?.name,
-                        message = "Open Spotify on TV/phone first (${response.code})"
+                        message = "Open Spotify on tablet/phone first (${response.code})"
                     )
                     error("Spotify play failed (${response.code}): $err")
                 }

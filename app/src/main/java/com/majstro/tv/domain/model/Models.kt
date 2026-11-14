@@ -90,7 +90,7 @@ data class RoundAward(
     }
 }
 
-/** Connected participant (phone browser or local TV/tablet player). */
+/** Connected participant (phone browser or local Tablet player). */
 @Serializable
 data class Player(
     val id: String,
@@ -127,7 +127,7 @@ enum class QuizPhase {
     GAME_OVER
 }
 
-/** Immutable snapshot observed by both the TV/Tablet UI and connected phone clients. */
+/** Immutable snapshot observed by both the Tablet UI and connected phone clients. */
 @Serializable
 data class GameState(
     val phase: QuizPhase = QuizPhase.LOBBY,

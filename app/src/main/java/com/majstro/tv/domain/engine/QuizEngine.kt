@@ -48,12 +48,12 @@ class QuizEngine(
         }
     }
 
-    /** Updates the playback status displayed on the TV/Tablet and phone controllers. */
+    /** Updates the playback status displayed on the Tablet and phone controllers. */
     fun updatePlaybackStatus(playbackStatus: PlaybackStatus) {
         _state.update { it.copy(playbackStatus = playbackStatus) }
     }
 
-    /** Records the TV/Tablet's local LAN URLs for QR code display. */
+    /** Records the Tablet's local LAN URLs for QR code display. */
     fun setServerUrls(joinUrl: String, spotifySetupUrl: String) {
         _state.update { it.copy(joinUrl = joinUrl, spotifySetupUrl = spotifySetupUrl) }
     }
@@ -125,7 +125,7 @@ class QuizEngine(
 
         _state.update { current ->
             val activePlayers = current.players.ifEmpty {
-                listOf(Player(id = TV_PLAYER_ID, name = "TV Couch"))
+                listOf(Player(id = HOST_PLAYER_ID, name = "Tablet"))
             }.map {
                 it.copy(
                     score = 0,
@@ -165,7 +165,7 @@ class QuizEngine(
             } else {
                 current.players + Player(
                     id = playerId,
-                    name = "TV Couch",
+                    name = "Tablet",
                     selectedOptionIndex = optionIndex
                 )
             }
@@ -196,7 +196,7 @@ class QuizEngine(
             } else {
                 current.players + Player(
                     id = playerId,
-                    name = "TV Couch",
+                    name = "Tablet",
                     writtenAnswer = cleanAnswer
                 )
             }
@@ -361,6 +361,6 @@ class QuizEngine(
         const val MIN_DIFFICULTY = 1
         const val MAX_DIFFICULTY = 5
         const val MULTIPLE_CHOICE_POINTS = 2
-        const val TV_PLAYER_ID = "tv-remote"
+        const val HOST_PLAYER_ID = "tablet-host"
     }
 }
