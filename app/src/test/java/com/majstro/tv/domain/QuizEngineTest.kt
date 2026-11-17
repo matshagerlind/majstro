@@ -79,7 +79,7 @@ class QuizEngineTest {
 
         engine.revealAnswer()
         assertEquals(QuizPhase.REVEAL, engine.state.value.phase)
-        assertEquals(1, gateway.pauseCount)
+        assertEquals(0, gateway.pauseCount)
 
         // Composer and Piece are NOT auto-confirmed; only Closest Year (+1) is pre-highlighted
         val claraReveal = engine.state.value.players.first { it.id == "p1" }

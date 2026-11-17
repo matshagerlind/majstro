@@ -194,13 +194,11 @@ class QuizEngine(
         }
     }
 
-    /** Stops playback, scores multiple-choice or pre-selects closest year for write-in, and reveals the answer. */
+    /** Scores multiple-choice or pre-selects closest year for write-in, and reveals the answer. */
     suspend fun revealAnswer() = mutex.withLock {
         val current = _state.value
         if (current.phase != QuizPhase.QUESTION) return@withLock
         val question = current.currentQuestion ?: return@withLock
-
-        playerGateway.pause()
 
         val updatedPlayers = when (current.selectedAnswerMode) {
             AnswerMode.MULTIPLE_CHOICE -> {
