@@ -142,4 +142,97 @@ class SpotifySessionTest {
         assertTrue(session.status.value.isPlaying)
         assertEquals("Living Room", session.status.value.activeDeviceName)
     }
+
+    @Test
+    fun `play omits device_id when no device is reported active so active Sonos session is preserved`() = runTest {
+        val store = InMemoryKeyValueStore().apply {
+            putString("spotify_client_id", "my-client-id")
+            putString("spotify_access_token", "valid-token")
+            putString("spotify_refresh_token", "ref-1")
+            putLong("spotify_expires_at", Long.MAX_VALUE / 2)
+        }
+        val playedDeviceIds = mutableListOf<String?>()
+
+        val client = fakeHttpClient { request ->
+            when (request.url.encodedPath) {
+                "/v1/search" -> 200 to """{"tracks":{"items":[{"uri":"spotify:track:123"}]}}"""
+                "/v1/me/player/devices" -> 200 to """{"devices":[{"id":"dev-phone","name":"Pixel 10 Pro","is_active":false}]}"""
+                "/v1/me/player/play" -> {
+                    playedDeviceIds.add(request.url.queryParameter("device_id"))
+                    204 to ""
+                }
+                else -> 404 to "{}"
+            }
+        }
+
+        val session = SpotifySession(store = store, httpClient = client)
+        val result = session.play(sampleWork)
+
+        assertTrue(result.isSuccess)
+        assertEquals(listOf<String?>(null), playedDeviceIds)
+        assertEquals("Spotify Connect", session.status.value.activeDeviceName)
+    }
+
+    @Test
+    fun `play falls back to first device when no-device play returns 404`() = runTest {
+        val store = InMemoryKeyValueStore().apply {
+            putString("spotify_client_id", "my-client-id")
+            putString("spotify_access_token", "valid-token")
+            putString("spotify_refresh_token", "ref-1")
+            putLong("spotify_expires_at", Long.MAX_VALUE / 2)
+        }
+        val playedDeviceIds = mutableListOf<String?>()
+
+        val client = fakeHttpClient { request ->
+            when (request.url.encodedPath) {
+                "/v1/search" -> 200 to """{"tracks":{"items":[{"uri":"spotify:track:123"}]}}"""
+                "/v1/me/player/devices" -> 200 to """{"devices":[{"id":"dev-phone","name":"Pixel 10 Pro","is_active":false}]}"""
+                "/v1/me/player/play" -> {
+                    val deviceId = request.url.queryParameter("device_id")
+                    playedDeviceIds.add(deviceId)
+                    if (deviceId == null) 404 to "{}" else 204 to ""
+                }
+                else -> 404 to "{}"
+            }
+        }
+
+        val session = SpotifySession(store = store, httpClient = client)
+        val result = session.play(sampleWork)
+
+        assertTrue(result.isSuccess)
+        assertEquals(listOf(null, "dev-phone"), playedDeviceIds)
+        assertEquals("Pixel 10 Pro", session.status.value.activeDeviceName)
+    }
+
+    @Test
+    fun `play stops with clear message on 403 restricted device instead of falling back to phone`() = runTest {
+        val store = InMemoryKeyValueStore().apply {
+            putString("spotify_client_id", "my-client-id")
+            putString("spotify_access_token", "valid-token")
+            putString("spotify_refresh_token", "ref-1")
+            putLong("spotify_expires_at", Long.MAX_VALUE / 2)
+        }
+        val playedDeviceIds = mutableListOf<String?>()
+
+        val client = fakeHttpClient { request ->
+            when (request.url.encodedPath) {
+                "/v1/search" -> 200 to """{"tracks":{"items":[{"uri":"spotify:track:123"}]}}"""
+                "/v1/me/player/devices" -> 200 to """{"devices":[{"id":"dev-phone","name":"Pixel 10 Pro","is_active":false}]}"""
+                "/v1/me/player/play" -> {
+                    val deviceId = request.url.queryParameter("device_id")
+                    playedDeviceIds.add(deviceId)
+                    if (deviceId == null) 403 to """{"error":{"status":403,"message":"Restricted device"}}""" else 204 to ""
+                }
+                else -> 404 to "{}"
+            }
+        }
+
+        val session = SpotifySession(store = store, httpClient = client)
+        val result = session.play(sampleWork)
+
+        assertTrue(result.isFailure)
+        assertEquals(listOf<String?>(null), playedDeviceIds)
+        assertFalse(session.status.value.isPlaying)
+        assertTrue(session.status.value.message.contains("403"))
+    }
 }

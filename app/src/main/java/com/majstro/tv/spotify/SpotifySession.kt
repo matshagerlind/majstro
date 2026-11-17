@@ -157,20 +157,51 @@ class SpotifySession(
             return@withContext Result.failure(IllegalStateException("Track not found"))
         }
 
-        var device = findActiveOrFirstDevice(token)
-        if (device == null) {
-            wakeSpotifyApp()
-            device = findActiveOrFirstDevice(token)
-        }
-
-        val playUrl = "https://api.spotify.com/v1/me/player/play".toHttpUrl().newBuilder().apply {
-            if (device != null) addQueryParameter("device_id", device.id)
-        }.build()
-
         val payload = buildJsonObject {
             put("uris", buildJsonArray { add(kotlinx.serialization.json.JsonPrimitive(trackUri)) })
             put("position_ms", work.startPositionMs)
         }.toString()
+
+        var devices = fetchDevices(token)
+        val activeDevice = devices.firstOrNull { it.isActive }
+
+        if (activeDevice != null) {
+            return@withContext executePlay(token, payload, activeDevice)
+        }
+
+        // No device reported is_active: try playing without device_id first so Spotify keeps
+        // any active non-restricted Connect session instead of hijacking playback to the phone.
+        val noDeviceResult = executePlay(token, payload, device = null, updateErrorStatus = false)
+        if (noDeviceResult.isSuccess) {
+            return@withContext noDeviceResult
+        }
+        val noDeviceError = noDeviceResult.exceptionOrNull()?.message.orEmpty()
+        if (noDeviceError.contains("(403)")) {
+            _status.value = PlaybackStatus(
+                mode = PlaybackMode.SPOTIFY_CONNECT,
+                isPlaying = false,
+                message = "Speaker restricts remote control (403) — connect via Bluetooth or switch speaker"
+            )
+            return@withContext noDeviceResult
+        }
+
+        if (devices.isEmpty()) {
+            wakeSpotifyApp()
+            devices = fetchDevices(token)
+        }
+        val fallbackDevice = devices.firstOrNull { it.isActive } ?: devices.firstOrNull()
+        executePlay(token, payload, fallbackDevice)
+    }
+
+    private fun executePlay(
+        token: String,
+        payload: String,
+        device: SpotifyDevice?,
+        updateErrorStatus: Boolean = true
+    ): Result<Unit> {
+        val playUrl = "https://api.spotify.com/v1/me/player/play".toHttpUrl().newBuilder().apply {
+            if (device != null) addQueryParameter("device_id", device.id)
+        }.build()
 
         val request = Request.Builder()
             .url(playUrl)
@@ -178,16 +209,18 @@ class SpotifySession(
             .put(payload.toRequestBody("application/json".toMediaType()))
             .build()
 
-        runCatching {
+        return runCatching {
             httpClient.newCall(request).execute().use { response ->
                 if (!response.isSuccessful) {
                     val err = response.body?.string().orEmpty()
-                    _status.value = PlaybackStatus(
-                        mode = PlaybackMode.SPOTIFY_CONNECT,
-                        isPlaying = false,
-                        activeDeviceName = device?.name,
-                        message = "Open Spotify on tablet/phone first (${response.code})"
-                    )
+                    if (updateErrorStatus) {
+                        _status.value = PlaybackStatus(
+                            mode = PlaybackMode.SPOTIFY_CONNECT,
+                            isPlaying = false,
+                            activeDeviceName = device?.name,
+                            message = "Open Spotify on tablet/phone first (${response.code})"
+                        )
+                    }
                     error("Spotify play failed (${response.code}): $err")
                 }
                 _status.value = PlaybackStatus(
@@ -283,7 +316,7 @@ class SpotifySession(
         }.getOrNull()
     }
 
-    private fun findActiveOrFirstDevice(token: String): SpotifyDevice? {
+    private fun fetchDevices(token: String): List<SpotifyDevice> {
         val request = Request.Builder()
             .url("https://api.spotify.com/v1/me/player/devices")
             .header("Authorization", "Bearer $token")
@@ -292,12 +325,11 @@ class SpotifySession(
 
         return runCatching {
             httpClient.newCall(request).execute().use { response ->
-                if (!response.isSuccessful) return@use null
                 val raw = response.body?.string().orEmpty()
-                val devices = json.decodeFromString<SpotifyDevicesResponse>(raw).devices
-                devices.firstOrNull { it.isActive } ?: devices.firstOrNull()
+                if (!response.isSuccessful) return@use emptyList()
+                json.decodeFromString<SpotifyDevicesResponse>(raw).devices
             }
-        }.getOrNull()
+        }.getOrElse { emptyList() }
     }
 
     private fun urlEncode(value: String): String =
