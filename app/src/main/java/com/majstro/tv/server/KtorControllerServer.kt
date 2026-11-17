@@ -281,17 +281,17 @@ class KtorControllerServer(
               <meta name="viewport" content="width=device-width, initial-scale=1" />
               <title>Majstro · Spotify Setup</title>
               <style>
-                body { font-family: system-ui, -apple-system, sans-serif; background: #0d1117; color: #f0f4f8; margin: 0; padding: 20px; }
-                .card { max-width: 480px; margin: 0 auto; background: #161b22; border: 1px solid #30363d; border-radius: 14px; padding: 20px; }
-                h1 { color: #d4af37; margin-top: 0; font-size: 1.4rem; }
-                label { display: block; margin-top: 14px; font-size: 0.9rem; color: #9da7b3; }
-                input { width: 100%; box-sizing: border-box; padding: 12px; margin-top: 6px; border-radius: 8px; border: 1px solid #30363d; background: #0d1117; color: #fff; font-size: 1rem; }
-                button { width: 100%; margin-top: 16px; padding: 13px; border: none; border-radius: 10px; font-size: 1rem; font-weight: 600; cursor: pointer; background: #1db954; color: #041208; }
-                .btn-secondary { background: #30363d; color: #f0f4f8; }
-                .code { background: #0d1117; padding: 10px; border-radius: 8px; font-family: monospace; font-size: 0.82rem; word-break: break-all; border: 1px solid #30363d; }
-                .badge { display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: 0.8rem; font-weight: 600; background: ${if (isConnected) "#1db95433" else "#d4af3733"}; color: ${if (isConnected) "#4ae381" else "#f1d37a"}; }
-                .msg { background: #1f2937; border-left: 4px solid #d4af37; padding: 10px 12px; border-radius: 6px; margin-top: 12px; font-size: 0.9rem; }
-                a { color: #d4af37; }
+                body { font-family: system-ui, -apple-system, sans-serif; background: #0e151c; color: #f2efea; margin: 0; padding: 20px; }
+                .card { max-width: 480px; margin: 0 auto; background: #141e28; border: 1px solid #253342; border-radius: 18px; padding: 22px; }
+                h1 { font-family: Georgia, "Times New Roman", serif; font-weight: normal; color: #f2efea; margin-top: 0; font-size: 1.45rem; }
+                label { display: block; margin-top: 14px; font-size: 0.9rem; color: #8e9ba8; }
+                input { width: 100%; box-sizing: border-box; padding: 12px; margin-top: 6px; border-radius: 10px; border: 1px solid #253342; background: #0e151c; color: #f2efea; font-size: 1rem; }
+                button { width: 100%; margin-top: 16px; padding: 13px; border: none; border-radius: 12px; font-size: 1rem; font-weight: 600; cursor: pointer; background: #25b864; color: #08150d; }
+                .btn-secondary { background: #1a2532; color: #f2efea; border: 1px solid #253342; }
+                .code { background: #0e151c; padding: 10px; border-radius: 10px; font-family: monospace; font-size: 0.82rem; word-break: break-all; border: 1px solid #253342; }
+                .badge { display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: 0.8rem; font-weight: 600; background: ${if (isConnected) "#25b86426" else "#dfb49b26"}; color: ${if (isConnected) "#63d492" else "#ecc8b2"}; }
+                .msg { background: #1a2532; border-left: 4px solid #dfb49b; padding: 10px 12px; border-radius: 6px; margin-top: 12px; font-size: 0.9rem; }
+                a { color: #dfb49b; }
               </style>
             </head>
             <body>
@@ -329,25 +329,25 @@ class KtorControllerServer(
               <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
               <title>Majstro · Controller</title>
               <style>
-                :root { --bg: #0d1117; --card: #161b22; --gold: #d4af37; --green: #2ea043; --text: #f0f4f8; --muted: #9da7b3; --border: #30363d; }
+                :root { --bg: #0e151c; --card: #141e28; --elevated: #1a2532; --gold: #dfb49b; --green: #4e9f76; --text: #f2efea; --muted: #8e9ba8; --border: #253342; }
                 body { font-family: system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 16px; }
                 .wrap { max-width: 520px; margin: 0 auto; }
                 .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
-                .brand { font-size: 1.35rem; font-weight: 700; color: var(--gold); letter-spacing: 0.04em; }
-                .pill { font-size: 0.78rem; padding: 4px 10px; border-radius: 999px; background: #21262d; color: var(--muted); }
-                .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 16px; margin-bottom: 12px; }
-                label { display: block; font-size: 0.8rem; color: var(--muted); margin: 8px 0 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
-                input { width: 100%; box-sizing: border-box; padding: 11px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); color: #fff; font-size: 1rem; margin-bottom: 8px; }
-                button { width: 100%; padding: 13px; border-radius: 12px; border: 1px solid var(--border); background: #21262d; color: var(--text); font-size: 0.98rem; font-weight: 600; cursor: pointer; margin-bottom: 8px; text-align: left; }
-                button.primary { background: var(--gold); color: #111; border-color: var(--gold); text-align: center; }
-                button.selected { border-color: var(--gold); background: #d4af3726; color: #ffe58f; }
-                button.awarded { border-color: var(--green); background: #2ea04333; color: #7ee787; text-align: center; }
+                .brand { font-family: Georgia, "Times New Roman", serif; font-size: 1.4rem; font-weight: normal; color: var(--text); letter-spacing: 0.08em; }
+                .pill { font-size: 0.78rem; padding: 4px 10px; border-radius: 999px; background: var(--elevated); border: 1px solid var(--border); color: var(--muted); }
+                .card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 16px; margin-bottom: 12px; }
+                label { display: block; font-size: 0.75rem; color: var(--gold); margin: 8px 0 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+                input { width: 100%; box-sizing: border-box; padding: 11px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 1rem; margin-bottom: 8px; }
+                button { width: 100%; padding: 13px; border-radius: 12px; border: 1px solid var(--border); background: var(--elevated); color: var(--text); font-size: 0.98rem; font-weight: 600; cursor: pointer; margin-bottom: 8px; text-align: left; }
+                button.primary { background: var(--gold); color: #10171e; border-color: var(--gold); text-align: center; }
+                button.selected { border-color: var(--gold); background: #dfb49b26; color: #ecc8b2; }
+                button.awarded { border-color: var(--green); background: #4e9f7633; color: #8ad6ad; text-align: center; }
                 .chip-row { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
                 .chip { width: auto; flex: 1; min-width: 44px; padding: 9px 10px; margin: 0; text-align: center; font-size: 0.88rem; border-radius: 9px; }
-                .clue { font-size: 0.9rem; color: #cbd5e1; border-left: 3px solid var(--gold); padding-left: 10px; margin: 10px 0 12px; }
-                .row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #21262d; }
+                .clue { font-size: 0.9rem; color: var(--text); border-left: 3px solid var(--gold); padding-left: 10px; margin: 10px 0 12px; opacity: 0.9; }
+                .row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid var(--border); }
                 .row:last-child { border-bottom: none; }
-                .guess-box { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 10px; margin-bottom: 10px; }
+                .guess-box { background: var(--elevated); border: 1px solid var(--border); border-radius: 12px; padding: 10px; margin-bottom: 10px; }
                 .judge-row { display: flex; gap: 6px; margin-top: 8px; }
                 .judge-btn { flex: 1; padding: 9px 6px; margin: 0; text-align: center; font-size: 0.8rem; border-radius: 8px; }
                 a { color: var(--gold); font-size: 0.85rem; }

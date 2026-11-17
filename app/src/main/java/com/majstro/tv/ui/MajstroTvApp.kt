@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
@@ -23,6 +24,7 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.Typography
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -32,6 +34,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -45,14 +49,62 @@ import com.majstro.tv.domain.model.QuizPhase
 import com.majstro.tv.domain.model.QuizQuestion
 import kotlin.math.abs
 
-private val ConcertBg = Color(0xFF0D1117)
-private val ConcertCard = Color(0xFF161B22)
-private val ConcertGold = Color(0xFFD4AF37)
-private val ConcertGoldBright = Color(0xFFF3D56B)
-private val ConcertGreen = Color(0xFF2EA043)
-private val ConcertSpotify = Color(0xFF1DB954)
-private val ConcertText = Color(0xFFF0F4F8)
-private val ConcertMuted = Color(0xFF9DA7B3)
+private val ConcertBg = Color(0xFF0E151C)
+private val ConcertCard = Color(0xFF141E28)
+private val ConcertCardElevated = Color(0xFF1A2532)
+private val ConcertBorder = Color(0xFF253342)
+private val ConcertGold = Color(0xFFDFB49B)
+private val ConcertGoldBright = Color(0xFFECC8B2)
+private val ConcertGreen = Color(0xFF4E9F76)
+private val ConcertSpotify = Color(0xFF25B864)
+private val ConcertText = Color(0xFFF2EFEA)
+private val ConcertMuted = Color(0xFF8E9BA8)
+private val ConcertOnPrimary = Color(0xFF10171E)
+
+private val MajstroTypography = Typography(
+    headlineLarge = TextStyle(
+        fontFamily = FontFamily.Serif,
+        fontWeight = FontWeight.Normal,
+        fontSize = 26.sp,
+        lineHeight = 32.sp
+    ),
+    headlineMedium = TextStyle(
+        fontFamily = FontFamily.Serif,
+        fontWeight = FontWeight.Normal,
+        fontSize = 22.sp,
+        lineHeight = 28.sp
+    ),
+    titleLarge = TextStyle(
+        fontFamily = FontFamily.Serif,
+        fontWeight = FontWeight.Medium,
+        fontSize = 19.sp,
+        lineHeight = 24.sp
+    ),
+    titleMedium = TextStyle(
+        fontFamily = FontFamily.SansSerif,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 16.sp,
+        lineHeight = 22.sp
+    ),
+    bodyLarge = TextStyle(
+        fontFamily = FontFamily.SansSerif,
+        fontWeight = FontWeight.Normal,
+        fontSize = 15.sp,
+        lineHeight = 22.sp
+    ),
+    bodyMedium = TextStyle(
+        fontFamily = FontFamily.SansSerif,
+        fontWeight = FontWeight.Normal,
+        fontSize = 13.sp,
+        lineHeight = 18.sp
+    ),
+    labelSmall = TextStyle(
+        fontFamily = FontFamily.SansSerif,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 11.sp,
+        letterSpacing = 1.4.sp
+    )
+)
 
 /** Landscape Tablet UI for Majstro. */
 @Composable
@@ -69,12 +121,14 @@ fun MajstroTvApp(
     MaterialTheme(
         colorScheme = darkColorScheme(
             primary = ConcertGold,
-            onPrimary = Color(0xFF111111),
+            onPrimary = ConcertOnPrimary,
             surface = ConcertCard,
             onSurface = ConcertText,
             background = ConcertBg,
-            onBackground = ConcertText
-        )
+            onBackground = ConcertText,
+            outline = ConcertBorder
+        ),
+        typography = MajstroTypography
     ) {
         Box(
             modifier = Modifier
@@ -119,12 +173,12 @@ fun MajstroTvApp(
     }
 }
 
-/** Material 3 touch button styled for the Concert Hall palette. */
+/** Material 3 touch button styled for the Midnight Classical palette. */
 @Composable
 private fun MajstroButton(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
-    containerColor: Color = ConcertCard,
+    containerColor: Color = ConcertCardElevated,
     contentColor: Color = ConcertText,
     selected: Boolean = false,
     awarded: Boolean = false,
@@ -132,15 +186,15 @@ private fun MajstroButton(
     content: @Composable () -> Unit
 ) {
     val effectiveContainer = when {
-        awarded -> ConcertGreen.copy(alpha = 0.28f)
-        selected -> ConcertGold.copy(alpha = 0.22f)
+        awarded -> ConcertGreen.copy(alpha = 0.22f)
+        selected -> ConcertGold.copy(alpha = 0.16f)
         else -> containerColor
     }
     val borderColor = when {
         awarded -> ConcertGreen
         selected -> ConcertGold
         containerColor == ConcertGold -> ConcertGold
-        else -> Color(0xFF30363D)
+        else -> ConcertBorder
     }
 
     Button(
@@ -175,33 +229,65 @@ private fun TopHeader(state: GameState) {
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Column {
-            Text(
-                text = "MAJSTRO",
-                fontSize = 26.sp,
-                fontWeight = FontWeight.Bold,
-                color = ConcertGold,
-                letterSpacing = 2.sp
-            )
-            Text(
-                text = "Classical Music Quiz · ${state.selectedAnswerMode.label} · Diff ${state.selectedDifficulty}/5",
-                fontSize = 13.sp,
-                color = ConcertMuted
-            )
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(14.dp)
+        ) {
+            // Minimalist vinyl/record emblem matching the reference header
+            Surface(
+                modifier = Modifier.size(40.dp),
+                shape = CircleShape,
+                color = ConcertCardElevated,
+                border = BorderStroke(1.dp, ConcertText.copy(alpha = 0.65f))
+            ) {
+                Box(contentAlignment = Alignment.Center) {
+                    Surface(
+                        modifier = Modifier.size(16.dp),
+                        shape = CircleShape,
+                        color = Color.Transparent,
+                        border = BorderStroke(1.dp, ConcertGold)
+                    ) {
+                        Box(contentAlignment = Alignment.Center) {
+                            Box(
+                                modifier = Modifier
+                                    .size(4.dp)
+                                    .clip(CircleShape)
+                                    .background(ConcertText)
+                            )
+                        }
+                    }
+                }
+            }
+
+            Column {
+                Text(
+                    text = "MAJSTRO",
+                    fontFamily = FontFamily.Serif,
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.Normal,
+                    color = ConcertText,
+                    letterSpacing = 2.5.sp
+                )
+                Text(
+                    text = "Classical Music Quiz · ${state.selectedAnswerMode.label} · Diff ${state.selectedDifficulty}/5",
+                    fontSize = 12.sp,
+                    color = ConcertMuted
+                )
+            }
         }
 
         Surface(
-            color = if (isSpotify) ConcertSpotify.copy(alpha = 0.2f) else ConcertCard,
+            color = if (isSpotify) ConcertSpotify.copy(alpha = 0.16f) else ConcertCard,
             border = BorderStroke(
                 width = 1.dp,
-                color = if (isSpotify) ConcertSpotify else ConcertGold.copy(alpha = 0.5f)
+                color = if (isSpotify) ConcertSpotify.copy(alpha = 0.7f) else ConcertBorder
             ),
             shape = RoundedCornerShape(999.dp)
         ) {
             Text(
                 text = "${state.playbackStatus.mode.label} · ${state.playbackStatus.message}",
                 modifier = Modifier.padding(horizontal = 14.dp, vertical = 7.dp),
-                fontSize = 13.sp,
+                fontSize = 12.sp,
                 color = ConcertText
             )
         }
@@ -232,6 +318,7 @@ private fun LobbyScreen(
                 .weight(0.85f)
                 .fillMaxSize(),
             color = ConcertCard,
+            border = BorderStroke(1.dp, ConcertBorder),
             shape = RoundedCornerShape(18.dp)
         ) {
             Column(
@@ -242,9 +329,10 @@ private fun LobbyScreen(
             ) {
                 Text(
                     text = "Join With Your Phone",
-                    fontSize = 18.sp,
-                    fontWeight = FontWeight.SemiBold,
-                    color = ConcertGold
+                    fontFamily = FontFamily.Serif,
+                    fontSize = 19.sp,
+                    fontWeight = FontWeight.Normal,
+                    color = ConcertText
                 )
                 Spacer(modifier = Modifier.height(10.dp))
                 if (joinQr != null) {
@@ -286,6 +374,7 @@ private fun LobbyScreen(
                     .fillMaxWidth()
                     .weight(1f),
                 color = ConcertCard,
+                border = BorderStroke(1.dp, ConcertBorder),
                 shape = RoundedCornerShape(18.dp)
             ) {
                 Column(
@@ -294,9 +383,10 @@ private fun LobbyScreen(
                         .padding(18.dp)
                 ) {
                     Text(
-                        text = "Songs",
-                        fontSize = 13.sp,
-                        fontWeight = FontWeight.Bold,
+                        text = "SONGS",
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        letterSpacing = 1.4.sp,
                         color = ConcertGold
                     )
                     Spacer(modifier = Modifier.height(6.dp))
@@ -318,9 +408,10 @@ private fun LobbyScreen(
 
                     Spacer(modifier = Modifier.height(12.dp))
                     Text(
-                        text = "Difficulty: ${difficultyLabel(state.selectedDifficulty)}",
-                        fontSize = 13.sp,
-                        fontWeight = FontWeight.Bold,
+                        text = "DIFFICULTY · ${difficultyLabel(state.selectedDifficulty).uppercase()}",
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        letterSpacing = 1.4.sp,
                         color = ConcertGold
                     )
                     Spacer(modifier = Modifier.height(6.dp))
@@ -342,9 +433,10 @@ private fun LobbyScreen(
 
                     Spacer(modifier = Modifier.height(12.dp))
                     Text(
-                        text = "Mode",
-                        fontSize = 13.sp,
-                        fontWeight = FontWeight.Bold,
+                        text = "MODE",
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        letterSpacing = 1.4.sp,
                         color = ConcertGold
                     )
                     Spacer(modifier = Modifier.height(6.dp))
@@ -394,7 +486,7 @@ private fun LobbyScreen(
                     .fillMaxWidth()
                     .height(54.dp),
                 containerColor = ConcertGold,
-                contentColor = Color(0xFF111111)
+                contentColor = ConcertOnPrimary
             ) {
                 Text(
                     text = "Start ${state.selectedRoundCount}-Song Quiz (${state.selectedAnswerMode.label})",
@@ -410,6 +502,7 @@ private fun LobbyScreen(
                 .weight(0.75f)
                 .fillMaxSize(),
             color = ConcertCard,
+            border = BorderStroke(1.dp, ConcertBorder),
             shape = RoundedCornerShape(18.dp)
         ) {
             Column(
@@ -420,8 +513,9 @@ private fun LobbyScreen(
             ) {
                 Text(
                     text = "Spotify Connect",
-                    fontSize = 17.sp,
-                    fontWeight = FontWeight.SemiBold,
+                    fontFamily = FontFamily.Serif,
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Normal,
                     color = ConcertSpotify
                 )
                 Spacer(modifier = Modifier.height(8.dp))
@@ -489,10 +583,10 @@ private fun QuestionScreen(
         ) {
             Text(
                 text = "SONG ${question.roundNumber} OF ${question.totalRounds} · LEVEL ${question.work.difficultyLevel}/5 · ${state.selectedAnswerMode.label.uppercase()}",
-                fontSize = 13.sp,
-                fontWeight = FontWeight.Bold,
+                fontSize = 12.sp,
+                fontWeight = FontWeight.SemiBold,
                 color = ConcertGold,
-                letterSpacing = 1.4.sp
+                letterSpacing = 1.6.sp
             )
             Spacer(modifier = Modifier.height(8.dp))
             Text(
@@ -501,8 +595,9 @@ private fun QuestionScreen(
                 } else {
                     question.prompt
                 },
-                fontSize = 24.sp,
-                fontWeight = FontWeight.Bold,
+                fontFamily = FontFamily.Serif,
+                fontSize = 25.sp,
+                fontWeight = FontWeight.Normal,
                 color = ConcertText
             )
             Spacer(modifier = Modifier.height(12.dp))
@@ -593,7 +688,8 @@ private fun QuestionScreen(
                     .fillMaxWidth()
                     .weight(1f),
                 color = ConcertCard,
-                shape = RoundedCornerShape(16.dp)
+                border = BorderStroke(1.dp, ConcertBorder),
+                shape = RoundedCornerShape(18.dp)
             ) {
                 Column(
                     modifier = Modifier
@@ -602,9 +698,10 @@ private fun QuestionScreen(
                 ) {
                     Text(
                         text = "Players",
-                        fontSize = 19.sp,
-                        fontWeight = FontWeight.SemiBold,
-                        color = ConcertGold
+                        fontFamily = FontFamily.Serif,
+                        fontSize = 20.sp,
+                        fontWeight = FontWeight.Normal,
+                        color = ConcertText
                     )
                     Spacer(modifier = Modifier.height(10.dp))
                     state.players.forEach { player ->
@@ -644,7 +741,7 @@ private fun QuestionScreen(
                     .fillMaxWidth()
                     .height(54.dp),
                 containerColor = ConcertGold,
-                contentColor = Color(0xFF111111)
+                contentColor = ConcertOnPrimary
             ) {
                 Text(
                     text = "Reveal Answer",
@@ -660,8 +757,8 @@ private fun QuestionScreen(
 private fun ScoringBadge(title: String, pts: String, modifier: Modifier = Modifier) {
     Surface(
         modifier = modifier,
-        color = ConcertBg,
-        border = BorderStroke(1.dp, Color(0xFF30363D)),
+        color = ConcertCardElevated,
+        border = BorderStroke(1.dp, ConcertBorder),
         shape = RoundedCornerShape(10.dp)
     ) {
         Column(modifier = Modifier.padding(10.dp)) {
@@ -711,15 +808,17 @@ private fun RevealScreen(
                     Spacer(modifier = Modifier.height(10.dp))
                     Text(
                         text = work.title,
-                        fontSize = 25.sp,
-                        fontWeight = FontWeight.Bold,
+                        fontFamily = FontFamily.Serif,
+                        fontSize = 26.sp,
+                        fontWeight = FontWeight.Normal,
                         color = ConcertText
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     Text(
                         text = work.composer,
+                        fontFamily = FontFamily.Serif,
                         fontSize = 21.sp,
-                        fontWeight = FontWeight.SemiBold,
+                        fontWeight = FontWeight.Normal,
                         color = ConcertGold
                     )
                     Spacer(modifier = Modifier.height(10.dp))
@@ -775,6 +874,7 @@ private fun RevealScreen(
                     .fillMaxWidth()
                     .weight(1f),
                 color = ConcertCard,
+                border = BorderStroke(1.dp, ConcertBorder),
                 shape = RoundedCornerShape(18.dp)
             ) {
                 Column(
@@ -784,9 +884,10 @@ private fun RevealScreen(
                 ) {
                     Text(
                         text = if (isWriteIn) "Confirm Who Was Right" else "Scoreboard",
-                        fontSize = 19.sp,
-                        fontWeight = FontWeight.SemiBold,
-                        color = ConcertGold
+                        fontFamily = FontFamily.Serif,
+                        fontSize = 20.sp,
+                        fontWeight = FontWeight.Normal,
+                        color = ConcertText
                     )
                     if (isWriteIn) {
                         Text(
@@ -820,7 +921,7 @@ private fun RevealScreen(
                     .fillMaxWidth()
                     .height(54.dp),
                 containerColor = ConcertGold,
-                contentColor = Color(0xFF111111)
+                contentColor = ConcertOnPrimary
             ) {
                 Text(
                     text = if (question.roundNumber >= question.totalRounds) "Final Standings" else "Next Song",
@@ -846,8 +947,8 @@ private fun PlayerJudgeCard(
 
     Surface(
         modifier = Modifier.fillMaxWidth(),
-        color = ConcertBg,
-        border = BorderStroke(1.dp, Color(0xFF30363D)),
+        color = ConcertCardElevated,
+        border = BorderStroke(1.dp, ConcertBorder),
         shape = RoundedCornerShape(12.dp)
     ) {
         Column(modifier = Modifier.padding(12.dp)) {
@@ -944,8 +1045,9 @@ private fun GameOverScreen(
     ) {
         Text(
             text = "CONCERT FINALE · FINAL STANDINGS",
-            fontSize = 15.sp,
-            fontWeight = FontWeight.Bold,
+            fontFamily = FontFamily.Serif,
+            fontSize = 18.sp,
+            fontWeight = FontWeight.Normal,
             color = ConcertGold,
             letterSpacing = 2.sp
         )
@@ -954,6 +1056,7 @@ private fun GameOverScreen(
         Surface(
             modifier = Modifier.width(540.dp),
             color = ConcertCard,
+            border = BorderStroke(1.dp, ConcertBorder),
             shape = RoundedCornerShape(18.dp)
         ) {
             Column(modifier = Modifier.padding(22.dp)) {
@@ -987,14 +1090,14 @@ private fun GameOverScreen(
             MajstroButton(
                 onClick = onPlayAgain,
                 containerColor = ConcertGold,
-                contentColor = Color(0xFF111111)
+                contentColor = ConcertOnPrimary
             ) {
                 Text("Play Again", fontSize = 17.sp, fontWeight = FontWeight.Bold)
             }
 
             MajstroButton(
                 onClick = onBackToLobby,
-                containerColor = ConcertCard,
+                containerColor = ConcertCardElevated,
                 contentColor = ConcertText
             ) {
                 Text("Back to Lobby", fontSize = 17.sp)
