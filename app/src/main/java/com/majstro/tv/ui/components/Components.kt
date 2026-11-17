@@ -43,6 +43,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
+import androidx.compose.ui.window.DialogProperties
 import com.majstro.tv.R
 import com.majstro.tv.domain.model.GameState
 import com.majstro.tv.domain.model.MusicalEra
@@ -401,7 +402,10 @@ fun SpotifySetupDialog(
     val spotifyQr = remember(state.spotifySetupUrl) {
         generateQrCodeBitmap(state.spotifySetupUrl, 220)
     }
-    Dialog(onDismissRequest = onDismiss) {
+    Dialog(
+        onDismissRequest = onDismiss,
+        properties = DialogProperties(decorFitsSystemWindows = false)
+    ) {
         Surface(
             color = MajstroColors.SlateSurface,
             shape = RoundedCornerShape(22.dp),
