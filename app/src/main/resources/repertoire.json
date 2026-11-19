@@ -221,7 +221,7 @@
     "stylisticClue": "Pentatonic G-flat major opening phrase unfolding with gentle, folk-like warmth and soft parallel chords.",
     "spotifyQuery": "Debussy La fille aux cheveux de lin",
     "startPositionMs": 10000,
-    "funFact": "Debussy named this gentle prelude after a French poem set in Scotland, picturing a fair-haired girl singing among clover blossoms at dawn."
+    "funFact": "Debussy named this gentle prelude after a French poem set in Scotland, picturing a fair-haired girl singing among flowering clover in the summer morning."
   },
   {
     "id": "prokofiev-op64-knights",
@@ -319,7 +319,7 @@
     "stylisticClue": "Nine-part string ensemble tossing energetic sixteenth-note motifs in tight rhythmic interlock.",
     "spotifyQuery": "Bach Brandenburg Concerto No 3 Allegro",
     "startPositionMs": 15000,
-    "funFact": "Bach sent this concerto in a job-application gift set to a German nobleman, who never even thanked him or had it played."
+    "funFact": "Bach sent this concerto in a 1721 presentation set to a German nobleman, who apparently never thanked him, paid him, or had the score performed."
   },
   {
     "id": "albinoni-adagio",
@@ -333,7 +333,7 @@
     "stylisticClue": "Plodding organ and pizzicato bass supporting mournful, soaring string suspensions.",
     "spotifyQuery": "Albinoni Adagio in G minor",
     "startPositionMs": 20000,
-    "funFact": "Although credited to Baroque composer Albinoni, this famous tragic piece was actually written in 1945 by Italian musicologist Remo Giazotto."
+    "funFact": "Although credited to Baroque composer Albinoni, this famous tragic piece was actually composed by Italian musicologist Remo Giazotto and published in 1958."
   },
   {
     "id": "mozart-k550",
@@ -375,7 +375,7 @@
     "stylisticClue": "Delicate tiptoeing C-major string theme shattered by a sudden fortissimo orchestral crash.",
     "spotifyQuery": "Haydn Symphony No 94 Surprise Andante",
     "startPositionMs": 10000,
-    "funFact": "Haydn added a sudden, thunderous chord in this gentle movement specifically to jolt sleepy London concertgoers awake after dinner."
+    "funFact": "Despite the popular myth about waking sleepy listeners, Haydn added this sudden, thunderous chord simply to startle London audiences and outshine rival concerts."
   },
   {
     "id": "mozart-k467-elvira",
@@ -529,7 +529,7 @@
     "stylisticClue": "Booming bass drum, tam-tam, and wide-open fourths and fifths in unison trumpets and horns.",
     "spotifyQuery": "Copland Fanfare for the Common Man",
     "startPositionMs": 15000,
-    "funFact": "Written to honor everyday Americans during World War II, Copland's brass fanfare has even been sampled by rock bands like Emerson, Lake & Palmer."
+    "funFact": "Written to honor everyday Americans during World War II, Copland's brass fanfare was even adapted into a hit rock single by Emerson, Lake & Palmer."
   },
   {
     "id": "khachaturian-sabre",
@@ -655,7 +655,7 @@
     "stylisticClue": "Solemn D-minor unison call giving way to a buoyant, monothematic D-major string theme.",
     "spotifyQuery": "Haydn Symphony No 104 London Allegro",
     "startPositionMs": 60000,
-    "funFact": "This was the 104th and final symphony Haydn ever wrote, capping a wildly successful London concert series that made him both rich and world-famous."
+    "funFact": "Written for his triumphant 1795 London concert series, this was the final symphony Haydn ever composed, capping a career that made him both rich and world-famous."
   },
   {
     "id": "mozart-k622-clarinet",
@@ -683,7 +683,7 @@
     "stylisticClue": "Brooding low-string unison followed by an oboe/clarinet cantabile over rippling sixteenth-note strings.",
     "spotifyQuery": "Schubert Symphony No 8 Unfinished Allegro moderato",
     "startPositionMs": 35000,
-    "funFact": "Schubert finished only two movements and tucked the manuscript into a friend's drawer; it wasn't discovered and premiered until 1865, 37 years after his death."
+    "funFact": "Schubert finished only two movements and gave the score to a friend, who kept it hidden in a drawer until its 1865 premiere, 37 years after Schubert's death."
   },
   {
     "id": "brahms-op90",
@@ -725,7 +725,7 @@
     "stylisticClue": "Suspended chromatic suspensions scored purely for strings and harp with bittersweet longing.",
     "spotifyQuery": "Mahler Symphony No 5 Adagietto",
     "startPositionMs": 40000,
-    "funFact": "Mahler composed this tender, slow movement for strings and harp as a musical love letter to his young wife, Alma, shortly after their wedding."
+    "funFact": "Mahler composed this tender movement for strings and harp as a musical love letter to Alma Schindler during their whirlwind courtship, shortly before their 1902 wedding."
   },
   {
     "id": "debussy-l109-mer",
@@ -739,7 +739,7 @@
     "stylisticClue": "Misty low-string swells and muted trumpet calls cresting into divided cellos and harp waves.",
     "spotifyQuery": "Debussy La Mer De l'aube a midi sur la mer",
     "startPositionMs": 45000,
-    "funFact": "Debussy painted the ocean entirely from memory and imagination, even choosing the famous Japanese woodblock print 'The Great Wave' for the sheet music cover."
+    "funFact": "Debussy began sketching the ocean inland from memory and imagination, even choosing the famous Japanese woodblock print 'The Great Wave' for the sheet music cover."
   },
   {
     "id": "ravel-m57-daphnis",
@@ -977,7 +977,7 @@
     "stylisticClue": "Eight-bar Baroque-inspired chaconne theme hammered by winds and brass across thirty symphonic variations.",
     "spotifyQuery": "Brahms Symphony No 4 Allegro energico e passionato",
     "startPositionMs": 12000,
-    "funFact": "Brahms modeled this thunderous finale on an old Baroque pattern he found in a Bach cantata, spinning over thirty dramatic variations from one stubborn eight-note theme."
+    "funFact": "Brahms modeled this thunderous finale on an old Baroque pattern he found in a Bach cantata, spinning thirty dramatic variations from one stubborn eight-note theme."
   },
   {
     "id": "schumann-op16-kreisleriana",
@@ -1089,7 +1089,7 @@
     "stylisticClue": "Twelve trumpets, bass trumpets, and tenor tubas blasting terse Moravian ostinatos.",
     "spotifyQuery": "Janacek Sinfonietta Fanfare Allegretto",
     "startPositionMs": 10000,
-    "funFact": "Inspired by an outdoor military band and dedicated to the young Czechoslovak army, Janáček launches this exhilarating work with a blazing fanfare for twelve trumpets."
+    "funFact": "Inspired by an outdoor military band and dedicated to the young Czechoslovak army, Janáček launches this exhilarating work with a blazing fanfare for eleven trumpets and two tenor tubas."
   },
   {
     "id": "britten-op31-serenade",
@@ -1159,7 +1159,7 @@
     "stylisticClue": "Descending four-note tetrachord repeated sixty-five times in polyphonic solo violin variations.",
     "spotifyQuery": "Biber Passacaglia in G minor Guardian Angel",
     "startPositionMs": 15000,
-    "funFact": "This lone solo violin meditation closes a cycle of sixteen pieces depicting scenes from the Rosary, inspired by a guardian angel engraving."
+    "funFact": "This lone solo violin meditation closes a cycle of fifteen Rosary sonatas, inspired by a guardian angel engraving at the end of the manuscript."
   },
   {
     "id": "rameau-les-boreades",
@@ -1215,7 +1215,7 @@
     "stylisticClue": "Brooding chromatic recitative giving way to stormy Beethovenian piano counterpoint.",
     "spotifyQuery": "Clementi Sonata Op 50 No 3 Didone abbandonata",
     "startPositionMs": 20000,
-    "funFact": "Inspired by Queen Dido's tragic abandonment in Virgil's Aeneid, Clementi published this dramatic piano sonata at age sixty-nine as his final major work."
+    "funFact": "Inspired by Queen Dido's tragic abandonment in Virgil's Aeneid, Clementi published this dramatic work at age sixty-nine as his final piano sonata."
   },
   {
     "id": "cpebach-wq172-cello",
@@ -1243,7 +1243,7 @@
     "stylisticClue": "Subdominant-answering opening fugue full of agonizing chromatic half-steps without pause.",
     "spotifyQuery": "Beethoven String Quartet Op 131 Adagio ma non troppo",
     "startPositionMs": 18000,
-    "funFact": "Beethoven reportedly called this seven-movement work his greatest string quartet; dying days later, Schubert asked to hear it one final time."
+    "funFact": "Beethoven reportedly called this seven-movement work his greatest string quartet, and Franz Schubert asked to hear it five days before his own death in 1828."
   },
   {
     "id": "liszt-s178-bmoll",
@@ -1355,7 +1355,7 @@
     "stylisticClue": "Halt-stepped cello, horn, and harp heartbeat fracturing into soaring, nostalgic string polyphony.",
     "spotifyQuery": "Mahler Symphony No 9 Andante comodo",
     "startPositionMs": 30000,
-    "funFact": "Superstitious about Beethoven and Bruckner dying after their ninth symphonies, Mahler hesitated to number this heartbreaking farewell, which premiered after his death."
+    "funFact": "Having left Das Lied von der Erde unnumbered to dodge the 'Curse of the Ninth,' Mahler numbered this heartbreaking farewell, which premiered after his death."
   },
   {
     "id": "stravinsky-rite",
@@ -1369,7 +1369,7 @@
     "stylisticClue": "Polychordal string stomping with jagged, unpredictable accents and primitive Russian folk-inspired ostinatos.",
     "spotifyQuery": "Stravinsky Rite of Spring Augurs of Spring",
     "startPositionMs": 15000,
-    "funFact": "Its 1913 Paris premiere sparked a famous opening-night uproar, with audience members jeering, shouting, and even coming to blows over the pounding rhythms."
+    "funFact": "Its 1913 Paris premiere sparked a famous opening-night uproar, with audience members jeering and shouting over the pounding rhythms and radical choreography."
   },
   {
     "id": "bartok-sz116",
@@ -1621,7 +1621,7 @@
     "stylisticClue": "Serene solo flute floating in pure, unadorned D-minor melancholy over muted strings.",
     "spotifyQuery": "Gluck Dance of the Blessed Spirits",
     "startPositionMs": 20000,
-    "funFact": "Gluck wrote Orfeo ed Euridice to reform opera by stripping away showy vocal stunts, letting this serene underworld ballet speak with pure, calm emotion."
+    "funFact": "Gluck added this serene flute-led underworld ballet for the 1774 Paris revision of Orfeo ed Euridice, expanding his pioneering reform opera for French audiences."
   },
   {
     "id": "tchaikovsky-op23-pc1",
@@ -1747,7 +1747,7 @@
     "stylisticClue": "Exotic, modal F-minor melody with augmented-second twists floating without barlines.",
     "spotifyQuery": "Erik Satie Gnossienne No 1",
     "startPositionMs": 10000,
-    "funFact": "Satie discarded bar lines and time signatures in this hypnotic piano piece, sprinkling the score with quirky French prompts like 'open your head.'"
+    "funFact": "Satie discarded bar lines and time signatures in this hypnotic piano piece, sprinkling the score with quirky French prompts like 'from the tip of thought.'"
   },
   {
     "id": "debussy-l113-golliwogg",
@@ -1775,7 +1775,7 @@
     "stylisticClue": "Hushed C-major strings rising into a shimmering, bell-drenched celesta and harp apotheosis.",
     "spotifyQuery": "Ravel Ma mere l'Oye Le Jardin feerique",
     "startPositionMs": 45000,
-    "funFact": "Ravel originally composed Mother Goose as a four-hand piano duet for the young children of his close friends, Mimi and Jean Godebski."
+    "funFact": "Ravel originally composed Mother Goose as a four-hand piano duet for Mimi and Jean Godebski, the young children of his close friends Cipa and Ida."
   },
   {
     "id": "faure-op50-pavane",
@@ -1971,7 +1971,7 @@
     "stylisticClue": "Two equal solo violins chasing each other in tight imitative counterpoint over driving continuo.",
     "spotifyQuery": "Bach Double Violin Concerto BWV 1043 Vivace",
     "startPositionMs": 15000,
-    "funFact": "Bach originally wrote this energetic double concerto in Cöthen, later recycling its music in Leipzig for a pair of solo harpsichords."
+    "funFact": "Bach wrote this energetic double concerto in Leipzig around 1730 for his student orchestra, later arranging it for a pair of solo harpsichords."
   },
   {
     "id": "handel-hwv350-arrival",
@@ -2391,7 +2391,7 @@
     "stylisticClue": "Relentless 5/4 col legno string ostinato building into terrifying, dissonant brass fanfares.",
     "spotifyQuery": "Holst The Planets Mars",
     "startPositionMs": 25000,
-    "funFact": "Holst completed this relentless, pounding war march in August 1914—just weeks before World War I broke out—inspired by astrology, not astronomy."
+    "funFact": "Holst conceived this relentless, pounding war march just before World War I broke out in 1914, drawing inspiration from astrology rather than astronomy."
   },
   {
     "id": "debussy-l121-iberia",
@@ -2531,7 +2531,7 @@
     "stylisticClue": "Two nimble recorders echoing and intertwining with a dazzlingly virtuosic solo violin.",
     "spotifyQuery": "Bach Brandenburg Concerto No 4 Allegro",
     "startPositionMs": 15000,
-    "funFact": "Bach paired a dazzling solo violin with two wooden recorders—everyday amateur instruments at the time—giving them surprisingly athletic, showstopping music."
+    "funFact": "Bach paired a dazzling solo violin with two wooden recorders—more often heard in gentle chamber music—giving them surprisingly athletic, showstopping parts."
   },
   {
     "id": "vivaldi-rv522-op3no8",
@@ -2727,7 +2727,7 @@
     "stylisticClue": "Restless, galloping D-minor sixteenth-note perpetual motion driven by surging bass figures.",
     "spotifyQuery": "Beethoven Tempest Sonata Op 31 No 2 Allegretto",
     "startPositionMs": 10000,
-    "funFact": "Asked what this stormy sonata meant, Beethoven reportedly replied, 'Just read Shakespeare's The Tempest,' though he wrote it while agonizing over his worsening deafness."
+    "funFact": "An unreliable early biographer claimed Beethoven said to 'read Shakespeare's The Tempest' to understand this stormy sonata, which he wrote while agonizing over his worsening deafness."
   },
   {
     "id": "hummel-trumpet-eb",
@@ -2783,7 +2783,7 @@
     "stylisticClue": "Sharp orchestral chord and descending piano cascade opening onto a tender oboe romance.",
     "spotifyQuery": "Schumann Piano Concerto Op 54 Allegro affettuoso",
     "startPositionMs": 10000,
-    "funFact": "Schumann wrote this passionate concerto for his wife, Clara—one of Europe's greatest pianists—who performed its triumphant premiere on New Year's Day in 1846."
+    "funFact": "Schumann wrote this passionate concerto for his wife, Clara—one of Europe's greatest pianists—who gave its triumphant Dresden premiere in December 1845."
   },
   {
     "id": "verdi-requiem-diesirae",
@@ -2839,7 +2839,7 @@
     "stylisticClue": "Brooding chromatic three-note question rising from low strings into luminous organ-like brass.",
     "spotifyQuery": "Cesar Franck Symphony in D minor I",
     "startPositionMs": 60000,
-    "funFact": "Organist César Franck completed his only symphony at age 66, though conservative Parisian critics initially scoffed at his unusual decision to include an English horn."
+    "funFact": "Organist César Franck completed his only symphony at age 65, though conservative Parisian critics initially scoffed at his unusual decision to include an English horn."
   },
   {
     "id": "rachmaninoff-op27-sym2",
@@ -2853,7 +2853,7 @@
     "stylisticClue": "Long, breathless solo clarinet cantabile spinning endlessly over lush, warm strings.",
     "spotifyQuery": "Rachmaninoff Symphony No 2 Adagio",
     "startPositionMs": 25000,
-    "funFact": "After a disastrous First Symphony left him depressed and unable to compose for three years, Rachmaninoff sealed his triumphant comeback with this lush Second Symphony."
+    "funFact": "A decade after his First Symphony's disastrous premiere left him depressed for three years, Rachmaninoff proved his orchestral mastery with this lush, triumphant Second Symphony."
   },
   {
     "id": "ravel-string-quartet",
@@ -3385,7 +3385,7 @@
     "stylisticClue": "Stately, nobilmente woodwind and viola march theme colliding with restless D-minor drama.",
     "spotifyQuery": "Elgar Symphony No 1 Andante",
     "startPositionMs": 15000,
-    "funFact": "After its 1908 Manchester premiere, Elgar's Symphony No. 1 became an instant global hit, racking up nearly a hundred performances across three continents in its first year."
+    "funFact": "After its 1908 Manchester premiere, Elgar's Symphony No. 1 became an instant international hit, racking up around a hundred performances across Britain, continental Europe, and North America within a year."
   },
   {
     "id": "dvorak-op104-cello",
@@ -3399,7 +3399,7 @@
     "stylisticClue": "Clarinet-introduced heroic theme crowned by noble horn fanfares before a fiery solo cello entry.",
     "spotifyQuery": "Dvorak Cello Concerto Op 104 Allegro",
     "startPositionMs": 45000,
-    "funFact": "Dvořák wrote this beloved concerto in New York while homesick for Bohemia and grieving his sister-in-law Josefina, weaving her favorite song of his into the music."
+    "funFact": "Dvořák wrote this beloved concerto in New York while homesick for Bohemia and worried over his gravely ill sister-in-law Josefina, weaving her favorite song of his into the music."
   },
   {
     "id": "wolf-italian-serenade",
@@ -3553,7 +3553,7 @@
     "stylisticClue": "Gruff, four-note DSCH-derived solo cello motif locked in tense dialogue with solo French horn.",
     "spotifyQuery": "Shostakovich Cello Concerto No 1 Allegretto",
     "startPositionMs": 10000,
-    "funFact": "Written for cellist Mstislav Rostropovich, this razor-sharp concerto was memorized by him in just four days and stamps Shostakovich's four-note musical signature throughout the opening."
+    "funFact": "Written for cellist Mstislav Rostropovich, who memorized it in just four days, this razor-sharp concerto opens with a jagged four-note motif closely related to Shostakovich's personal DSCH signature."
   },
   {
     "id": "stravinsky-symphony-3mvt",
@@ -3595,7 +3595,7 @@
     "stylisticClue": "Fierce, antiphonal string choirs driven by percussive piano and urgent timpani.",
     "spotifyQuery": "Martinu Double Concerto I",
     "startPositionMs": 15000,
-    "funFact": "Holed up in the Swiss mountains in 1938 as Nazi Germany threatened Czechoslovakia, Martinů anxiously listened to radio news and finished sketching this work the day Munich fell."
+    "funFact": "Staying in the Swiss mountains in 1938 as Nazi Germany threatened Czechoslovakia, Martinů anxiously listened to radio news and finished this work the day the Munich Agreement was signed."
   },
   {
     "id": "honegger-pacific231",
@@ -3861,7 +3861,7 @@
     "stylisticClue": "Mozartian polish infused with passionate Spanish-Classical minor-key urgency.",
     "spotifyQuery": "Arriaga String Quartet No 1 D minor Allegro",
     "startPositionMs": 15000,
-    "funFact": "Born fifty years to the day after Mozart, the brilliant Spanish prodigy Arriaga published this remarkable string quartet at just seventeen, shortly before his early death."
+    "funFact": "Born fifty years to the day after Mozart, the Spanish prodigy Arriaga composed this remarkable string quartet at seventeen and published it in Paris at eighteen."
   },
   {
     "id": "brahms-op114-trio",
@@ -3917,7 +3917,7 @@
     "stylisticClue": "Tarantella frenzy for solo piano and giant orchestra before a hidden male chorus enters.",
     "spotifyQuery": "Busoni Piano Concerto Op 39 All'Italiana",
     "startPositionMs": 20000,
-    "funFact": "Busoni jokingly called this massive, seventy-minute concerto his 'Skyscraper,' even bringing a hidden male choir onstage for the final movement after this fiery Italian dance."
+    "funFact": "Busoni jokingly called this massive, seventy-minute concerto his 'Skyscraper,' even adding a hidden offstage male choir in the final movement after this fiery Italian dance."
   },
   {
     "id": "chausson-op21-concert",
@@ -4001,7 +4001,7 @@
     "stylisticClue": "Labyrinthine, perfumed nocturne woven from cascading, jewel-like chromatic piano filigree.",
     "spotifyQuery": "Sorabji Le Jardin parfume",
     "startPositionMs": 20000,
-    "funFact": "Inspired by a classic Arabic text, Sorabji wrote this hypnotic twenty-minute piano nocturne completely without bar lines, letting dreamy cascades flow freely."
+    "funFact": "Inspired by a classic Arabic text, Sorabji wrote this hypnotic twenty-minute piano nocturne without time signatures, letting dreamy, ornate cascades flow freely."
   },
   {
     "id": "koechlin-jungle-book",
@@ -4127,7 +4127,7 @@
     "stylisticClue": "Thirteen percussionists unleashing sirens, anvils, snare drums, and piano clusters with zero melody.",
     "spotifyQuery": "Edgard Varese Ionisation",
     "startPositionMs": 15000,
-    "funFact": "Scored for thirteen percussionists, sirens, and even a lion's roar, this 1931 landmark became the first Western concert piece written entirely for percussion."
+    "funFact": "Scored for thirteen players on percussion, sirens, and a lion's roar—plus a brief piano—this 1931 landmark helped pioneer the Western percussion ensemble."
   },
   {
     "id": "carter-string-quartet1",
