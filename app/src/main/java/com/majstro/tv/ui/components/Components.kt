@@ -22,6 +22,8 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
@@ -29,7 +31,9 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -101,11 +105,12 @@ fun VinylEmblem(
     }
 }
 
-/** Quiet editorial top bar with vinyl brand mark, match context, and Spotify modal trigger. */
+/** Quiet editorial top bar with vinyl brand mark, match context, and Spotify modal / overflow menu. */
 @Composable
 fun TopHeader(
     state: GameState,
-    onOpenSpotifyModal: () -> Unit
+    onOpenSpotifyModal: () -> Unit,
+    onRequestExitToLobby: () -> Unit = {}
 ) {
     val isSpotify = state.playbackStatus.mode == PlaybackMode.SPOTIFY_CONNECT
     val statusDotColor = if (isSpotify) MajstroColors.SpotifyGreen else MajstroColors.Champagne
@@ -151,37 +156,115 @@ fun TopHeader(
             )
         }
 
-        Surface(
-            modifier = Modifier
-                .clip(CircleShape)
-                .clickable(onClick = onOpenSpotifyModal),
-            color = MajstroColors.SlateElevated,
-            shape = CircleShape,
-            border = BorderStroke(
-                1.dp,
-                if (isSpotify) MajstroColors.SpotifyGreen.copy(alpha = 0.45f) else MajstroColors.Hairline
-            )
-        ) {
-            Row(
-                modifier = Modifier.padding(horizontal = 14.dp, vertical = 7.dp),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(8.dp)
+        if (state.phase == QuizPhase.LOBBY) {
+            Surface(
+                modifier = Modifier
+                    .clip(CircleShape)
+                    .clickable(onClick = onOpenSpotifyModal),
+                color = MajstroColors.SlateElevated,
+                shape = CircleShape,
+                border = BorderStroke(
+                    1.dp,
+                    if (isSpotify) MajstroColors.SpotifyGreen.copy(alpha = 0.45f) else MajstroColors.Hairline
+                )
             ) {
+                Row(
+                    modifier = Modifier.padding(horizontal = 14.dp, vertical = 7.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    Box(
+                        modifier = Modifier
+                            .size(7.dp)
+                            .clip(CircleShape)
+                            .background(statusDotColor)
+                    )
+                    Text(
+                        text = statusLabel,
+                        fontFamily = InterFamily,
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.Medium,
+                        color = MajstroColors.WarmIvory,
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis
+                    )
+                }
+            }
+        } else {
+            var menuExpanded by remember { mutableStateOf(false) }
+            Box {
                 Box(
                     modifier = Modifier
-                        .size(7.dp)
+                        .size(38.dp)
                         .clip(CircleShape)
-                        .background(statusDotColor)
-                )
-                Text(
-                    text = statusLabel,
-                    fontFamily = InterFamily,
-                    fontSize = 12.sp,
-                    fontWeight = FontWeight.Medium,
-                    color = MajstroColors.WarmIvory,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis
-                )
+                        .clickable { menuExpanded = true },
+                    contentAlignment = Alignment.Center
+                ) {
+                    Column(
+                        verticalArrangement = Arrangement.spacedBy(3.5.dp, Alignment.CenterVertically),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        repeat(3) {
+                            Box(
+                                modifier = Modifier
+                                    .size(3.5.dp)
+                                    .clip(CircleShape)
+                                    .background(MajstroColors.CoolMuted)
+                            )
+                        }
+                    }
+                }
+
+                DropdownMenu(
+                    expanded = menuExpanded,
+                    onDismissRequest = { menuExpanded = false },
+                    containerColor = MajstroColors.SlateSurface,
+                    shape = RoundedCornerShape(14.dp),
+                    border = BorderStroke(1.dp, MajstroColors.Hairline)
+                ) {
+                    DropdownMenuItem(
+                        text = {
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.spacedBy(10.dp)
+                            ) {
+                                Box(
+                                    modifier = Modifier
+                                        .size(7.dp)
+                                        .clip(CircleShape)
+                                        .background(statusDotColor)
+                                )
+                                Text(
+                                    text = statusLabel,
+                                    fontFamily = InterFamily,
+                                    fontSize = 13.sp,
+                                    fontWeight = FontWeight.Medium,
+                                    color = MajstroColors.WarmIvory
+                                )
+                            }
+                        },
+                        onClick = {
+                            menuExpanded = false
+                            onOpenSpotifyModal()
+                        }
+                    )
+                    HorizontalDivider(color = MajstroColors.Hairline, thickness = 1.dp)
+                    DropdownMenuItem(
+                        text = {
+                            Text(
+                                text = "Exit to Lobby",
+                                fontFamily = InterFamily,
+                                fontSize = 13.sp,
+                                fontWeight = FontWeight.Medium,
+                                color = MajstroColors.WarmIvory
+                            )
+                        },
+                        onClick = {
+                            menuExpanded = false
+                            onRequestExitToLobby()
+                        }
+                    )
+                }
             }
         }
     }
@@ -459,6 +542,55 @@ fun SpotifySetupDialog(
                 Spacer(modifier = Modifier.height(10.dp))
                 OutlinedChampagneButton(
                     text = "Close",
+                    onClick = onDismiss,
+                    modifier = Modifier.fillMaxWidth()
+                )
+            }
+        }
+    }
+}
+
+/** Confirmation dialog before quitting an in-progress match back to the lobby. */
+@Composable
+fun ExitToLobbyConfirmDialog(
+    onConfirmExit: () -> Unit,
+    onDismiss: () -> Unit
+) {
+    Dialog(
+        onDismissRequest = onDismiss,
+        properties = DialogProperties(decorFitsSystemWindows = false)
+    ) {
+        Surface(
+            color = MajstroColors.SlateSurface,
+            shape = RoundedCornerShape(22.dp),
+            border = BorderStroke(1.dp, MajstroColors.Hairline)
+        ) {
+            Column(
+                modifier = Modifier
+                    .width(360.dp)
+                    .padding(26.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Text(
+                    text = "Exit to Lobby?",
+                    style = MaterialTheme.typography.headlineMedium,
+                    color = MajstroColors.WarmIvory
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = "Your current game progress and scores will be lost.",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MajstroColors.CoolMuted
+                )
+                Spacer(modifier = Modifier.height(22.dp))
+                ChampagnePillButton(
+                    text = "Exit to Lobby",
+                    onClick = onConfirmExit,
+                    modifier = Modifier.fillMaxWidth()
+                )
+                Spacer(modifier = Modifier.height(10.dp))
+                OutlinedChampagneButton(
+                    text = "Keep Playing",
                     onClick = onDismiss,
                     modifier = Modifier.fillMaxWidth()
                 )

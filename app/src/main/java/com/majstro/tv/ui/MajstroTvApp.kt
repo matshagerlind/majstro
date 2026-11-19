@@ -24,6 +24,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.majstro.tv.domain.engine.QuizEngine
 import com.majstro.tv.domain.model.QuizPhase
+import com.majstro.tv.ui.components.ExitToLobbyConfirmDialog
 import com.majstro.tv.ui.components.SpotifySetupDialog
 import com.majstro.tv.ui.components.TopHeader
 import com.majstro.tv.ui.screens.GameOverScreen
@@ -45,6 +46,7 @@ fun MajstroTvApp(
 ) {
     val state by engine.state.collectAsState()
     var showSpotifyModal by remember { mutableStateOf(false) }
+    var showExitConfirmDialog by remember { mutableStateOf(false) }
 
     MajstroTheme {
         Box(
@@ -57,7 +59,14 @@ fun MajstroTvApp(
             Column(modifier = Modifier.fillMaxSize()) {
                 TopHeader(
                     state = state,
-                    onOpenSpotifyModal = { showSpotifyModal = true }
+                    onOpenSpotifyModal = { showSpotifyModal = true },
+                    onRequestExitToLobby = {
+                        if (state.phase == QuizPhase.GAME_OVER) {
+                            onBackToLobby()
+                        } else {
+                            showExitConfirmDialog = true
+                        }
+                    }
                 )
                 Spacer(modifier = Modifier.height(22.dp))
                 Box(modifier = Modifier.weight(1f)) {
@@ -70,28 +79,35 @@ fun MajstroTvApp(
                         },
                         label = "phaseTransition"
                     ) { phase ->
+                        // Freeze the exiting screen's snapshot so fadeOut doesn't flash the next round's state.
+                        val phaseState = remember(phase) { mutableStateOf(state) }
+                        if (phase == state.phase) {
+                            phaseState.value = state
+                        }
+                        val effectiveState = phaseState.value
                         when (phase) {
                             QuizPhase.LOBBY -> LobbyScreen(
-                                state = state,
+                                state = effectiveState,
+                                onSelectCategory = engine::setCategory,
                                 onSelectRoundCount = engine::setRoundCount,
                                 onSelectDifficulty = engine::setDifficultyLevel,
                                 onSelectAnswerMode = engine::setAnswerMode,
                                 onStartGame = onStartGame
                             )
                             QuizPhase.QUESTION -> QuestionScreen(
-                                state = state,
+                                state = effectiveState,
                                 onSelectOption = { index ->
                                     engine.submitAnswer(QuizEngine.HOST_PLAYER_ID, index)
                                 },
                                 onRevealAnswer = onRevealAnswer
                             )
                             QuizPhase.REVEAL -> RevealScreen(
-                                state = state,
+                                state = effectiveState,
                                 onToggleAward = engine::togglePlayerAward,
                                 onNextRound = onNextRound
                             )
                             QuizPhase.GAME_OVER -> GameOverScreen(
-                                state = state,
+                                state = effectiveState,
                                 onPlayAgain = onStartGame,
                                 onBackToLobby = onBackToLobby
                             )
@@ -105,6 +121,16 @@ fun MajstroTvApp(
                     state = state,
                     onOpenSpotifySetup = onOpenSpotifySetup,
                     onDismiss = { showSpotifyModal = false }
+                )
+            }
+
+            if (showExitConfirmDialog) {
+                ExitToLobbyConfirmDialog(
+                    onConfirmExit = {
+                        showExitConfirmDialog = false
+                        onBackToLobby()
+                    },
+                    onDismiss = { showExitConfirmDialog = false }
                 )
             }
         }
