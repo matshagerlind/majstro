@@ -30,8 +30,17 @@ class DefaultQuestionGeneratorTest {
         works.forEach { work ->
             assertTrue("Blank title for ${work.id}", work.title.isNotBlank())
             assertTrue("Blank composer for ${work.id}", work.composer.isNotBlank())
+            assertTrue("Blank funFact for ${work.id}", work.funFact.isNotBlank())
             assertTrue("Blank spotifyQuery for ${work.id}", work.spotifyQuery.isNotBlank())
             assertTrue("Invalid year for ${work.id}", work.yearWritten in 1600..2025)
+            assertTrue(
+                "Missing composer lifespan for ${work.composer}",
+                !ComposerCatalog.lifespanFor(work.composer).isNullOrBlank()
+            )
+            assertTrue(
+                "Blank Wikipedia title for ${work.composer}",
+                ComposerCatalog.wikipediaTitleFor(work.composer).isNotBlank()
+            )
         }
     }
 

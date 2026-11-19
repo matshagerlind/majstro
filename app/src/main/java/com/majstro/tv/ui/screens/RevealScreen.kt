@@ -3,6 +3,7 @@ package com.majstro.tv.ui.screens
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -13,6 +14,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -31,10 +33,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.majstro.tv.data.ComposerCatalog
 import com.majstro.tv.domain.model.AnswerMode
 import com.majstro.tv.domain.model.AwardField
 import com.majstro.tv.domain.model.GameState
 import com.majstro.tv.domain.model.Player
+import com.majstro.tv.ui.rememberComposerPortrait
 import com.majstro.tv.ui.components.ChampagnePillButton
 import com.majstro.tv.ui.components.EditorialClueQuote
 import com.majstro.tv.ui.components.EditorialSectionLabel
@@ -67,66 +71,97 @@ fun RevealScreen(
                 .fillMaxHeight()
                 .verticalScroll(rememberScrollState())
         ) {
-            Image(
-                painter = painterResource(id = eraArtworkRes(work.era)),
-                contentDescription = "${work.era.label} era painting",
-                contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(170.dp)
-                    .clip(RoundedCornerShape(18.dp))
-            )
-            Spacer(modifier = Modifier.height(18.dp))
+            val composerPortrait = rememberComposerPortrait(work.composer)
+            val composerDisplay = ComposerCatalog.lifespanFor(work.composer)
+                ?.let { "${work.composer} ($it)" }
+                ?: work.composer
 
-            EditorialSectionLabel("ANSWER REVEALED  ·  ${work.era.label} (${work.era.years})")
-            Spacer(modifier = Modifier.height(8.dp))
-
-            Text(
-                text = work.title,
-                style = MaterialTheme.typography.headlineLarge,
-                color = MajstroColors.WarmIvory
-            )
-            Spacer(modifier = Modifier.height(4.dp))
-            Text(
-                text = work.composer,
-                fontFamily = CormorantGaramondFamily,
-                fontSize = 22.sp,
-                fontWeight = FontWeight.Medium,
-                color = MajstroColors.Champagne
-            )
-
-            Spacer(modifier = Modifier.height(12.dp))
+            val portraitShape = RoundedCornerShape(18.dp)
+            val portraitModifier = Modifier
+                .width(140.dp)
+                .height(186.dp)
+                .clip(portraitShape)
+                .border(1.dp, MajstroColors.Champagne.copy(alpha = 0.28f), portraitShape)
 
             Row(
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(12.dp)
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(20.dp),
+                verticalAlignment = Alignment.Top
             ) {
-                Surface(
-                    color = MajstroColors.Champagne.copy(alpha = 0.14f),
-                    shape = CircleShape,
-                    border = BorderStroke(1.dp, MajstroColors.Champagne.copy(alpha = 0.45f))
-                ) {
-                    Text(
-                        text = "Written ${work.yearWritten}",
-                        fontFamily = InterFamily,
-                        fontSize = 12.sp,
-                        fontWeight = FontWeight.SemiBold,
-                        color = MajstroColors.ChampagneBright,
-                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 5.dp)
+                if (composerPortrait != null) {
+                    Image(
+                        bitmap = composerPortrait,
+                        contentDescription = "${work.composer} portrait",
+                        contentScale = ContentScale.Crop,
+                        alignment = Alignment.TopCenter,
+                        modifier = portraitModifier
+                    )
+                } else {
+                    Image(
+                        painter = painterResource(id = eraArtworkRes(work.era)),
+                        contentDescription = "${work.era.label} era painting",
+                        contentScale = ContentScale.Crop,
+                        modifier = portraitModifier
                     )
                 }
-                val metaText = listOf(work.catalogNumber, work.styleOrForm)
-                    .filter { it.isNotBlank() }
-                    .joinToString("  ·  ")
-                Text(
-                    text = metaText,
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MajstroColors.CoolMuted
-                )
+
+                Column(modifier = Modifier.weight(1f)) {
+                    EditorialSectionLabel("ANSWER REVEALED  ·  ${work.era.label}")
+                    Spacer(modifier = Modifier.height(8.dp))
+
+                    Text(
+                        text = work.title,
+                        style = MaterialTheme.typography.headlineLarge,
+                        color = MajstroColors.WarmIvory
+                    )
+                    Spacer(modifier = Modifier.height(4.dp))
+                    Text(
+                        text = composerDisplay,
+                        fontFamily = CormorantGaramondFamily,
+                        fontSize = 22.sp,
+                        fontWeight = FontWeight.Medium,
+                        color = MajstroColors.Champagne
+                    )
+
+                    Spacer(modifier = Modifier.height(12.dp))
+
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(12.dp)
+                    ) {
+                        Surface(
+                            color = MajstroColors.Champagne.copy(alpha = 0.14f),
+                            shape = CircleShape,
+                            border = BorderStroke(1.dp, MajstroColors.Champagne.copy(alpha = 0.45f))
+                        ) {
+                            Text(
+                                text = "Written ${work.yearWritten}",
+                                fontFamily = InterFamily,
+                                fontSize = 12.sp,
+                                fontWeight = FontWeight.SemiBold,
+                                color = MajstroColors.ChampagneBright,
+                                modifier = Modifier.padding(horizontal = 12.dp, vertical = 5.dp)
+                            )
+                        }
+                        val metaText = listOf(work.catalogNumber, work.styleOrForm)
+                            .filter { it.isNotBlank() }
+                            .joinToString("  ·  ")
+                        Text(
+                            text = metaText,
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MajstroColors.CoolMuted
+                        )
+                    }
+                }
             }
 
-            Spacer(modifier = Modifier.height(16.dp))
-            EditorialClueQuote(clue = work.stylisticClue)
+            val revealNote = work.funFact.ifBlank { work.stylisticClue }
+            if (revealNote.isNotBlank()) {
+                Spacer(modifier = Modifier.height(18.dp))
+                EditorialSectionLabel("FUN FACT")
+                Spacer(modifier = Modifier.height(8.dp))
+                EditorialClueQuote(clue = revealNote)
+            }
 
             if (!isWriteIn) {
                 Spacer(modifier = Modifier.height(14.dp))

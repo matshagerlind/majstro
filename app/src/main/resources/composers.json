@@ -1,0 +1,657 @@
+[
+  {
+    "name": "Aaron Copland",
+    "lifespan": "1900–1990",
+    "wikipediaTitle": "Aaron_Copland"
+  },
+  {
+    "name": "Alban Berg",
+    "lifespan": "1885–1935",
+    "wikipediaTitle": "Alban_Berg"
+  },
+  {
+    "name": "Albert Roussel",
+    "lifespan": "1869–1937",
+    "wikipediaTitle": "Albert_Roussel"
+  },
+  {
+    "name": "Alessandro Marcello",
+    "lifespan": "1673–1747",
+    "wikipediaTitle": "Alessandro_Marcello"
+  },
+  {
+    "name": "Alessandro Stradella",
+    "lifespan": "1643–1682",
+    "wikipediaTitle": "Alessandro_Stradella"
+  },
+  {
+    "name": "Alexander Scriabin",
+    "lifespan": "1872–1915",
+    "wikipediaTitle": "Alexander_Scriabin"
+  },
+  {
+    "name": "Anton Bruckner",
+    "lifespan": "1824–1896",
+    "wikipediaTitle": "Anton_Bruckner"
+  },
+  {
+    "name": "Anton Webern",
+    "lifespan": "1883–1945",
+    "wikipediaTitle": "Anton_Webern"
+  },
+  {
+    "name": "Antonio Salieri",
+    "lifespan": "1750–1825",
+    "wikipediaTitle": "Antonio_Salieri"
+  },
+  {
+    "name": "Antonio Vivaldi",
+    "lifespan": "1678–1741",
+    "wikipediaTitle": "Antonio_Vivaldi"
+  },
+  {
+    "name": "Antonín Dvořák",
+    "lifespan": "1841–1904",
+    "wikipediaTitle": "Antonín_Dvořák"
+  },
+  {
+    "name": "Aram Khachaturian",
+    "lifespan": "1903–1978",
+    "wikipediaTitle": "Aram_Khachaturian"
+  },
+  {
+    "name": "Arcangelo Corelli",
+    "lifespan": "1653–1713",
+    "wikipediaTitle": "Arcangelo_Corelli"
+  },
+  {
+    "name": "Arnold Bax",
+    "lifespan": "1883–1953",
+    "wikipediaTitle": "Arnold_Bax"
+  },
+  {
+    "name": "Arthur Honegger",
+    "lifespan": "1892–1955",
+    "wikipediaTitle": "Arthur_Honegger"
+  },
+  {
+    "name": "Arvo Pärt",
+    "lifespan": "b. 1935",
+    "wikipediaTitle": "Arvo_Pärt"
+  },
+  {
+    "name": "Astor Piazzolla",
+    "lifespan": "1921–1992",
+    "wikipediaTitle": "Astor_Piazzolla"
+  },
+  {
+    "name": "Bedřich Smetana",
+    "lifespan": "1824–1884",
+    "wikipediaTitle": "Bedřich_Smetana"
+  },
+  {
+    "name": "Benjamin Britten",
+    "lifespan": "1913–1976",
+    "wikipediaTitle": "Benjamin_Britten"
+  },
+  {
+    "name": "Bohuslav Martinů",
+    "lifespan": "1890–1959",
+    "wikipediaTitle": "Bohuslav_Martinů"
+  },
+  {
+    "name": "Béla Bartók",
+    "lifespan": "1881–1945",
+    "wikipediaTitle": "Béla_Bartók"
+  },
+  {
+    "name": "Camille Saint-Saëns",
+    "lifespan": "1835–1921",
+    "wikipediaTitle": "Camille_Saint-Saëns"
+  },
+  {
+    "name": "Carl Orff",
+    "lifespan": "1895–1982",
+    "wikipediaTitle": "Carl_Orff"
+  },
+  {
+    "name": "Carl Philipp Emanuel Bach",
+    "lifespan": "1714–1788",
+    "wikipediaTitle": "Carl_Philipp_Emanuel_Bach"
+  },
+  {
+    "name": "Carlo Gesualdo",
+    "lifespan": "1566–1613",
+    "wikipediaTitle": "Carlo_Gesualdo"
+  },
+  {
+    "name": "Charles Koechlin",
+    "lifespan": "1867–1950",
+    "wikipediaTitle": "Charles_Koechlin"
+  },
+  {
+    "name": "Charles Tomlinson Griffes",
+    "lifespan": "1884–1920",
+    "wikipediaTitle": "Charles_Tomlinson_Griffes"
+  },
+  {
+    "name": "Charles-Valentin Alkan",
+    "lifespan": "1813–1888",
+    "wikipediaTitle": "Charles-Valentin_Alkan"
+  },
+  {
+    "name": "Christoph Willibald Gluck",
+    "lifespan": "1714–1787",
+    "wikipediaTitle": "Christoph_Willibald_Gluck"
+  },
+  {
+    "name": "Claude Debussy",
+    "lifespan": "1862–1918",
+    "wikipediaTitle": "Claude_Debussy"
+  },
+  {
+    "name": "Claudio Monteverdi",
+    "lifespan": "1567–1643",
+    "wikipediaTitle": "Claudio_Monteverdi"
+  },
+  {
+    "name": "César Franck",
+    "lifespan": "1822–1890",
+    "wikipediaTitle": "César_Franck"
+  },
+  {
+    "name": "Dieterich Buxtehude",
+    "lifespan": "c. 1637–1707",
+    "wikipediaTitle": "Dieterich_Buxtehude"
+  },
+  {
+    "name": "Dmitri Shostakovich",
+    "lifespan": "1906–1975",
+    "wikipediaTitle": "Dmitri_Shostakovich"
+  },
+  {
+    "name": "Domenico Scarlatti",
+    "lifespan": "1685–1757",
+    "wikipediaTitle": "Domenico_Scarlatti"
+  },
+  {
+    "name": "E. J. Moeran",
+    "lifespan": "1894–1950",
+    "wikipediaTitle": "Ernest_John_Moeran"
+  },
+  {
+    "name": "Edgard Varèse",
+    "lifespan": "1883–1965",
+    "wikipediaTitle": "Edgard_Varèse"
+  },
+  {
+    "name": "Edvard Grieg",
+    "lifespan": "1843–1907",
+    "wikipediaTitle": "Edvard_Grieg"
+  },
+  {
+    "name": "Edward Elgar",
+    "lifespan": "1857–1934",
+    "wikipediaTitle": "Edward_Elgar"
+  },
+  {
+    "name": "Elliott Carter",
+    "lifespan": "1908–2012",
+    "wikipediaTitle": "Elliott_Carter"
+  },
+  {
+    "name": "Erik Satie",
+    "lifespan": "1866–1925",
+    "wikipediaTitle": "Erik_Satie"
+  },
+  {
+    "name": "Ernest Chausson",
+    "lifespan": "1855–1899",
+    "wikipediaTitle": "Ernest_Chausson"
+  },
+  {
+    "name": "Felix Mendelssohn",
+    "lifespan": "1809–1847",
+    "wikipediaTitle": "Felix_Mendelssohn"
+  },
+  {
+    "name": "Ferruccio Busoni",
+    "lifespan": "1866–1924",
+    "wikipediaTitle": "Ferruccio_Busoni"
+  },
+  {
+    "name": "Florent Schmitt",
+    "lifespan": "1870–1958",
+    "wikipediaTitle": "Florent_Schmitt"
+  },
+  {
+    "name": "Frank Bridge",
+    "lifespan": "1879–1941",
+    "wikipediaTitle": "Frank_Bridge"
+  },
+  {
+    "name": "Franz Liszt",
+    "lifespan": "1811–1886",
+    "wikipediaTitle": "Franz_Liszt"
+  },
+  {
+    "name": "Franz Schreker",
+    "lifespan": "1878–1934",
+    "wikipediaTitle": "Franz_Schreker"
+  },
+  {
+    "name": "Franz Schubert",
+    "lifespan": "1797–1828",
+    "wikipediaTitle": "Franz_Schubert"
+  },
+  {
+    "name": "François Couperin",
+    "lifespan": "1668–1733",
+    "wikipediaTitle": "François_Couperin"
+  },
+  {
+    "name": "Frederick Delius",
+    "lifespan": "1862–1934",
+    "wikipediaTitle": "Frederick_Delius"
+  },
+  {
+    "name": "Frédéric Chopin",
+    "lifespan": "1810–1849",
+    "wikipediaTitle": "Frédéric_Chopin"
+  },
+  {
+    "name": "Gabriel Fauré",
+    "lifespan": "1845–1924",
+    "wikipediaTitle": "Gabriel_Fauré"
+  },
+  {
+    "name": "Georg Philipp Telemann",
+    "lifespan": "1681–1767",
+    "wikipediaTitle": "Georg_Philipp_Telemann"
+  },
+  {
+    "name": "George Frideric Handel",
+    "lifespan": "1685–1759",
+    "wikipediaTitle": "George_Frideric_Handel"
+  },
+  {
+    "name": "George Gershwin",
+    "lifespan": "1898–1937",
+    "wikipediaTitle": "George_Gershwin"
+  },
+  {
+    "name": "Georges Bizet",
+    "lifespan": "1838–1875",
+    "wikipediaTitle": "Georges_Bizet"
+  },
+  {
+    "name": "Giacomo Puccini",
+    "lifespan": "1858–1924",
+    "wikipediaTitle": "Giacomo_Puccini"
+  },
+  {
+    "name": "Gioachino Rossini",
+    "lifespan": "1792–1868",
+    "wikipediaTitle": "Gioachino_Rossini"
+  },
+  {
+    "name": "Giovanni Battista Pergolesi",
+    "lifespan": "1710–1736",
+    "wikipediaTitle": "Giovanni_Battista_Pergolesi"
+  },
+  {
+    "name": "Girolamo Frescobaldi",
+    "lifespan": "1583–1643",
+    "wikipediaTitle": "Girolamo_Frescobaldi"
+  },
+  {
+    "name": "Giuseppe Verdi",
+    "lifespan": "1813–1901",
+    "wikipediaTitle": "Giuseppe_Verdi"
+  },
+  {
+    "name": "Gustav Holst",
+    "lifespan": "1874–1934",
+    "wikipediaTitle": "Gustav_Holst"
+  },
+  {
+    "name": "Gustav Mahler",
+    "lifespan": "1860–1911",
+    "wikipediaTitle": "Gustav_Mahler"
+  },
+  {
+    "name": "György Ligeti",
+    "lifespan": "1923–2006",
+    "wikipediaTitle": "György_Ligeti"
+  },
+  {
+    "name": "Hector Berlioz",
+    "lifespan": "1803–1869",
+    "wikipediaTitle": "Hector_Berlioz"
+  },
+  {
+    "name": "Heinrich Ignaz Franz Biber",
+    "lifespan": "1644–1704",
+    "wikipediaTitle": "Heinrich_Ignaz_Franz_Biber"
+  },
+  {
+    "name": "Heinrich Schütz",
+    "lifespan": "1585–1672",
+    "wikipediaTitle": "Heinrich_Schütz"
+  },
+  {
+    "name": "Henri Dutilleux",
+    "lifespan": "1916–2013",
+    "wikipediaTitle": "Henri_Dutilleux"
+  },
+  {
+    "name": "Henry Purcell",
+    "lifespan": "1659–1695",
+    "wikipediaTitle": "Henry_Purcell"
+  },
+  {
+    "name": "Hugo Wolf",
+    "lifespan": "1860–1903",
+    "wikipediaTitle": "Hugo_Wolf"
+  },
+  {
+    "name": "Iannis Xenakis",
+    "lifespan": "1922–2001",
+    "wikipediaTitle": "Iannis_Xenakis"
+  },
+  {
+    "name": "Igor Stravinsky",
+    "lifespan": "1882–1971",
+    "wikipediaTitle": "Igor_Stravinsky"
+  },
+  {
+    "name": "Jacques Offenbach",
+    "lifespan": "1819–1880",
+    "wikipediaTitle": "Jacques_Offenbach"
+  },
+  {
+    "name": "Jan Dismas Zelenka",
+    "lifespan": "1679–1745",
+    "wikipediaTitle": "Jan_Dismas_Zelenka"
+  },
+  {
+    "name": "Jan Ladislav Dussek",
+    "lifespan": "1760–1812",
+    "wikipediaTitle": "Jan_Ladislav_Dussek"
+  },
+  {
+    "name": "Jean Sibelius",
+    "lifespan": "1865–1957",
+    "wikipediaTitle": "Jean_Sibelius"
+  },
+  {
+    "name": "Jean-Baptiste Lully",
+    "lifespan": "1632–1687",
+    "wikipediaTitle": "Jean-Baptiste_Lully"
+  },
+  {
+    "name": "Jean-François Dandrieu",
+    "lifespan": "c. 1682–1738",
+    "wikipediaTitle": "Jean-François_Dandrieu"
+  },
+  {
+    "name": "Jean-Joseph Mouret",
+    "lifespan": "1682–1738",
+    "wikipediaTitle": "Jean-Joseph_Mouret"
+  },
+  {
+    "name": "Jean-Philippe Rameau",
+    "lifespan": "1683–1764",
+    "wikipediaTitle": "Jean-Philippe_Rameau"
+  },
+  {
+    "name": "Jeremiah Clarke",
+    "lifespan": "c. 1674–1707",
+    "wikipediaTitle": "Jeremiah_Clarke"
+  },
+  {
+    "name": "Joe Hisaishi",
+    "lifespan": "b. 1950",
+    "wikipediaTitle": "Joe_Hisaishi"
+  },
+  {
+    "name": "Johann Nepomuk Hummel",
+    "lifespan": "1778–1837",
+    "wikipediaTitle": "Johann_Nepomuk_Hummel"
+  },
+  {
+    "name": "Johann Pachelbel",
+    "lifespan": "1653–1706",
+    "wikipediaTitle": "Johann_Pachelbel"
+  },
+  {
+    "name": "Johann Sebastian Bach",
+    "lifespan": "1685–1750",
+    "wikipediaTitle": "Johann_Sebastian_Bach"
+  },
+  {
+    "name": "Johann Strauss II",
+    "lifespan": "1825–1899",
+    "wikipediaTitle": "Johann_Strauss_II"
+  },
+  {
+    "name": "Johannes Brahms",
+    "lifespan": "1833–1897",
+    "wikipediaTitle": "Johannes_Brahms"
+  },
+  {
+    "name": "John Adams",
+    "lifespan": "b. 1947",
+    "wikipediaTitle": "John_Adams_(composer)"
+  },
+  {
+    "name": "John Williams",
+    "lifespan": "b. 1932",
+    "wikipediaTitle": "John_Williams"
+  },
+  {
+    "name": "Joseph Haydn",
+    "lifespan": "1732–1809",
+    "wikipediaTitle": "Joseph_Haydn"
+  },
+  {
+    "name": "Joseph Martin Kraus",
+    "lifespan": "1756–1792",
+    "wikipediaTitle": "Joseph_Martin_Kraus"
+  },
+  {
+    "name": "Juan Crisóstomo Arriaga",
+    "lifespan": "1806–1826",
+    "wikipediaTitle": "Juan_Crisóstomo_Arriaga"
+  },
+  {
+    "name": "Kaikhosru Shapurji Sorabji",
+    "lifespan": "1892–1988",
+    "wikipediaTitle": "Kaikhosru_Shapurji_Sorabji"
+  },
+  {
+    "name": "Karol Szymanowski",
+    "lifespan": "1882–1937",
+    "wikipediaTitle": "Karol_Szymanowski"
+  },
+  {
+    "name": "Krzysztof Penderecki",
+    "lifespan": "1933–2020",
+    "wikipediaTitle": "Krzysztof_Penderecki"
+  },
+  {
+    "name": "Leonard Bernstein",
+    "lifespan": "1918–1990",
+    "wikipediaTitle": "Leonard_Bernstein"
+  },
+  {
+    "name": "Leoš Janáček",
+    "lifespan": "1854–1928",
+    "wikipediaTitle": "Leoš_Janáček"
+  },
+  {
+    "name": "Lili Boulanger",
+    "lifespan": "1893–1918",
+    "wikipediaTitle": "Lili_Boulanger"
+  },
+  {
+    "name": "Luciano Berio",
+    "lifespan": "1925–2003",
+    "wikipediaTitle": "Luciano_Berio"
+  },
+  {
+    "name": "Ludovico Einaudi",
+    "lifespan": "b. 1955",
+    "wikipediaTitle": "Ludovico_Einaudi"
+  },
+  {
+    "name": "Ludwig van Beethoven",
+    "lifespan": "1770–1827",
+    "wikipediaTitle": "Ludwig_van_Beethoven"
+  },
+  {
+    "name": "Luigi Boccherini",
+    "lifespan": "1743–1805",
+    "wikipediaTitle": "Luigi_Boccherini"
+  },
+  {
+    "name": "Luigi Cherubini",
+    "lifespan": "1760–1842",
+    "wikipediaTitle": "Luigi_Cherubini"
+  },
+  {
+    "name": "Maurice Ravel",
+    "lifespan": "1875–1937",
+    "wikipediaTitle": "Maurice_Ravel"
+  },
+  {
+    "name": "Max Reger",
+    "lifespan": "1873–1916",
+    "wikipediaTitle": "Max_Reger"
+  },
+  {
+    "name": "Modest Mussorgsky",
+    "lifespan": "1839–1881",
+    "wikipediaTitle": "Modest_Mussorgsky"
+  },
+  {
+    "name": "Muzio Clementi",
+    "lifespan": "1752–1832",
+    "wikipediaTitle": "Muzio_Clementi"
+  },
+  {
+    "name": "Nikolai Rimsky-Korsakov",
+    "lifespan": "1844–1908",
+    "wikipediaTitle": "Nikolai_Rimsky-Korsakov"
+  },
+  {
+    "name": "Olivier Messiaen",
+    "lifespan": "1908–1992",
+    "wikipediaTitle": "Olivier_Messiaen"
+  },
+  {
+    "name": "Ottorino Respighi",
+    "lifespan": "1879–1936",
+    "wikipediaTitle": "Ottorino_Respighi"
+  },
+  {
+    "name": "Paul Dukas",
+    "lifespan": "1865–1935",
+    "wikipediaTitle": "Paul_Dukas"
+  },
+  {
+    "name": "Paul Hindemith",
+    "lifespan": "1895–1963",
+    "wikipediaTitle": "Paul_Hindemith"
+  },
+  {
+    "name": "Philip Glass",
+    "lifespan": "b. 1937",
+    "wikipediaTitle": "Philip_Glass"
+  },
+  {
+    "name": "Pyotr Ilyich Tchaikovsky",
+    "lifespan": "1840–1893",
+    "wikipediaTitle": "Pyotr_Ilyich_Tchaikovsky"
+  },
+  {
+    "name": "Ralph Vaughan Williams",
+    "lifespan": "1872–1958",
+    "wikipediaTitle": "Ralph_Vaughan_Williams"
+  },
+  {
+    "name": "Richard Strauss",
+    "lifespan": "1864–1949",
+    "wikipediaTitle": "Richard_Strauss"
+  },
+  {
+    "name": "Richard Wagner",
+    "lifespan": "1813–1883",
+    "wikipediaTitle": "Richard_Wagner"
+  },
+  {
+    "name": "Robert Schumann",
+    "lifespan": "1810–1856",
+    "wikipediaTitle": "Robert_Schumann"
+  },
+  {
+    "name": "Samuel Barber",
+    "lifespan": "1910–1981",
+    "wikipediaTitle": "Samuel_Barber"
+  },
+  {
+    "name": "Sergei Prokofiev",
+    "lifespan": "1891–1953",
+    "wikipediaTitle": "Sergei_Prokofiev"
+  },
+  {
+    "name": "Sergei Rachmaninoff",
+    "lifespan": "1873–1943",
+    "wikipediaTitle": "Sergei_Rachmaninoff"
+  },
+  {
+    "name": "Sergei Taneyev",
+    "lifespan": "1856–1915",
+    "wikipediaTitle": "Sergei_Taneyev"
+  },
+  {
+    "name": "Steve Reich",
+    "lifespan": "b. 1936",
+    "wikipediaTitle": "Steve_Reich"
+  },
+  {
+    "name": "Sylvius Leopold Weiss",
+    "lifespan": "1687–1750",
+    "wikipediaTitle": "Sylvius_Leopold_Weiss"
+  },
+  {
+    "name": "Tomaso Albinoni",
+    "lifespan": "1671–1751",
+    "wikipediaTitle": "Tomaso_Albinoni"
+  },
+  {
+    "name": "Toru Takemitsu",
+    "lifespan": "1930–1996",
+    "wikipediaTitle": "Toru_Takemitsu"
+  },
+  {
+    "name": "William Walton",
+    "lifespan": "1902–1983",
+    "wikipediaTitle": "William_Walton"
+  },
+  {
+    "name": "Witold Lutosławski",
+    "lifespan": "1913–1994",
+    "wikipediaTitle": "Witold_Lutosławski"
+  },
+  {
+    "name": "Wolfgang Amadeus Mozart",
+    "lifespan": "1756–1791",
+    "wikipediaTitle": "Wolfgang_Amadeus_Mozart"
+  },
+  {
+    "name": "Zoltán Kodály",
+    "lifespan": "1882–1967",
+    "wikipediaTitle": "Zoltán_Kodály"
+  }
+]

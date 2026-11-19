@@ -10,7 +10,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Bouncy Venetian ritornello strings alternating with bird-call solo violin episodes and harpsichord continuo.",
     "spotifyQuery": "Vivaldi Four Seasons Spring Allegro",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Vivaldi published this violin concerto alongside a matching sonnet describing spring birdsong, babbling brooks, and a sudden afternoon thunderstorm."
   },
   {
     "id": "bach-bwv1068-air",
@@ -23,7 +24,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Serene sustained first-violin cantabile gliding over a walking pizzicato-like basso continuo.",
     "spotifyQuery": "Bach Orchestral Suite No 3 BWV 1068 Air",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Its famous nickname comes from an 1871 arrangement by violinist August Wilhelmj, who shifted the melody so it could be played on one string."
   },
   {
     "id": "pachelbel-canon",
@@ -36,7 +38,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Two-bar descending bass ostinato repeated twenty-eight times beneath three interlocking violin voices.",
     "spotifyQuery": "Pachelbel Canon in D major",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Nearly forgotten for centuries, this Baroque wedding favorite only became a global sensation after a French chamber orchestra recorded it in 1968."
   },
   {
     "id": "handel-hwv56-hallelujah",
@@ -49,7 +52,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Jubilant choral homophony punctuated by Baroque trumpets, timpani, and contrapuntal fugal entries.",
     "spotifyQuery": "Handel Messiah Hallelujah Chorus",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Handel composed the entire two-and-a-half-hour Messiah oratorio in a frantic 24-day burst of inspiration, reportedly barely stopping to eat or sleep."
   },
   {
     "id": "mozart-k525",
@@ -62,7 +66,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Crisp Mannheim-rocket arpeggio opening in G major for chamber strings.",
     "spotifyQuery": "Mozart Eine kleine Nachtmusik Allegro",
-    "startPositionMs": 5000
+    "startPositionMs": 5000,
+    "funFact": "Mozart entered this beloved serenade into his personal catalog in 1787, yet no one knows who commissioned it or if he ever heard it."
   },
   {
     "id": "beethoven-op67",
@@ -75,7 +80,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Obsessive four-note rhythmic cell hammered across the entire orchestra with relentless motivic development.",
     "spotifyQuery": "Beethoven Symphony No 5 Op 67 Allegro con brio",
-    "startPositionMs": 25000
+    "startPositionMs": 25000,
+    "funFact": "Facing worsening deafness, Beethoven poured his defiance into this symphony's famous four-note opening, later used as a BBC victory signal in World War II."
   },
   {
     "id": "beethoven-woo59",
@@ -88,7 +94,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Alternating E and D-sharp semitone turn opening into a gentle broken-chord A-minor rondo.",
     "spotifyQuery": "Beethoven Fur Elise Bagatelle WoO 59",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "This piano favorite wasn't published until 40 years after Beethoven's death, and historians still debate which woman's name he scribbled on the lost manuscript."
   },
   {
     "id": "mozart-k331-turca",
@@ -101,7 +108,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Playful Janissary-band piano imitation with crisp grace-note octaves and A-major march refrain.",
     "spotifyQuery": "Mozart Piano Sonata No 11 K 331 Rondo alla Turca",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Mozart wrote this lively finale in the exotic 'Turkish' style, mimicking the clashing cymbals and marching drums of Ottoman military bands popular in Vienna."
   },
   {
     "id": "bizet-carmen-toreador",
@@ -114,7 +122,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Swaggering Spanish-inflected orchestral march building into an unmistakable heroic refrain.",
     "spotifyQuery": "Bizet Carmen Toreador Song Votre toast",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Bizet added this swaggering bullfighter's song late in rehearsals to give the baritone a showstopper, though he cynically dismissed it as 'trash.'"
   },
   {
     "id": "tchaikovsky-op71",
@@ -127,7 +136,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Sweeping harp cadenza launching into lush Russian French-horn phrasing and crystalline orchestral color.",
     "spotifyQuery": "Tchaikovsky Waltz of the Flowers",
-    "startPositionMs": 45000
+    "startPositionMs": 45000,
+    "funFact": "Though The Nutcracker is now a holiday staple, Tchaikovsky disliked working on the ballet and worried the music was far worse than Sleeping Beauty."
   },
   {
     "id": "grieg-op46-hall",
@@ -140,7 +150,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Creeping pizzicato bassoons and low strings accelerating into a crashing orchestral frenzy.",
     "spotifyQuery": "Grieg Peer Gynt In the Hall of the Mountain King",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Grieg hated writing this famous troll-chase music for Ibsen's play, joking in a letter that it literally smelled of cowpats."
   },
   {
     "id": "strauss-op314-danube",
@@ -153,7 +164,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Shimmering tremolos in the strings leading into a buoyant three-beat A-major arpeggio melody.",
     "spotifyQuery": "Johann Strauss II Blue Danube Waltz Op 314",
-    "startPositionMs": 45000
+    "startPositionMs": 45000,
+    "funFact": "Written as a choral piece to lift Viennese spirits after a war defeat, this waltz flopped at its premiere before its orchestral version conquered the world."
   },
   {
     "id": "debussy-l66-arabesque1",
@@ -166,7 +178,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Rippling triplets against duplets in a sunlit, flowing harp-like piano texture.",
     "spotifyQuery": "Debussy Arabesque No 1 in E major",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Inspired by swirling curved lines in art and nature, the 26-year-old Debussy wrote this dreamy piano piece just as Art Nouveau swept Paris."
   },
   {
     "id": "satie-gymnopedie1",
@@ -179,7 +192,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Sparse, hypnotic 3/4 rocking major-seventh chords beneath a slow, wistful treble melody.",
     "spotifyQuery": "Erik Satie Gymnopedie No 1",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Satie named these tranquil piano pieces after an ancient Spartan festival of naked youths, while working as a bohemian cabaret pianist in Paris."
   },
   {
     "id": "ravel-pavane",
@@ -192,7 +206,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Nostalgic solo French horn intoning a dignified Spanish court dance over pizzicato strings and harp.",
     "spotifyQuery": "Ravel Pavane pour une infante defunte orchestra",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Ravel chose the poetic title 'Pavane for a Dead Princess' simply because he loved how the French words sounded together, not to mourn anyone real."
   },
   {
     "id": "debussy-l117-lin",
@@ -205,7 +220,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Pentatonic G-flat major opening phrase unfolding with gentle, folk-like warmth and soft parallel chords.",
     "spotifyQuery": "Debussy La fille aux cheveux de lin",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Debussy named this gentle prelude after a French poem set in Scotland, picturing a fair-haired girl singing among clover blossoms at dawn."
   },
   {
     "id": "prokofiev-op64-knights",
@@ -218,7 +234,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Heavy, menacing low-brass and string stomps with angular Russian harmonic twists.",
     "spotifyQuery": "Prokofiev Dance of the Knights Romeo and Juliet",
-    "startPositionMs": 30000
+    "startPositionMs": 30000,
+    "funFact": "Soviet officials initially rejected Prokofiev's Romeo and Juliet ballet as 'undanceable,' and his original score even gave the doomed lovers a happy ending."
   },
   {
     "id": "orff-carmina-fortuna",
@@ -231,7 +248,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Thunderous percussion and full choir chanting medieval Latin over relentless driving ostinatos.",
     "spotifyQuery": "Carl Orff Carmina Burana O Fortuna",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Orff discovered the medieval Latin text for this thunderous chorus in an 1847 book of poems written by wandering 13th-century students and monks."
   },
   {
     "id": "gershwin-rhapsody-blue",
@@ -244,7 +262,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Iconic solo clarinet trill and upward glissando into blues-inflected symphonic swing.",
     "spotifyQuery": "Gershwin Rhapsody in Blue",
-    "startPositionMs": 5000
+    "startPositionMs": 5000,
+    "funFact": "Gershwin forgot he had promised to write a jazz concerto until reading a newspaper ad, then finished the masterpiece in roughly three weeks."
   },
   {
     "id": "holst-op32-jupiter",
@@ -257,7 +276,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Buoyant brass fanfares and swirling strings giving way to a sweeping, noble British hymn tune.",
     "spotifyQuery": "Holst The Planets Jupiter",
-    "startPositionMs": 30000
+    "startPositionMs": 30000,
+    "funFact": "Holst based his Planets suite on astrology rather than astronomy, portraying Jupiter not as a giant gas planet, but as the bringer of good cheer."
   },
   {
     "id": "bach-bwv565",
@@ -270,7 +290,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Dramatic solo pipe organ rhetoric followed by tight four-voice Baroque counterpoint.",
     "spotifyQuery": "Bach Toccata and Fugue in D minor BWV 565",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Bach's dramatic organ showpiece went largely forgotten for over a century until Felix Mendelssohn helped revive it in the 1840s."
   },
   {
     "id": "vivaldi-rv315-summer",
@@ -283,7 +304,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Furious descending string scales depicting a violent Italian summer hailstorm.",
     "spotifyQuery": "Vivaldi Four Seasons Summer Presto",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Vivaldi printed vivid sonnets alongside the score; Summer's furious finale depicts a violent thunderstorm flattening the farmers' crops."
   },
   {
     "id": "bach-bwv1048-brandenburg3",
@@ -296,7 +318,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Nine-part string ensemble tossing energetic sixteenth-note motifs in tight rhythmic interlock.",
     "spotifyQuery": "Bach Brandenburg Concerto No 3 Allegro",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Bach sent this concerto in a job-application gift set to a German nobleman, who never even thanked him or had it played."
   },
   {
     "id": "albinoni-adagio",
@@ -309,7 +332,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Plodding organ and pizzicato bass supporting mournful, soaring string suspensions.",
     "spotifyQuery": "Albinoni Adagio in G minor",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Although credited to Baroque composer Albinoni, this famous tragic piece was actually written in 1945 by Italian musicologist Remo Giazotto."
   },
   {
     "id": "mozart-k550",
@@ -322,7 +346,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Restless half-step sighing motif over pulsing violas—Classical-era Sturm und Drang minor-key urgency.",
     "spotifyQuery": "Mozart Symphony No 40 K 550 Molto allegro",
-    "startPositionMs": 12000
+    "startPositionMs": 12000,
+    "funFact": "Mozart completed this stormy, urgent symphony in just a few weeks during the summer of 1788, alongside two other symphonic masterpieces."
   },
   {
     "id": "beethoven-op27no2-moonlight",
@@ -335,7 +360,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Hushed C-sharp minor triplet ostinato under a brooding, bell-like soprano line.",
     "spotifyQuery": "Beethoven Moonlight Sonata Op 27 No 2 Adagio sostenuto",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Beethoven didn't name it 'Moonlight'—a German poet coined the nickname five years after the composer's death, comparing it to moonlit lake waves."
   },
   {
     "id": "haydn-hob94-surprise",
@@ -348,7 +374,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Delicate tiptoeing C-major string theme shattered by a sudden fortissimo orchestral crash.",
     "spotifyQuery": "Haydn Symphony No 94 Surprise Andante",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Haydn added a sudden, thunderous chord in this gentle movement specifically to jolt sleepy London concertgoers awake after dinner."
   },
   {
     "id": "mozart-k467-elvira",
@@ -361,7 +388,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Muted violins with triplet accompaniment cradling a serene, singing piano cantabile.",
     "spotifyQuery": "Mozart Piano Concerto No 21 K 467 Andante",
-    "startPositionMs": 25000
+    "startPositionMs": 25000,
+    "funFact": "This dreamy movement gained a modern nickname after starring in the 1967 Swedish film Elvira Madigan, sparking a classical-music craze."
   },
   {
     "id": "chopin-op9no2",
@@ -374,7 +402,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Bel canto vocal cantilena in the right hand with ornamental fioritura over a steady waltz-like bass.",
     "spotifyQuery": "Chopin Nocturne Op 9 No 2",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Chopin wrote this dreamy, singing piano piece around age twenty, shortly before leaving his Polish homeland for Paris forever."
   },
   {
     "id": "tchaikovsky-op20-swan",
@@ -387,7 +416,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Plaintive solo oboe gliding over shimmering harp arpeggios and tremolo strings before brass swells.",
     "spotifyQuery": "Tchaikovsky Swan Lake Scene Moderato",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "At its 1877 Moscow premiere, critics panned Swan Lake as 'too noisy' and the choreography as dull; fame came only after Tchaikovsky's death."
   },
   {
     "id": "rossini-william-tell",
@@ -400,7 +430,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Galloping brass bugle call launching into a breathless, unstoppable orchestral cavalry charge.",
     "spotifyQuery": "Rossini William Tell Overture Finale",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Written for Rossini's final opera in 1829, this galloping finale later became iconic as the theme music for The Lone Ranger."
   },
   {
     "id": "elgar-op36-nimrod",
@@ -413,7 +444,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Whispered E-flat major strings rising slowly to a radiant, brass-crowned orchestral climax.",
     "spotifyQuery": "Elgar Enigma Variations Nimrod",
-    "startPositionMs": 25000
+    "startPositionMs": 25000,
+    "funFact": "Elgar wrote 'Nimrod' to honor his close friend and publisher August Jaeger, whose surname means 'hunter' in German—just like the biblical Nimrod."
   },
   {
     "id": "debussy-l75",
@@ -426,7 +458,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Floating ninth chords, blurred pedal resonance, and gentle 9/8 rubato avoiding functional cadences.",
     "spotifyQuery": "Debussy Clair de lune",
-    "startPositionMs": 30000
+    "startPositionMs": 30000,
+    "funFact": "Debussy first called this gentle piano piece 'Promenade sentimentale,' only renaming it 'Clair de lune' after a Paul Verlaine poem years later."
   },
   {
     "id": "ravel-bolero",
@@ -439,7 +472,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Unchanging ostinato snare drum and two-part modal melody passed instrument by instrument.",
     "spotifyQuery": "Ravel Bolero",
-    "startPositionMs": 60000
+    "startPositionMs": 60000,
+    "funFact": "Ravel described Boléro as a seventeen-minute orchestral crescendo with 'no music in it'—yet it became his most famous work worldwide."
   },
   {
     "id": "debussy-l86-faune",
@@ -452,7 +486,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Languid solo flute tracing a chromatic tritone curve answered by shimmering harp glissandi and horns.",
     "spotifyQuery": "Debussy Prelude a l'apres-midi d'un faune",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "When Vaslav Nijinsky choreographed this sensual piece into a 1912 ballet, its bold movements shocked Parisian audiences into a near-riot."
   },
   {
     "id": "dukas-sorcerer",
@@ -465,7 +500,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Bouncy bassoon motif marching steadily forward as orchestral magic multiplies out of control.",
     "spotifyQuery": "Dukas Sorcerer's Apprentice",
-    "startPositionMs": 60000
+    "startPositionMs": 60000,
+    "funFact": "Inspired by a Goethe poem, Dukas's magical tale of out-of-control broomsticks became world-famous thanks to Mickey Mouse in Disney's Fantasia."
   },
   {
     "id": "barber-op11-adagio",
@@ -478,7 +514,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Stepwise B-flat minor string arch climbing relentlessly to an agonizing high-register apex.",
     "spotifyQuery": "Samuel Barber Adagio for Strings Op 11",
-    "startPositionMs": 30000
+    "startPositionMs": 30000,
+    "funFact": "Originally written as part of a string quartet, this deeply moving piece later became America's unofficial music of mourning for presidents and tragedies."
   },
   {
     "id": "copland-fanfare",
@@ -491,7 +528,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Booming bass drum, tam-tam, and wide-open fourths and fifths in unison trumpets and horns.",
     "spotifyQuery": "Copland Fanfare for the Common Man",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Written to honor everyday Americans during World War II, Copland's brass fanfare has even been sampled by rock bands like Emerson, Lake & Palmer."
   },
   {
     "id": "khachaturian-sabre",
@@ -504,7 +542,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Driving xylophone and string ostinato whipped by brass glissandi and Armenian folk chromaticism.",
     "spotifyQuery": "Khachaturian Sabre Dance",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Khachaturian dashed off this frenzied dance in a single evening right before his ballet's premiere, never guessing it would become a jukebox hit."
   },
   {
     "id": "shostakovich-jazz2-waltz",
@@ -517,7 +556,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Wry alto saxophone and muted trombone melody swinging with bittersweet Soviet cabaret charm.",
     "spotifyQuery": "Shostakovich Waltz No 2 Suite for Variety Orchestra",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Often mislabeled as 'Jazz Suite No. 2,' this wistful waltz actually comes from a later medley Shostakovich assembled from his film scores."
   },
   {
     "id": "handel-hwv349",
@@ -530,7 +570,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Festive outdoor antiphony trading bright natural horns and trumpets against oboe-led strings.",
     "spotifyQuery": "Handel Water Music Alla Hornpipe",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Handel wrote Water Music for King George I's lavish 1717 River Thames boat party, where 50 musicians played from a barge floating alongside the royal vessel."
   },
   {
     "id": "bach-bwv1007-prelude",
@@ -543,7 +584,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Rolling broken-chord arpeggios for solo cello outlining implied Baroque harmony.",
     "spotifyQuery": "Bach Cello Suite No 1 BWV 1007 Prelude",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Bach's cello suites were largely forgotten for over a century until teenage cellist Pablo Casals stumbled upon a yellowed copy in a Barcelona thrift shop in 1890."
   },
   {
     "id": "purcell-z628-cold",
@@ -556,7 +598,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Shivering repeated string chords rising chromatically beneath a trembling bass-baritone.",
     "spotifyQuery": "Purcell King Arthur Cold Song What Power Art Thou",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "In this 1691 opera aria, Purcell makes the singer stutter and shiver on repeated notes to portray the Spirit of Winter waking up in the freezing cold."
   },
   {
     "id": "bach-bwv1047-brandenburg2",
@@ -569,7 +612,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Clarino Baroque trumpet soaring above recorder, oboe, and solo violin concertino.",
     "spotifyQuery": "Bach Brandenburg Concerto No 2 Allegro",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Bach sent the Brandenburg Concertos as a job application to a German margrave, who apparently never paid him, thanked him, or even had the pieces performed."
   },
   {
     "id": "beethoven-op55-eroica",
@@ -582,7 +626,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Two hammer-blow E-flat chords launching a cello theme jolted by an unexpected C-sharp.",
     "spotifyQuery": "Beethoven Symphony No 3 Eroica Allegro con brio",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Beethoven originally dedicated his Third Symphony to Napoleon, but furiously scratched the name out after hearing that Napoleon had crowned himself emperor."
   },
   {
     "id": "mozart-k551-jupiter",
@@ -595,7 +640,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Four-note plainsong motif spun into a dazzling five-voice Classical fugato finale.",
     "spotifyQuery": "Mozart Symphony No 41 Jupiter Molto allegro",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Mozart wrote this grand final symphony in the summer of 1788, and a London concert promoter later nicknamed it 'Jupiter' after the king of the Roman gods."
   },
   {
     "id": "haydn-hob104-london",
@@ -608,7 +654,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Solemn D-minor unison call giving way to a buoyant, monothematic D-major string theme.",
     "spotifyQuery": "Haydn Symphony No 104 London Allegro",
-    "startPositionMs": 60000
+    "startPositionMs": 60000,
+    "funFact": "This was the 104th and final symphony Haydn ever wrote, capping a wildly successful London concert series that made him both rich and world-famous."
   },
   {
     "id": "mozart-k622-clarinet",
@@ -621,7 +668,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Warm chalumeau-register clarinet phrasing floating effortlessly over hushed string chords.",
     "spotifyQuery": "Mozart Clarinet Concerto K 622 Adagio",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Written just two months before Mozart's death for his close friend Anton Stadler, this concerto showcased a newly invented clarinet with extra low notes."
   },
   {
     "id": "schubert-d759",
@@ -634,7 +682,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Brooding low-string unison followed by an oboe/clarinet cantabile over rippling sixteenth-note strings.",
     "spotifyQuery": "Schubert Symphony No 8 Unfinished Allegro moderato",
-    "startPositionMs": 35000
+    "startPositionMs": 35000,
+    "funFact": "Schubert finished only two movements and tucked the manuscript into a friend's drawer; it wasn't discovered and premiered until 1865, 37 years after his death."
   },
   {
     "id": "brahms-op90",
@@ -647,7 +696,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Autumnal cello melody wrapped in Brahmsian cross-rhythms and warm horn sonorities.",
     "spotifyQuery": "Brahms Symphony No 3 Poco allegretto",
-    "startPositionMs": 22000
+    "startPositionMs": 22000,
+    "funFact": "Brahms wove his personal motto—'Free, but happy'—as a three-note musical code into this symphony, composed during a peaceful summer retreat on the Rhine."
   },
   {
     "id": "dvorak-op95",
@@ -660,7 +710,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Hushed brass chorale modulation opening onto an aching solo English horn melody.",
     "spotifyQuery": "Dvorak Symphony No 9 Largo English horn",
-    "startPositionMs": 45000
+    "startPositionMs": 45000,
+    "funFact": "Inspired by African American spirituals and Native American music during his stay in America, Dvořák wrote a symphony so beloved that Neil Armstrong took a recording to the Moon."
   },
   {
     "id": "mahler-sym5",
@@ -673,7 +724,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Suspended chromatic suspensions scored purely for strings and harp with bittersweet longing.",
     "spotifyQuery": "Mahler Symphony No 5 Adagietto",
-    "startPositionMs": 40000
+    "startPositionMs": 40000,
+    "funFact": "Mahler composed this tender, slow movement for strings and harp as a musical love letter to his young wife, Alma, shortly after their wedding."
   },
   {
     "id": "debussy-l109-mer",
@@ -686,7 +738,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Misty low-string swells and muted trumpet calls cresting into divided cellos and harp waves.",
     "spotifyQuery": "Debussy La Mer De l'aube a midi sur la mer",
-    "startPositionMs": 45000
+    "startPositionMs": 45000,
+    "funFact": "Debussy painted the ocean entirely from memory and imagination, even choosing the famous Japanese woodblock print 'The Great Wave' for the sheet music cover."
   },
   {
     "id": "ravel-m57-daphnis",
@@ -699,7 +752,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Rippling flute and clarinet bird-calls over wordless chorus and glowing orchestral sunrise.",
     "spotifyQuery": "Ravel Daphnis et Chloe Lever du jour",
-    "startPositionMs": 30000
+    "startPositionMs": 30000,
+    "funFact": "Written for the famous Ballets Russes, Ravel's shimmering 'Daybreak' depicts sunrise over an ancient Greek meadow through rippling flutes and orchestral birdsong."
   },
   {
     "id": "respighi-pines-appia",
@@ -712,7 +766,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Distant marching bass ostinato growing into a blazing Roman legion triumph with offstage brass.",
     "spotifyQuery": "Respighi Pines of Rome Pines of the Appian Way",
-    "startPositionMs": 60000
+    "startPositionMs": 60000,
+    "funFact": "To summon the vision of a ghostly Roman army marching at dawn, Respighi added extra offstage brass instruments that build the finale to a thunderous roar."
   },
   {
     "id": "vaughan-williams-lark",
@@ -725,7 +780,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Free-meter pentatonic solo violin fluttering high above muted English modal strings.",
     "spotifyQuery": "Vaughan Williams The Lark Ascending",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Vaughan Williams sketched this soaring violin piece while watching warships cross the English Channel in 1914—and was briefly detained by police as a suspected spy."
   },
   {
     "id": "stravinsky-firebird-finale",
@@ -738,7 +794,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Solo horn intoning a Russian folk tune that builds into radiant 7/4 brass triumph.",
     "spotifyQuery": "Stravinsky Firebird Suite Finale",
-    "startPositionMs": 30000
+    "startPositionMs": 30000,
+    "funFact": "Before The Firebird, Stravinsky was virtually unknown outside Russia; its dazzling 1910 Paris premiere turned the 28-year-old composer into an overnight international star."
   },
   {
     "id": "prokofiev-op25-classical",
@@ -751,7 +808,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Haydn-sized orchestra playing crisp Classical scales spiked with sudden witty harmonic side-slips.",
     "spotifyQuery": "Prokofiev Symphony No 1 Classical Allegro",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Prokofiev wrote this crisp, playful symphony during the chaos of the 1917 Russian Revolution, imagining what Haydn's music would sound like in the 20th century."
   },
   {
     "id": "shostakovich-op47-sym5",
@@ -764,7 +822,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Timpani-driven march accelerating into an ambiguous, hammered D-major brass peroration.",
     "spotifyQuery": "Shostakovich Symphony No 5 Op 47 Allegro non troppo",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "After Stalin's regime publicly condemned his earlier work, Shostakovich unveiled this symphony in 1937 and earned a 30-minute standing ovation that likely saved his life."
   },
   {
     "id": "copland-appalachian",
@@ -777,7 +836,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Clear solo clarinet presenting a Shaker melody followed by bright, open-voiced variations.",
     "spotifyQuery": "Copland Appalachian Spring Simple Gifts",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Originally scored for just 13 players, the ballet had no name until choreographer Martha Graham borrowed 'Appalachian Spring' from a poem right before opening night."
   },
   {
     "id": "bach-bwv582",
@@ -790,7 +850,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Eight-measure pedal ostinato climbing through twenty polyphonic variations into a double fugue.",
     "spotifyQuery": "Bach Passacaglia and Fugue in C minor BWV 582",
-    "startPositionMs": 25000
+    "startPositionMs": 25000,
+    "funFact": "Bach borrowed part of the opening melody from French organist André Raison, repeating that eight-bar tune twenty times beneath ever-richer organ fireworks."
   },
   {
     "id": "monteverdi-vespers-1610",
@@ -803,7 +864,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Blazing brass and string fanfare framing choral falsobordone chanting on a single chord.",
     "spotifyQuery": "Monteverdi Vespers 1610 Deus in adjutorium",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Monteverdi opened this sacred church masterpiece with a flashy fanfare recycled straight from his own opera Orfeo, thrilling listeners by bringing theater into the cathedral."
   },
   {
     "id": "corelli-op6no8-christmas",
@@ -816,7 +878,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Two solo violins and cello trading luminous suspensions against full Baroque ripieno strings.",
     "spotifyQuery": "Corelli Concerto Grosso Op 6 No 8 Christmas",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Corelli inscribed this concerto 'written for Christmas Eve,' closing with a gentle pastoral dance meant to evoke Italian shepherds playing bagpipes in the hills."
   },
   {
     "id": "scarlatti-k141",
@@ -829,7 +892,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Machine-gun repeated notes and Spanish guitar-like acciaccaturas crackling across the keyboard.",
     "spotifyQuery": "Scarlatti Sonata in D minor K 141",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Having spent decades serving the Spanish royal court in Madrid, Scarlatti packed this fiery keyboard sonata with rapid repeated notes imitating a strumming Spanish guitar."
   },
   {
     "id": "mozart-k361",
@@ -842,7 +906,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Pulsing accompaniment beneath trading solos for oboe, clarinet, and velvety basset horns.",
     "spotifyQuery": "Mozart Gran Partita K 361 Adagio",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Featured memorably in the film Amadeus, this glowing slow movement was scored for twelve wind instruments and a double bass instead of a standard orchestra."
   },
   {
     "id": "haydn-op76no2",
@@ -855,7 +920,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Stark falling fifths in the first violin answered by terse contrapuntal wit and canonic drive.",
     "spotifyQuery": "Haydn String Quartet Op 76 No 2 Fifths Allegro",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Named for the bold leaping intervals at its start, this quartet also features a quirky 'Witches' Minuet' where two pairs of strings chase each other in a round."
   },
   {
     "id": "beethoven-op59no1-razumovsky",
@@ -868,7 +934,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Broad cello melody rising over pulsing eighth-note chords into symphonic quartet scale.",
     "spotifyQuery": "Beethoven String Quartet Op 59 No 1 Allegro",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Commissioned by Russia's ambassador to Vienna, Beethoven's boundary-pushing quartet so baffled musicians in 1806 that one violinist reportedly accused him of playing a practical joke."
   },
   {
     "id": "mozart-k491-piano24",
@@ -881,7 +948,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Creeping chromatic unison theme in C minor answered by woodwind-rich tragic drama.",
     "spotifyQuery": "Mozart Piano Concerto No 24 K 491 Allegro",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "One of only two minor-key piano concertos Mozart ever wrote, this stormy work so awed Beethoven that he told a friend they could never match it."
   },
   {
     "id": "berlioz-op14",
@@ -894,7 +962,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Pastoral dialogue between offstage oboe and onstage English horn later shadowed by four-timpani thunder.",
     "spotifyQuery": "Berlioz Symphonie fantastique Scene aux champs",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Written during Berlioz's obsessive infatuation with actress Harriet Smithson, this countryside scene opens with an offstage oboe and English horn echoing like distant shepherds."
   },
   {
     "id": "brahms-op98",
@@ -907,7 +976,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Eight-bar Baroque-inspired chaconne theme hammered by winds and brass across thirty symphonic variations.",
     "spotifyQuery": "Brahms Symphony No 4 Allegro energico e passionato",
-    "startPositionMs": 12000
+    "startPositionMs": 12000,
+    "funFact": "Brahms modeled this thunderous finale on an old Baroque pattern he found in a Bach cantata, spinning over thirty dramatic variations from one stubborn eight-note theme."
   },
   {
     "id": "schumann-op16-kreisleriana",
@@ -920,7 +990,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Headlong D-minor triplet turbulence colliding with tender, syncopated inner voices.",
     "spotifyQuery": "Schumann Kreisleriana Op 16 No 1",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Secretly engaged to Clara Wieck, Schumann dashed off this stormy piano cycle in four days, naming it after a wild, eccentric fictional conductor from E.T.A. Hoffmann's tales."
   },
   {
     "id": "wagner-tristan-prelude",
@@ -933,7 +1004,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Unresolved chromatic yearning built around the half-diminished 'Tristan chord' and rising oboe sighs.",
     "spotifyQuery": "Wagner Tristan und Isolde Prelude",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Wagner's famous opening chord refuses to settle peacefully for over four hours until the opera's final scene, keeping listeners suspended in constant, aching longing."
   },
   {
     "id": "ravel-m73-tombeau",
@@ -946,7 +1018,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Featherlight oboe and flute filigree spinning Baroque-inspired 12/16 ornaments with French wit.",
     "spotifyQuery": "Ravel Le Tombeau de Couperin Prelude orchestra",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Ravel dedicated each movement of this sparkling suite to a friend killed in World War I, replying to critics of its brightness: 'The dead are sad enough.'"
   },
   {
     "id": "debussy-l122-jeux",
@@ -959,7 +1032,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Kaleidoscopic orchestral wisps shifting tempo and timbre every few bars without fixed themes.",
     "spotifyQuery": "Debussy Jeux Poeme danse",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Debussy wrote this shimmering score for a Ballets Russes dance about three young people flirting while hunting a lost tennis ball—premiering right before The Rite of Spring."
   },
   {
     "id": "delius-cuckoo",
@@ -972,7 +1046,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Chromatic string harmonies cradling a Norwegian folk melody punctuated by clarinet cuckoo calls.",
     "spotifyQuery": "Delius On Hearing the First Cuckoo in Spring",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Though loved as a quintessentially English nature portrait, Delius actually built this dreamy springtime miniature around a Norwegian folk song given to him by Percy Grainger."
   },
   {
     "id": "szymanowski-op35-mythes",
@@ -985,7 +1060,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Ecstatic quarter-tone-like violin harmonics shimmering over bitonal piano water-ripples.",
     "spotifyQuery": "Szymanowski La Fontaine d'Arethuse",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Inspired by a trip to Sicily, Szymanowski teamed up with violinist Paweł Kochański to invent shimmering, watery effects depicting a Greek nymph turning into a fountain."
   },
   {
     "id": "hindemith-mathis",
@@ -998,7 +1074,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Trombones intoning a German folk chorale amid quartal brass harmonies and contrapuntal strings.",
     "spotifyQuery": "Hindemith Mathis der Maler Engelkonzert",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Before finishing his opera on Renaissance painter Matthias Grünewald, Hindemith turned parts of it into this symphony depicting angels playing music around the Nativity."
   },
   {
     "id": "janacek-sinfonietta",
@@ -1011,7 +1088,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Twelve trumpets, bass trumpets, and tenor tubas blasting terse Moravian ostinatos.",
     "spotifyQuery": "Janacek Sinfonietta Fanfare Allegretto",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Inspired by an outdoor military band and dedicated to the young Czechoslovak army, Janáček launches this exhilarating work with a blazing fanfare for twelve trumpets."
   },
   {
     "id": "britten-op31-serenade",
@@ -1024,7 +1102,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Unaccompanied French horn playing natural, untempered overtones that bend eerily in twilight.",
     "spotifyQuery": "Britten Serenade for Tenor Horn and Strings Prologue",
-    "startPositionMs": 5000
+    "startPositionMs": 5000,
+    "funFact": "Written during World War II for Britten's partner Peter Pears and horn virtuoso Dennis Brain, the piece opens with an eerie, unvarnished horn solo."
   },
   {
     "id": "messiaen-quartet-end-time",
@@ -1037,7 +1116,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Clarinet and violin birdsong suspended over asymmetric cello harmonics and a 29-chord piano cycle.",
     "spotifyQuery": "Messiaen Quatuor pour la fin du temps Liturgie de cristal",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Messiaen composed and premiered this haunting quartet in 1941 inside a German prisoner-of-war camp, writing for the exact four instruments available among fellow prisoners."
   },
   {
     "id": "bach-bwv1080-contrapunctus1",
@@ -1050,7 +1130,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Stark D-minor triadic subject entering voice by voice in pure, austere Baroque counterpoint.",
     "spotifyQuery": "Bach Art of Fugue Contrapunctus 1",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Bach wrote this monumental collection of intertwined melodies in his final years, leaving the very last piece unfinished at his death in 1750."
   },
   {
     "id": "zelenka-zwv181-capriccio",
@@ -1063,7 +1144,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Virtuosic twin oboes and gnarly bassoon obligato weaving eccentric Bohemian syncopations.",
     "spotifyQuery": "Zelenka Trio Sonata No 5 ZWV 181 Allegro",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Written for two oboes, bassoon, and keyboard at the Dresden court, this dazzling piece pushed woodwind players to the limits of virtuosity."
   },
   {
     "id": "biber-rosary-guardian",
@@ -1076,7 +1158,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Descending four-note tetrachord repeated sixty-five times in polyphonic solo violin variations.",
     "spotifyQuery": "Biber Passacaglia in G minor Guardian Angel",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "This lone solo violin meditation closes a cycle of sixteen pieces depicting scenes from the Rosary, inspired by a guardian angel engraving."
   },
   {
     "id": "rameau-les-boreades",
@@ -1089,7 +1172,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Hushed, trembling French strings and bassoons floating in luminous harmonic suspension.",
     "spotifyQuery": "Rameau Les Boreades Entree de Polymnie",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Rameau died in 1764 during rehearsals for this final opera, and the score sat unperformed for more than two centuries until 1964."
   },
   {
     "id": "mozart-k428-quartet",
@@ -1102,7 +1186,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Chromatic octave unison opening that dissolves into daring enharmonic quartet counterpoint.",
     "spotifyQuery": "Mozart String Quartet K 428 Allegro ma non troppo",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Mozart dedicated this quartet and five companions to Joseph Haydn, calling them the fruit of long and laborious effort out of deep admiration."
   },
   {
     "id": "haydn-op20no5-fugue",
@@ -1115,7 +1200,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Sotto voce double fugue in F minor built on a jagged Baroque-style diminished-seventh leap.",
     "spotifyQuery": "Haydn String Quartet Op 20 No 5 Fuga",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Haydn helped shape the modern string quartet by letting all four instruments share the spotlight equally, ending this intense work with a classic musical chase."
   },
   {
     "id": "clementi-op50no3-didone",
@@ -1128,7 +1214,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Brooding chromatic recitative giving way to stormy Beethovenian piano counterpoint.",
     "spotifyQuery": "Clementi Sonata Op 50 No 3 Didone abbandonata",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Inspired by Queen Dido's tragic abandonment in Virgil's Aeneid, Clementi published this dramatic piano sonata at age sixty-nine as his final major work."
   },
   {
     "id": "cpebach-wq172-cello",
@@ -1141,7 +1228,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Nervous, mercurial string syncopations and sudden dynamic shifts framing fiery solo cello runs.",
     "spotifyQuery": "CPE Bach Cello Concerto in A major Wq 172 Allegro",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Johann Sebastian's second surviving son wrote this fiery concerto while serving King Frederick the Great, who famously preferred flutes over cellos."
   },
   {
     "id": "beethoven-op131",
@@ -1154,7 +1242,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Subdominant-answering opening fugue full of agonizing chromatic half-steps without pause.",
     "spotifyQuery": "Beethoven String Quartet Op 131 Adagio ma non troppo",
-    "startPositionMs": 18000
+    "startPositionMs": 18000,
+    "funFact": "Beethoven reportedly called this seven-movement work his greatest string quartet; dying days later, Schubert asked to hear it one final time."
   },
   {
     "id": "liszt-s178-bmoll",
@@ -1167,7 +1256,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Mysterious Phrygian descending scales exploding into octave fury and thematic transformation.",
     "spotifyQuery": "Liszt Piano Sonata in B minor S 178",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "When Liszt first played this stormy half-hour masterpiece for friends in 1853, a young, exhausted Johannes Brahms famously dozed off in his chair."
   },
   {
     "id": "brahms-op34-quintet",
@@ -1180,7 +1270,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Dark unison opening in strings and piano erupting into volcanic F-minor counterpoint.",
     "spotifyQuery": "Brahms Piano Quintet Op 34 Allegro non troppo",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Brahms first drafted this turbulent work as a string quintet and later as a two-piano duet before finally finding its ideal voice here."
   },
   {
     "id": "bruckner-sym8-finale",
@@ -1193,7 +1284,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Galloping string ostinato beneath massive Wagner-tuba and brass chorale blocks.",
     "spotifyQuery": "Bruckner Symphony No 8 Finale Feierlich",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Nicknamed the 'Apocalyptic,' this colossal finale took Bruckner years of anxious revisions after a conductor rejected his earlier version."
   },
   {
     "id": "ravel-m55-gaspard",
@@ -1206,7 +1298,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Whispered, superhumanly fast right-hand water shimmer beneath a seductive water-nymph melody.",
     "spotifyQuery": "Ravel Gaspard de la nuit Ondine",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Inspired by a prose poem about a water nymph luring a mortal to her lake, Ravel deliberately tried to make this piano piece impossibly hard."
   },
   {
     "id": "debussy-l136-etudes",
@@ -1219,7 +1312,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Distant horn-like fifths layered against crystalline bell resonances in three simultaneous planes.",
     "spotifyQuery": "Debussy Etude Pour les sonorites opposees",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Written during World War I while Debussy battled terminal cancer, this late piano collection served as a tribute to Frédéric Chopin."
   },
   {
     "id": "scriabin-op60-prometheus",
@@ -1232,7 +1326,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Quartal 'mystic chord' mist pierced by ecstatic solo piano trills and solo trumpet.",
     "spotifyQuery": "Scriabin Prometheus Poem of Fire Op 60",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Scriabin built this cosmic symphony around a 'color organ' designed to project shifting colored lights across the concert hall in sync with the music."
   },
   {
     "id": "schreker-kammersymphonie",
@@ -1245,7 +1340,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Opulent harp, celesta, and harmonium colorism enveloping solo winds in Viennese twilight.",
     "spotifyQuery": "Franz Schreker Chamber Symphony",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Written in 1916 for the Vienna Music Academy's centenary, this shimmering work packs a full four-part symphony into one continuous movement."
   },
   {
     "id": "mahler-sym9",
@@ -1258,7 +1354,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Halt-stepped cello, horn, and harp heartbeat fracturing into soaring, nostalgic string polyphony.",
     "spotifyQuery": "Mahler Symphony No 9 Andante comodo",
-    "startPositionMs": 30000
+    "startPositionMs": 30000,
+    "funFact": "Superstitious about Beethoven and Bruckner dying after their ninth symphonies, Mahler hesitated to number this heartbreaking farewell, which premiered after his death."
   },
   {
     "id": "stravinsky-rite",
@@ -1271,7 +1368,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Polychordal string stomping with jagged, unpredictable accents and primitive Russian folk-inspired ostinatos.",
     "spotifyQuery": "Stravinsky Rite of Spring Augurs of Spring",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Its 1913 Paris premiere sparked a famous opening-night uproar, with audience members jeering, shouting, and even coming to blows over the pounding rhythms."
   },
   {
     "id": "bartok-sz116",
@@ -1284,7 +1382,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Wry snareless side drum introduction followed by wind pairs marching in fixed parallel intervals.",
     "spotifyQuery": "Bartok Concerto for Orchestra Giuoco delle coppie",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Commissioned while Bartók was gravely ill in New York exile, this witty movement pairs orchestral instruments two by two like a playful parade."
   },
   {
     "id": "shostakovich-op93",
@@ -1297,7 +1396,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Relentless four-minute whirlwind of biting piccolos, shrieking E-flat clarinet, and brutal snare-drum snaps.",
     "spotifyQuery": "Shostakovich Symphony No 10 II Allegro",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Completed months after Joseph Stalin's death in 1953, this ferocious, galloping movement is widely regarded as a blistering musical portrait of the Soviet dictator."
   },
   {
     "id": "vivaldi-rv297-winter",
@@ -1310,7 +1410,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Icy shivering repeated eighth-note chords broken by biting solo violin arpeggios.",
     "spotifyQuery": "Vivaldi Four Seasons Winter Allegro non molto",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Vivaldi wrote icy violin effects into this concerto to match his own poem about chattering teeth, stamping feet in the snow, and slipping on ice."
   },
   {
     "id": "bach-bwv147-jesu",
@@ -1323,7 +1424,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Flowing triplet oboe and violin obbligato weaving gently around a solemn Lutheran chorale.",
     "spotifyQuery": "Bach Jesu Joy of Man's Desiring BWV 147",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Written for a church service in 1723, this serene melody became famous worldwide through English pianist Myra Hess's 1926 solo piano arrangement."
   },
   {
     "id": "handel-hwv351-rejoicing",
@@ -1336,7 +1438,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Jubilant Baroque trumpets, horns, and timpani alternating with crisp oboe-and-bassoon choirs.",
     "spotifyQuery": "Handel Royal Fireworks La Rejouissance",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Handel wrote this joyful fanfare for a 1749 London fireworks celebration in Green Park, where misfiring rockets accidentally burned down part of the wooden pavilion."
   },
   {
     "id": "clarke-prince-denmark",
@@ -1349,7 +1452,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Stately, bright solo trumpet melody marching cleanly over a crisp Baroque snare and organ.",
     "spotifyQuery": "Jeremiah Clarke Trumpet Voluntary Prince of Denmark's March",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Long mistaken for a work by Henry Purcell, this regal wedding favorite was actually composed around 1700 for harpsichord by English organist Jeremiah Clarke."
   },
   {
     "id": "bach-bwv846-prelude",
@@ -1362,7 +1466,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Pure, unbroken stream of five-note rising arpeggios outlining serene Baroque harmonic progressions.",
     "spotifyQuery": "Bach Prelude in C major BWV 846",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Bach wrote this serene opening prelude for his eldest son's keyboard lessons, long before French composer Charles Gounod added 'Ave Maria' on top."
   },
   {
     "id": "boccherini-g275-minuet",
@@ -1375,7 +1480,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Delicate, courtly pizzicato accompaniment beneath a graceful, lilting solo violin minuet.",
     "spotifyQuery": "Boccherini Minuetto String Quintet Op 11 No 5",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Boccherini wrote more than 100 string quintets, yet this single dainty minuet became so famous it overshadowed almost everything else he ever composed."
   },
   {
     "id": "mouret-rondeau",
@@ -1388,7 +1494,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Regal natural trumpet fanfare alternating with brisk French string and timpani refrains.",
     "spotifyQuery": "Mouret Rondeau Fanfare",
-    "startPositionMs": 5000
+    "startPositionMs": 5000,
+    "funFact": "Premiered at a Paris concert hall in 1729, this regal brass fanfare found modern fame in 1971 as the theme for PBS's Masterpiece Theatre."
   },
   {
     "id": "bach-bwv1067-badinerie",
@@ -1401,7 +1508,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Breathless, sparkling solo transverse flute leaping through playful B-minor arpeggios.",
     "spotifyQuery": "Bach Badinerie BWV 1067",
-    "startPositionMs": 5000
+    "startPositionMs": 5000,
+    "funFact": "Meaning 'banter' or 'playful teasing' in French, this breathless flute showcase races along as one of the fastest solo pieces in Bach's entire catalog."
   },
   {
     "id": "beethoven-op125-ode",
@@ -1414,7 +1522,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Hushed low-string unison hymn blooming into triumphant full orchestra and chorus.",
     "spotifyQuery": "Beethoven Symphony No 9 Ode to Joy",
-    "startPositionMs": 60000
+    "startPositionMs": 60000,
+    "funFact": "Completely deaf at the 1824 premiere, Beethoven had to be gently turned around by a singer so he could see the audience cheering wildly."
   },
   {
     "id": "mozart-k545-sonata",
@@ -1427,7 +1536,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Limpid C-major melody over an Alberti-bass left hand breaking into crisp scale runs.",
     "spotifyQuery": "Mozart Piano Sonata K 545 Allegro",
-    "startPositionMs": 5000
+    "startPositionMs": 5000,
+    "funFact": "Mozart labeled this famous C-major piece a 'little piano sonata for beginners,' though its clean, exposed melodies leave pianists nowhere to hide."
   },
   {
     "id": "mozart-k620-queen",
@@ -1440,7 +1550,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Fierce D-minor string chords launching stratospheric staccato F6 soprano coloratura.",
     "spotifyQuery": "Mozart Queen of the Night Der Holle Rache",
-    "startPositionMs": 30000
+    "startPositionMs": 30000,
+    "funFact": "Mozart wrote this famously sky-high villain aria for his sister-in-law Josepha Hofer, whose extraordinary vocal range could hit towering notes with ease."
   },
   {
     "id": "beethoven-op13-pathetique2",
@@ -1453,7 +1564,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Warm, hymn-like A-flat major singing melody cradled by gentle inner-voice sixteenth chords.",
     "spotifyQuery": "Beethoven Pathetique Sonata Adagio cantabile",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Beethoven's publisher suggested the dramatic title 'Pathétique' for this stormy sonata, and the composer approved—balancing it with this tender, hymn-like slow movement."
   },
   {
     "id": "haydn-hob101-clock",
@@ -1466,7 +1578,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Steady staccato bassoon and pizzicato tick-tock pulsing beneath a poised violin tune.",
     "spotifyQuery": "Haydn Symphony No 101 Clock Andante",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Haydn gave this symphony a steady ticking accompaniment to delight London audiences, who nicknamed it 'The Clock' right after its 1794 premiere."
   },
   {
     "id": "mozart-k588-cosi",
@@ -1479,7 +1592,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Witty woodwind chatter and scurrying C-major strings sparkling with theatrical energy.",
     "spotifyQuery": "Mozart Cosi fan tutte Overture",
-    "startPositionMs": 40000
+    "startPositionMs": 40000,
+    "funFact": "This sparkling comedy's 1790 Vienna run was abruptly cut short after just five performances when Emperor Joseph II died, plunging the city into mourning."
   },
   {
     "id": "beethoven-op21-sym1",
@@ -1492,7 +1606,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Cheeky off-tonic opening chords resolving into brisk, Haydn-inspired Classical momentum.",
     "spotifyQuery": "Beethoven Symphony No 1 Allegro con brio",
-    "startPositionMs": 45000
+    "startPositionMs": 45000,
+    "funFact": "At age 29, Beethoven famously opened his very first symphony with a cheeky, unexpected chord that startled proper Viennese audiences in 1800."
   },
   {
     "id": "gluck-orfeo-blessed",
@@ -1505,7 +1620,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Serene solo flute floating in pure, unadorned D-minor melancholy over muted strings.",
     "spotifyQuery": "Gluck Dance of the Blessed Spirits",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Gluck wrote Orfeo ed Euridice to reform opera by stripping away showy vocal stunts, letting this serene underworld ballet speak with pure, calm emotion."
   },
   {
     "id": "tchaikovsky-op23-pc1",
@@ -1518,7 +1634,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Four thunderous French-horn blasts answered by towering, crashing piano chords and sweeping strings.",
     "spotifyQuery": "Tchaikovsky Piano Concerto No 1 Opening",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Pianist Nikolai Rubinstein furiously declared this concerto 'worthless and unplayable,' so Tchaikovsky dedicated it instead to Hans von Bülow, who championed it worldwide."
   },
   {
     "id": "verdi-rigoletto-donna",
@@ -1531,7 +1648,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Jaunty, swaggering 3/8 tenor melody punctuated by crisp pizzicato strings and brass.",
     "spotifyQuery": "Verdi Rigoletto La donna e mobile",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Fearing this catchy tune would leak and be whistled across Venice before opening night, Verdi kept it secret until the final dress rehearsal."
   },
   {
     "id": "brahms-woo1-hungarian5",
@@ -1544,7 +1662,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Fiery gypsy-style violin melody snapping between slow, brooding rubato and sudden prestissimo.",
     "spotifyQuery": "Brahms Hungarian Dance No 5",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Brahms thought he was adapting an authentic Hungarian folk tune here, unaware it had actually been composed by Hungarian bandleader Béla Kéler."
   },
   {
     "id": "mendelssohn-op61-wedding",
@@ -1557,7 +1676,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Crisp trumpet triplets heralding a jubilant C-major processional fanfare.",
     "spotifyQuery": "Mendelssohn Wedding March Op 61",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Mendelssohn wrote this march at age 33 for a Shakespeare play, and it became a wedding standard after Princess Victoria used it in 1858."
   },
   {
     "id": "offenbach-orpheus-cancan",
@@ -1570,7 +1690,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Breathless, high-kicking Parisian orchestral gallop bursting with brass and cymbals.",
     "spotifyQuery": "Offenbach Orpheus in the Underworld Infernal Galop",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Originally written as a spoof of ancient Greek gods behaving badly, this wild galop became the signature music of Paris's Moulin Rouge dance hall."
   },
   {
     "id": "puccini-turandot-nessun",
@@ -1583,7 +1704,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Hushed nocturnal strings swelling into an unforgettable, soaring high-B tenor triumph.",
     "spotifyQuery": "Puccini Turandot Nessun dorma",
-    "startPositionMs": 30000
+    "startPositionMs": 30000,
+    "funFact": "Puccini died before finishing Turandot, so at the 1926 premiere, conductor Arturo Toscanini halted the performance right where the dying composer's pen had stopped."
   },
   {
     "id": "dvorak-op46-slavonic1",
@@ -1596,7 +1718,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Exuberant furiant cross-rhythms crashing out with festive Bohemian brass and strings.",
     "spotifyQuery": "Dvorak Slavonic Dance Op 46 No 1",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Inspired by Brahms's Hungarian Dances, Dvořák invented original Czech-style melodies for these dances, which sold out immediately and launched his international career."
   },
   {
     "id": "saint-saens-carnival-swan",
@@ -1609,7 +1732,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Gliding solo cello melody drifting serenely over rippling, watery piano arpeggios.",
     "spotifyQuery": "Saint-Saens The Swan Carnival of the Animals",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Saint-Saëns banned performances of Carnival of the Animals during his lifetime so it wouldn't harm his serious reputation—making an exception only for 'The Swan.'"
   },
   {
     "id": "satie-gnossienne1",
@@ -1622,7 +1746,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Exotic, modal F-minor melody with augmented-second twists floating without barlines.",
     "spotifyQuery": "Erik Satie Gnossienne No 1",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Satie discarded bar lines and time signatures in this hypnotic piano piece, sprinkling the score with quirky French prompts like 'open your head.'"
   },
   {
     "id": "debussy-l113-golliwogg",
@@ -1635,7 +1760,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Syncopated cakewalk cake-strut winking mid-piece with a cheeky quote of Wagner's Tristan.",
     "spotifyQuery": "Debussy Golliwogg's Cakewalk",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Written for his three-year-old daughter Chou-Chou, this ragtime-inspired piece playfully quotes Wagner's tragic opera Tristan and Isolde in the middle as a musical joke."
   },
   {
     "id": "ravel-mother-goose-garden",
@@ -1648,7 +1774,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Hushed C-major strings rising into a shimmering, bell-drenched celesta and harp apotheosis.",
     "spotifyQuery": "Ravel Ma mere l'Oye Le Jardin feerique",
-    "startPositionMs": 45000
+    "startPositionMs": 45000,
+    "funFact": "Ravel originally composed Mother Goose as a four-hand piano duet for the young children of his close friends, Mimi and Jean Godebski."
   },
   {
     "id": "faure-op50-pavane",
@@ -1661,7 +1788,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Cool, poised solo flute tracing a wistful modal line over gentle pizzicato strings.",
     "spotifyQuery": "Faure Pavane Op 50",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Fauré wrote this wistful, gently swaying dance in 1887 for an aristocratic patron, later adding an optional choir to give it a bittersweet Renaissance flair."
   },
   {
     "id": "debussy-l117-cathedral",
@@ -1674,7 +1802,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Hollow open fifths rising from the ocean depths into booming, bell-like organ sonorities.",
     "spotifyQuery": "Debussy La cathedrale engloutie",
-    "startPositionMs": 30000
+    "startPositionMs": 30000,
+    "funFact": "Debussy's prelude brings to life a medieval Breton legend about the sunken city of Ys, whose cathedral rises above the waves only at sunrise."
   },
   {
     "id": "respighi-fountains-triton",
@@ -1687,7 +1816,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Sparkling woodwind trills, celesta, and exuberant horn calls splashing in sunlight.",
     "spotifyQuery": "Respighi Fountains of Rome Triton",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Respighi painted Rome's ornate Triton Fountain in sound using shimmering horns to mimic sea gods blowing conch shells, earning worldwide fame after Toscanini championed it."
   },
   {
     "id": "elgar-op49-pomp1",
@@ -1700,7 +1830,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Broad, noble 'Land of Hope and Glory' string tune crowned by organ and brass.",
     "spotifyQuery": "Elgar Pomp and Circumstance March No 1",
-    "startPositionMs": 90000
+    "startPositionMs": 90000,
+    "funFact": "When King Edward VII heard this sweeping melody, he reportedly urged Elgar to add words to it—creating Britain's beloved anthem 'Land of Hope and Glory.'"
   },
   {
     "id": "faure-op48-piejesu",
@@ -1713,7 +1844,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Pure, luminous boy-soprano or soprano line floating over warm organ and muted strings.",
     "spotifyQuery": "Faure Requiem Pie Jesu",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Despite his mother dying weeks before its 1888 premiere, Fauré insisted he wrote this peaceful Requiem 'for pleasure,' viewing death as a gentle deliverance."
   },
   {
     "id": "prokofiev-op67-peter",
@@ -1726,7 +1858,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Jaunty C-major string quartet theme skipping playfully with crisp classical clarity.",
     "spotifyQuery": "Prokofiev Peter and the Wolf Peter's Theme",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Prokofiev wrote both the story and music for Peter and the Wolf in just two weeks to introduce Moscow schoolchildren to orchestral instruments."
   },
   {
     "id": "bernstein-candide-overture",
@@ -1739,7 +1872,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Brassy, asymmetric 2/2 and 3/2 fanfares racing into sparkling, witty Broadway-symphonic patter.",
     "spotifyQuery": "Bernstein Candide Overture",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "The 1956 Broadway musical Candide was a box-office flop that closed after 73 shows, yet its sparkling overture instantly became an orchestral concert favorite."
   },
   {
     "id": "khachaturian-masquerade-waltz",
@@ -1752,7 +1886,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Dark, swirling A-minor strings and brass sweeping forward with theatrical Soviet intensity.",
     "spotifyQuery": "Khachaturian Masquerade Waltz",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Khachaturian struggled to write a worthy waltz for Lermontov's play Masquerade, which premiered on June 21, 1941—just one day before Germany invaded the Soviet Union."
   },
   {
     "id": "williams-starwars-main",
@@ -1765,7 +1900,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Explosive B-flat brass fanfare and sweeping Korngold-inspired symphonic adventure theme.",
     "spotifyQuery": "John Williams Star Wars Main Title",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "George Lucas originally planned to score Star Wars with existing classical music, until friend Steven Spielberg urged him to hire John Williams instead."
   },
   {
     "id": "ricci-glass-metamorphosis1",
@@ -1778,7 +1914,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Hypnotic, cycling E-minor broken triads shifting subtly between two-against-three pulses.",
     "spotifyQuery": "Philip Glass Metamorphosis One",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Philip Glass borrowed this haunting piano theme from his score for the 1988 crime documentary The Thin Blue Line, uniting it with Kafka's famous story."
   },
   {
     "id": "einaudi-nuvole-bianche",
@@ -1791,7 +1928,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Gentle four-chord F-minor ostinato building steadily into cascading right-hand arpeggios.",
     "spotifyQuery": "Ludovico Einaudi Nuvole Bianche",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Meaning 'White Clouds,' Einaudi composed this tranquil piece in 2004 after watching slow-moving clouds drift past the windows of his Milan apartment."
   },
   {
     "id": "hisaishi-spirited-one-summer",
@@ -1804,7 +1942,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Quartal jazz-inflected piano chords opening into a nostalgic, bittersweet lyrical theme.",
     "spotifyQuery": "Joe Hisaishi One Summer's Day",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Joe Hisaishi wrote this nostalgic piano theme for Studio Ghibli's Spirited Away, capturing the bittersweet wonder of a young girl stumbling into a spirit world."
   },
   {
     "id": "copland-rodeo-hoedown",
@@ -1817,7 +1956,8 @@
     "difficultyLevel": 1,
     "stylisticClue": "Snappy orchestral square-dance fiddle tune punctuated by xylophone, woodblock, and brass.",
     "spotifyQuery": "Copland Rodeo Hoe-Down",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "For this lively cowboy dance, Copland adapted 'Bonaparte's Retreat,' a traditional American fiddle tune he learned from a 1937 Library of Congress field recording."
   },
   {
     "id": "bach-bwv1043-double",
@@ -1830,7 +1970,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Two equal solo violins chasing each other in tight imitative counterpoint over driving continuo.",
     "spotifyQuery": "Bach Double Violin Concerto BWV 1043 Vivace",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Bach originally wrote this energetic double concerto in Cöthen, later recycling its music in Leipzig for a pair of solo harpsichords."
   },
   {
     "id": "handel-hwv350-arrival",
@@ -1843,7 +1984,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Virtuosic twin oboes racing through joyful B-flat sixteenth-note flourishes against strings.",
     "spotifyQuery": "Handel Arrival of the Queen of Sheba",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Handel wrote the entire three-hour oratorio Solomon in just over a month, opening its third act with this sparkling royal processional."
   },
   {
     "id": "vivaldi-rv293-autumn",
@@ -1856,7 +1998,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Hearty rustic harvest dance interrupted by tipsy, stumbling solo violin scale passages.",
     "spotifyQuery": "Vivaldi Four Seasons Autumn Allegro",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "True to its accompanying poem, Vivaldi's 'Autumn' opens with joyful harvest dancing before portraying tipsy villagers stumbling and falling asleep."
   },
   {
     "id": "bach-bwv988-goldberg-aria",
@@ -1869,7 +2012,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Ornamented French sarabande melody unfolding over a stately, descending 32-measure bass line.",
     "spotifyQuery": "Bach Goldberg Variations Aria BWV 988",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Legend claims Bach wrote these variations to soothe a sleepless Russian count, who supposedly rewarded the composer with a golden goblet full of coins."
   },
   {
     "id": "purcell-z626-dido",
@@ -1882,7 +2026,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Descending chromatic ground bass repeating eleven times beneath heartbroken soprano suspensions.",
     "spotifyQuery": "Purcell Dido's Lament When I am laid in earth",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Purcell likely composed his only true opera for a girls' boarding school in Chelsea, ending it with Queen Dido's heartbreaking farewell before dying."
   },
   {
     "id": "bach-bwv1056-ariadne",
@@ -1895,7 +2040,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Gentle pizzicato string pulse supporting an expressive, singing keyboard cantilena.",
     "spotifyQuery": "Bach Concerto in F minor BWV 1056 Largo",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Bach helped invent the keyboard concerto by taking the harpsichord out of the background and giving it a starring solo role."
   },
   {
     "id": "marcello-s-d935-oboe",
@@ -1908,7 +2054,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Poignant solo oboe ornamenting long, sighing Baroque phrases above steady pulsing strings.",
     "spotifyQuery": "Alessandro Marcello Oboe Concerto D minor Adagio",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Johann Sebastian Bach admired this Venetian nobleman's oboe concerto so much that he arranged the entire piece for solo harpsichord."
   },
   {
     "id": "telemann-viola-g",
@@ -1921,7 +2068,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Rich, warm solo viola leaping briskly through galant Baroque sequences and string tuttis.",
     "spotifyQuery": "Telemann Viola Concerto in G major Allegro",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Telemann wrote the earliest known concerto for solo viola, giving an instrument usually stuck in the orchestra's middle a rare chance to shine."
   },
   {
     "id": "beethoven-op73-emperor",
@@ -1934,7 +2082,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Three massive E-flat orchestral chords each answered by sweeping, rhapsodic solo piano cadenzas.",
     "spotifyQuery": "Beethoven Piano Concerto No 5 Emperor Allegro",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Beethoven drafted this heroic concerto in 1809 while Napoleon's troops shelled Vienna; a French officer's boast allegedly inspired the 'Emperor' nickname."
   },
   {
     "id": "mozart-k527-dongiovanni",
@@ -1947,7 +2096,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Terrifying D-minor Statue chords and rushing scales pivoting abruptly into brisk, sparkling comedy.",
     "spotifyQuery": "Mozart Don Giovanni Overture",
-    "startPositionMs": 30000
+    "startPositionMs": 30000,
+    "funFact": "Mozart famously stayed up all night before Don Giovanni's 1787 Prague premiere, finishing the overture's score just hours before the curtain rose."
   },
   {
     "id": "beethoven-op61-violin",
@@ -1960,7 +2110,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Four quiet solo timpani taps launching a serene woodwind theme and radiant D-major poise.",
     "spotifyQuery": "Beethoven Violin Concerto Op 61 Allegro",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "This now-beloved concerto flopped at its 1806 premiere because the violinist had to sight-read Beethoven's freshly inked score right onstage."
   },
   {
     "id": "mozart-k364-sinfonia",
@@ -1973,7 +2124,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Solo violin and scordatura viola trading noble phrases after a long orchestral Mannheim crescendo.",
     "spotifyQuery": "Mozart Sinfonia Concertante K 364 Allegro maestoso",
-    "startPositionMs": 45000
+    "startPositionMs": 45000,
+    "funFact": "To give the solo viola extra brilliance alongside the violin, Mozart asked the violist to tune all four strings slightly higher."
   },
   {
     "id": "beethoven-op68-pastoral",
@@ -1986,7 +2138,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Drone fifths in low strings cradling a fresh, open-air F-major folk-like violin tune.",
     "spotifyQuery": "Beethoven Symphony No 6 Pastoral I",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "An avid nature walker, Beethoven wrote this countryside symphony alongside his Fifth, saying it expressed 'more the feeling than the painting' of nature."
   },
   {
     "id": "haydn-hob100-military",
@@ -1999,7 +2152,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Graceful French romance suddenly joined by triangle, cymbals, and booming bass drum.",
     "spotifyQuery": "Haydn Symphony No 100 Military Allegretto",
-    "startPositionMs": 25000
+    "startPositionMs": 25000,
+    "funFact": "Haydn thrilled London audiences by adding loud 'Turkish' percussion—triangle, cymbals, and bass drum—to paint the thrill and thunder of battle."
   },
   {
     "id": "mozart-k488-piano23",
@@ -2012,7 +2166,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Stark, intimate F-sharp minor siciliano opened by solo piano in hushed, tragic solitude.",
     "spotifyQuery": "Mozart Piano Concerto No 23 K 488 Adagio",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Mozart wrote this concerto in 1786 while juggling rehearsals for The Marriage of Figaro, creating one of his most tender slow movements."
   },
   {
     "id": "salieri-axur-sinfonia",
@@ -2025,7 +2180,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Crisp, theatrical Italian buffa strings and oboes bubbling with late-18th-century energy.",
     "spotifyQuery": "Salieri Sinfonia Veneziana",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Despite movie myths of a bitter rivalry, Salieri actually mentored Mozart's son as well as young Beethoven, Schubert, and Liszt."
   },
   {
     "id": "mendelssohn-op64-violin",
@@ -2038,7 +2194,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Solo violin entering almost immediately with a passionate, singing E-minor melody over murmuring strings.",
     "spotifyQuery": "Mendelssohn Violin Concerto Op 64 Allegro molto appassionato",
-    "startPositionMs": 5000
+    "startPositionMs": 5000,
+    "funFact": "Mendelssohn worked on this concerto for six years with his close friend, violinist Ferdinand David, who advised him on every solo trick."
   },
   {
     "id": "grieg-op16-piano",
@@ -2051,7 +2208,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Dramatic timpani roll shattered by a thunderous, cascading A-minor piano octave descent.",
     "spotifyQuery": "Grieg Piano Concerto Op 16 Allegro molto moderato",
-    "startPositionMs": 5000
+    "startPositionMs": 5000,
+    "funFact": "A twenty-five-year-old Grieg wrote this dramatic concerto during a sunny Danish summer holiday, and it remains Norway's most famous classical export."
   },
   {
     "id": "rachmaninoff-op18-pc2",
@@ -2064,7 +2222,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Eight tolling bell-like solo piano chords swelling into sweeping, surging C-minor strings.",
     "spotifyQuery": "Rachmaninoff Piano Concerto No 2 Moderato",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "After a disastrous symphony premiere left him depressed and unable to compose, Rachmaninoff recovered with hypnotherapy and dedicated this comeback concerto to his doctor."
   },
   {
     "id": "smetana-moldau",
@@ -2077,7 +2236,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Two rippling flutes and clarinets merging into a sweeping, minor-to-major Bohemian river theme.",
     "spotifyQuery": "Smetana The Moldau Vltava",
-    "startPositionMs": 45000
+    "startPositionMs": 45000,
+    "funFact": "Although Smetana went completely deaf the year he composed this flowing river portrait, he could still 'hear' every orchestral ripple in his mind."
   },
   {
     "id": "mussorgsky-pictures-kiev",
@@ -2090,7 +2250,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Monumental Russian brass chorale alternating with tolling cathedral bells and swirling strings.",
     "spotifyQuery": "Mussorgsky Ravel Great Gate of Kiev",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Mussorgsky wrote this grand finale after viewing his late friend Viktor Hartmann's architectural design for a ceremonial city gate that was never built."
   },
   {
     "id": "liszt-s541-liebestraum",
@@ -2103,7 +2264,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Warm baritone-register thumb melody wrapped in harp-like arpeggios and dazzling cadenzas.",
     "spotifyQuery": "Liszt Liebestraum No 3",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Originally composed as a love song for voice and piano, Liszt later turned this tender melody into his most famous solo piano daydream."
   },
   {
     "id": "schubert-d957-standchen",
@@ -2116,7 +2278,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Gentle guitar-like staccato chords cradling a pleading, bittersweet D-minor melody.",
     "spotifyQuery": "Schubert Standchen Serenade D 957",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Schubert wrote this aching serenade in the final months of his short life; it was published after his death in a collection called 'Swan Song.'"
   },
   {
     "id": "tchaikovsky-op35-violin",
@@ -2129,7 +2292,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Brief orchestral introduction leading to a radiant, singing D-major solo violin entrance.",
     "spotifyQuery": "Tchaikovsky Violin Concerto Op 35 Allegro moderato",
-    "startPositionMs": 45000
+    "startPositionMs": 45000,
+    "funFact": "Tchaikovsky's intended soloist rejected this concerto as 'unplayable,' and one harsh critic even claimed the music 'stank to the ear.'"
   },
   {
     "id": "debussy-l117-sunken",
@@ -2142,7 +2306,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Plucked guitar-like piano grace notes repeatedly interrupted by distant, brisk fanfare fragments.",
     "spotifyQuery": "Debussy La serenade interrompue",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "In this Spanish-flavored prelude, a lovestruck guitarist tries to play a serenade but keeps getting rudely interrupted by loud street noise."
   },
   {
     "id": "ravel-jeux-deau",
@@ -2155,7 +2320,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Sparkling pentatonic and major-seventh water cascades shimmering across the upper keyboard.",
     "spotifyQuery": "Ravel Jeux d'eau",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Inspired by fountains and waterfalls, twenty-six-year-old Ravel dedicated this shimmering piano showcase to his composition teacher, Gabriel Fauré."
   },
   {
     "id": "respighi-pines-borghese",
@@ -2168,7 +2334,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Playful, glittering woodwinds, piano, and brass mimicking children's games in a sunny Roman park.",
     "spotifyQuery": "Respighi Pines of Villa Borghese",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "In this lively opening movement, Respighi uses playful orchestral melodies to imitate Roman children singing, marching, and playing war games beneath pine trees."
   },
   {
     "id": "dukas-villanelle",
@@ -2181,7 +2348,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Warm, hunting-horn echoing calls and stopped-horn colors over shimmering piano chords.",
     "spotifyQuery": "Dukas Villanelle horn",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Written as a tough graduation exam piece for Paris Conservatory horn students, this rustic showpiece asks players to switch between modern and valveless horns."
   },
   {
     "id": "vaughan-williams-tallis",
@@ -2194,7 +2362,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Resonant cathedral antiphony between full strings, distant muted echo choir, and solo quartet.",
     "spotifyQuery": "Vaughan Williams Fantasia on a Theme by Thomas Tallis",
-    "startPositionMs": 30000
+    "startPositionMs": 30000,
+    "funFact": "Borrowing a 1567 hymn tune by Tudor composer Thomas Tallis, Vaughan Williams premiered this lush string work inside Gloucester Cathedral in 1910."
   },
   {
     "id": "elgar-op85-cello",
@@ -2207,7 +2376,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Stark, declamatory solo cello quadruple-stops opening onto a wistful, rocking 9/8 theme.",
     "spotifyQuery": "Elgar Cello Concerto Op 85 Adagio Moderato",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Haunted by World War I's devastation and his wife's failing health, Elgar poured his deepest sorrow into this autumnal, final major work."
   },
   {
     "id": "holst-op32-mars",
@@ -2220,7 +2390,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Relentless 5/4 col legno string ostinato building into terrifying, dissonant brass fanfares.",
     "spotifyQuery": "Holst The Planets Mars",
-    "startPositionMs": 25000
+    "startPositionMs": 25000,
+    "funFact": "Holst completed this relentless, pounding war march in August 1914—just weeks before World War I broke out—inspired by astrology, not astronomy."
   },
   {
     "id": "debussy-l121-iberia",
@@ -2233,7 +2404,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Distant marching bells and strummed guitar-like strings bursting into festive Spanish sunlight.",
     "spotifyQuery": "Debussy Iberia Le matin d'un jour de fete",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Despite vividly capturing Spanish street festivals, bells, and guitars, Debussy had only ever set foot in Spain for a single afternoon at a bullfight."
   },
   {
     "id": "prokofiev-op16-pc2",
@@ -2246,7 +2418,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Wistful solo clarinet opening suddenly exploded by racing C-major string and piano scales.",
     "spotifyQuery": "Prokofiev Piano Concerto No 3 Allegro",
-    "startPositionMs": 30000
+    "startPositionMs": 30000,
+    "funFact": "Prokofiev premiered this dazzling concerto in Chicago in 1921, drawing on musical sketches he had saved in notebooks for nearly a decade."
   },
   {
     "id": "bartok-romanian-dances",
@@ -2259,7 +2432,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Earthy modal violin tunes and crisp percussive rhythms straight from Transylvanian villages.",
     "spotifyQuery": "Bartok Romanian Folk Dances Sz 68",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Bartók traveled rural villages with a heavy wax-cylinder phonograph, recording peasant fiddlers and turning their lively folk tunes into this colorful dance suite."
   },
   {
     "id": "gershwin-american-paris",
@@ -2272,7 +2446,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Jaunty walking theme punctuated by real Parisian taxi horns and a bluesy muted trumpet solo.",
     "spotifyQuery": "Gershwin An American in Paris",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "To capture bustling Parisian streets authentically, Gershwin actually bought four French taxi horns in Paris and brought them back for the orchestra to honk."
   },
   {
     "id": "stravinsky-petrushka-shrovetide",
@@ -2285,7 +2460,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Bustling Russian carnival crowd music glittering with flute trills, accordion-like winds, and hurdy-gurdy.",
     "spotifyQuery": "Stravinsky Petrushka Shrovetide Fair",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "This bustling opening scene sets a snowy Russian carnival where a street magician brings three puppets—including tragic Petrushka—magically to life."
   },
   {
     "id": "britten-op34-guide",
@@ -2298,7 +2474,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Noble Purcell hornpipe theme stated by full orchestra before passing section by section.",
     "spotifyQuery": "Britten Young Person's Guide to the Orchestra",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Britten originally wrote this orchestral showcase for a 1946 educational film, letting every instrument family show off before uniting in a grand finale."
   },
   {
     "id": "piazzolla-libertango",
@@ -2311,7 +2488,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Propulsive 3-3-2 tango bass ostinato driving a fiery bandoneon and string melody.",
     "spotifyQuery": "Astor Piazzolla Libertango",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Combining 'liberty' and 'tango,' Piazzolla recorded this electric hit in Milan in 1974 to signal his break from traditional Argentine dance-hall tango."
   },
   {
     "id": "adams-short-ride",
@@ -2324,7 +2502,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Steadfast woodblock pulse propelling dazzling, shifting brass and synthesizer-like wind arpeggios.",
     "spotifyQuery": "John Adams Short Ride in a Fast Machine",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Adams said this breathless, four-minute burst of orchestral energy captures the feeling of being talked into riding in someone's terrifyingly fast sports car."
   },
   {
     "id": "part-spiegel",
@@ -2337,7 +2516,8 @@
     "difficultyLevel": 2,
     "stylisticClue": "Slow, luminous F-major triadic piano arpeggios beneath long, pure ascending violin scales.",
     "spotifyQuery": "Arvo Part Spiegel im Spiegel",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Written right before Pärt emigrated from Soviet Estonia, this tranquil, minimalist duet for violin and piano has become a modern favorite in films."
   },
   {
     "id": "bach-bwv1049-brandenburg4",
@@ -2350,7 +2530,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Two nimble recorders echoing and intertwining with a dazzlingly virtuosic solo violin.",
     "spotifyQuery": "Bach Brandenburg Concerto No 4 Allegro",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Bach paired a dazzling solo violin with two wooden recorders—everyday amateur instruments at the time—giving them surprisingly athletic, showstopping music."
   },
   {
     "id": "vivaldi-rv522-op3no8",
@@ -2363,7 +2544,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Crisp unison A-minor ritornello launching interlocking solo violin sequences.",
     "spotifyQuery": "Vivaldi Op 3 No 8 RV 522 Allegro",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Known as 'The Red Priest' for his bright red hair, Vivaldi wrote many of his sparkling violin concertos for the talented orphaned girls he taught in Venice."
   },
   {
     "id": "bach-bwv244-matthew-aria",
@@ -2376,7 +2558,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Weeping solo violin obbligato sighing in B minor alongside a deeply expressive alto voice.",
     "spotifyQuery": "Bach St Matthew Passion Erbarme dich",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "After Bach's death, his St. Matthew Passion sat unperformed for decades until 20-year-old Felix Mendelssohn revived it in 1829, igniting the modern Bach revival."
   },
   {
     "id": "handel-hwv350-hornpipe",
@@ -2389,7 +2572,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Warm F-major string cantabile with poised oboe echoes floating gently over river breezes.",
     "spotifyQuery": "Handel Water Music Suite No 1 Air",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "King George I reportedly enjoyed Handel's Water Music so much during the 1717 Thames cruise that he ordered the musicians to play the whole program three times."
   },
   {
     "id": "corelli-op5no12-folia",
@@ -2402,7 +2586,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Solemn Spanish sarabande chord progression escalating into fiery solo violin bariolage.",
     "spotifyQuery": "Corelli La Folia Op 5 No 12",
-    "startPositionMs": 25000
+    "startPositionMs": 25000,
+    "funFact": "Corelli built this fiery violin showpiece on 'La Folia,' a centuries-old Portuguese dance tune originally associated with wild, frenzied street celebrations."
   },
   {
     "id": "pergolesi-stabat-mater",
@@ -2415,7 +2600,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Aching Baroque suspensions between soprano and alto weaving over walking F-minor strings.",
     "spotifyQuery": "Pergolesi Stabat Mater dolorosa",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Dying of tuberculosis at just 26, Pergolesi finished this deeply moving sacred masterpiece in a quiet Franciscan monastery only weeks before his death."
   },
   {
     "id": "bach-bwv1052-dminor",
@@ -2428,7 +2614,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Relentless unison D-minor string theme driving fiercely virtuosic keyboard toccata episodes.",
     "spotifyQuery": "Bach Keyboard Concerto BWV 1052 Allegro",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Bach helped invent the keyboard concerto by putting the harpsichord in the solo spotlight, often playing this dramatic piece himself at a Leipzig coffeehouse."
   },
   {
     "id": "telemann-tafelmusik-trumpet",
@@ -2441,7 +2628,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Three clarino trumpets trading brilliant fanfare imitation above crisp timpani and strings.",
     "spotifyQuery": "Telemann Concerto for 3 Trumpets TWV 54 D3",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Telemann published Tafelmusik ('Table Music') by subscription to entertain wealthy diners at banquets, counting George Frideric Handel among his famous subscribers."
   },
   {
     "id": "beethoven-op60-sym4",
@@ -2454,7 +2642,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Mysterious, shadowy B-flat minor introduction exploding into sunlit, effervescent B-flat joy.",
     "spotifyQuery": "Beethoven Symphony No 4 Allegro vivace",
-    "startPositionMs": 60000
+    "startPositionMs": 60000,
+    "funFact": "Tucked between the stormy Third and Fifth symphonies, Beethoven's sunny Fourth was described by Robert Schumann as 'a slender Greek maiden between two Norse giants.'"
   },
   {
     "id": "mozart-k516-quintet",
@@ -2467,7 +2656,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Dark, yearning G-minor upper strings answered by the rich, dusky warmth of paired violas.",
     "spotifyQuery": "Mozart String Quintet K 516 Allegro",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Mozart wrote this darkly emotional string quintet weeks before his father died, adding a second viola to give the ensemble a richer, deeper voice."
   },
   {
     "id": "haydn-hob92-oxford",
@@ -2480,7 +2670,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Off-tonic opening gesture launching one of Haydn's wittiest, most tightly spun sonata movements.",
     "spotifyQuery": "Haydn Symphony No 92 Oxford Allegro",
-    "startPositionMs": 45000
+    "startPositionMs": 45000,
+    "funFact": "Written in 1789, this symphony earned its 'Oxford' nickname when Haydn conducted it there two years later to celebrate receiving an honorary doctorate."
   },
   {
     "id": "beethoven-op92-sym7-2",
@@ -2493,7 +2684,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Hypnotic dactylic A-minor rhythm rising slowly from violas and cellos into monumental counterpoint.",
     "spotifyQuery": "Beethoven Symphony No 7 Allegretto",
-    "startPositionMs": 25000
+    "startPositionMs": 25000,
+    "funFact": "This solemn, pulsing movement was such an instant hit at its 1813 charity premiere that the audience demanded an immediate encore mid-symphony."
   },
   {
     "id": "mozart-k453-piano17",
@@ -2506,7 +2698,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Bright, singing G-major violin melody with cheeky chromatic inflections and woodwind dialogue.",
     "spotifyQuery": "Mozart Piano Concerto No 17 K 453 Allegro",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Mozart kept a pet starling that learned to whistle the finale's tune from this concerto, and he gave the bird a full funeral with poems when it died."
   },
   {
     "id": "cherubini-medea-overture",
@@ -2519,7 +2712,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Fierce F-minor unison slashes and Beethovenian storminess heralding tragic Greek drama.",
     "spotifyQuery": "Cherubini Medea Overture",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Italian-born Cherubini conquered Paris during the French Revolution, and Beethoven admired his dramatic style so much that he called him the greatest living composer."
   },
   {
     "id": "beethoven-op31no2-tempest",
@@ -2532,7 +2726,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Restless, galloping D-minor sixteenth-note perpetual motion driven by surging bass figures.",
     "spotifyQuery": "Beethoven Tempest Sonata Op 31 No 2 Allegretto",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Asked what this stormy sonata meant, Beethoven reportedly replied, 'Just read Shakespeare's The Tempest,' though he wrote it while agonizing over his worsening deafness."
   },
   {
     "id": "hummel-trumpet-eb",
@@ -2545,7 +2740,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Dazzlingly nimble classical trumpet leaping cleanly through sparkling rondo episodes.",
     "spotifyQuery": "Hummel Trumpet Concerto Rondo",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Hummel wrote this cheerful concerto for a newly invented keyed trumpet in Vienna, helping transform the trumpet from a battlefield horn into a nimble solo instrument."
   },
   {
     "id": "tchaikovsky-op74-sym6",
@@ -2558,7 +2754,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Bleak solo bassoon emerging from double-bass gloom before explosive, Fate-driven passion.",
     "spotifyQuery": "Tchaikovsky Symphony No 6 Pathetique I",
-    "startPositionMs": 60000
+    "startPositionMs": 60000,
+    "funFact": "Tchaikovsky considered this deeply personal symphony his finest creation; he conducted its premiere in St. Petersburg and died mysteriously just nine days later."
   },
   {
     "id": "mendelssohn-op56-scottish",
@@ -2571,7 +2768,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Misty A-minor wind and string ballad sweeping into stormy Highland seas.",
     "spotifyQuery": "Mendelssohn Symphony No 3 Scottish Allegro",
-    "startPositionMs": 60000
+    "startPositionMs": 60000,
+    "funFact": "Mendelssohn sketched the opening melody in 1829 after visiting the rain-swept ruins of Edinburgh's Holyrood Chapel, though it took him 13 years to finish the symphony."
   },
   {
     "id": "schumann-op54-piano",
@@ -2584,7 +2782,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Sharp orchestral chord and descending piano cascade opening onto a tender oboe romance.",
     "spotifyQuery": "Schumann Piano Concerto Op 54 Allegro affettuoso",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Schumann wrote this passionate concerto for his wife, Clara—one of Europe's greatest pianists—who performed its triumphant premiere on New Year's Day in 1846."
   },
   {
     "id": "verdi-requiem-diesirae",
@@ -2597,7 +2796,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Four terrifying orchestral hammer-blows, thunderous bass drum, and swirling choral terror.",
     "spotifyQuery": "Verdi Requiem Dies Irae",
-    "startPositionMs": 5000
+    "startPositionMs": 5000,
+    "funFact": "Opera master Verdi used thunderous chorus shouts and violent bass-drum blows to depict Judgment Day, making this sacred work as dramatic as any of his operas."
   },
   {
     "id": "rimsky-korsakov-op35-scheherazade",
@@ -2610,7 +2810,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Stern brass sea-theme answered by a seductive, arabesque solo violin with harp.",
     "spotifyQuery": "Rimsky-Korsakov Scheherazade Sea and Sinbad's Ship",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Before turning to music full-time, Rimsky-Korsakov served as a Russian naval officer, drawing on his own memories of ocean voyages for Sinbad's sea adventures."
   },
   {
     "id": "sibelius-op47-violin",
@@ -2623,7 +2824,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Frosty muted violins shimmering beneath a rhapsodic, soaring D-minor solo violin.",
     "spotifyQuery": "Sibelius Violin Concerto Allegro moderato",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Sibelius once dreamed of becoming a concert violinist; after stage fright ended that dream, he poured his lifelong love of the instrument into this fierce concerto."
   },
   {
     "id": "franck-symphony-dminor",
@@ -2636,7 +2838,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Brooding chromatic three-note question rising from low strings into luminous organ-like brass.",
     "spotifyQuery": "Cesar Franck Symphony in D minor I",
-    "startPositionMs": 60000
+    "startPositionMs": 60000,
+    "funFact": "Organist César Franck completed his only symphony at age 66, though conservative Parisian critics initially scoffed at his unusual decision to include an English horn."
   },
   {
     "id": "rachmaninoff-op27-sym2",
@@ -2649,7 +2852,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Long, breathless solo clarinet cantabile spinning endlessly over lush, warm strings.",
     "spotifyQuery": "Rachmaninoff Symphony No 2 Adagio",
-    "startPositionMs": 25000
+    "startPositionMs": 25000,
+    "funFact": "After a disastrous First Symphony left him depressed and unable to compose for three years, Rachmaninoff sealed his triumphant comeback with this lush Second Symphony."
   },
   {
     "id": "ravel-string-quartet",
@@ -2662,7 +2866,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Cross-rhythmed pizzicato strumming punctuated by a soaring, lyric bowed cello and violin tune.",
     "spotifyQuery": "Ravel String Quartet Assez vif",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "When Ravel's teacher suggested revising the quartet's finale, fellow composer Claude Debussy famously begged him: 'In the name of the gods of music, do not touch a single note!'"
   },
   {
     "id": "debussy-string-quartet",
@@ -2675,7 +2880,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Fierce Phrygian motto theme unifying sweeping French quartet textures and modal colors.",
     "spotifyQuery": "Debussy String Quartet Anime et tres decide",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Debussy wrote only one string quartet, giving it the key and an official opus number—Opus 10—even though he avoided traditional numbering for nearly everything else."
   },
   {
     "id": "dukas-peri-fanfare",
@@ -2688,7 +2894,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Radiant French horns, trumpets, and trombones shimmering in rich whole-tone and ninth harmonies.",
     "spotifyQuery": "Dukas La Peri Fanfare",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Perfectionist Paul Dukas burned most of his manuscripts before dying, sparing only a few works—including this blazing brass fanfare meant to quiet chatty ballet crowds."
   },
   {
     "id": "roussel-op43-bacchus",
@@ -2701,7 +2908,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Pungent, muscular French orchestration driving ecstatic Dionysian rhythms and vivid brass.",
     "spotifyQuery": "Roussel Bacchus et Ariane Suite No 2",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Like Rimsky-Korsakov, Albert Roussel spent seven years as a French naval officer sailing to Asia before switching careers to become a leading symphonic composer."
   },
   {
     "id": "bax-tintagel",
@@ -2714,7 +2922,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Surging Atlantic string swells and glistening harp around a noble Cornish castle brass theme.",
     "spotifyQuery": "Arnold Bax Tintagel",
-    "startPositionMs": 30000
+    "startPositionMs": 30000,
+    "funFact": "English composer Arnold Bax wrote this sweeping musical seascape after visiting the windswept cliffside ruins of Tintagel Castle, legendary birthplace of King Arthur."
   },
   {
     "id": "bridge-the-sea",
@@ -2727,7 +2936,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Luminous morning ocean shimmer with rolling harp arpeggios and sweeping English horns.",
     "spotifyQuery": "Frank Bridge The Sea Seascape",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Future composer Benjamin Britten heard this ocean-inspired suite at age 10 and was so mesmerized by it that he went on to study with Frank Bridge."
   },
   {
     "id": "griffes-white-peacock",
@@ -2740,7 +2950,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Languid solo oboe floating over exotic, perfumed harmonic clouds and shimmering celesta.",
     "spotifyQuery": "Charles Griffes The White Peacock",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "American composer Charles Griffes wrote this dreamy piece while teaching piano at a New York boarding school, dying tragically at 35 months after its orchestral triumph."
   },
   {
     "id": "debussy-l100-nocturnes",
@@ -2753,7 +2964,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Slowly drifting parallel clarinets and bassoons veiled by an unchanging English horn sigh.",
     "spotifyQuery": "Debussy Nocturnes Nuages",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Inspired by James McNeill Whistler's misty paintings, Debussy wrote 'Clouds' to capture the slow, quiet drifting of gray clouds across a Paris sky."
   },
   {
     "id": "bartok-sz106-strings",
@@ -2766,7 +2978,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Eerie xylophone accelerando, timpani glissandi, and shivering celesta over dark divided strings.",
     "spotifyQuery": "Bartok Music for Strings Percussion and Celesta Adagio",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Director Stanley Kubrick later used this eerie, sliding-string movement to chill audiences during the haunted hallway scenes of the horror classic The Shining."
   },
   {
     "id": "hindemith-symphonic-metamorphosis",
@@ -2779,7 +2992,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Brassy, swaggering neo-Baroque march bursting with contrapuntal energy and crisp percussion.",
     "spotifyQuery": "Hindemith Symphonic Metamorphosis March",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "After fleeing Nazi Germany for the United States, Hindemith transformed obscure four-hand piano pieces by 19th-century composer Carl Maria von Weber into an orchestral showpiece."
   },
   {
     "id": "stravinsky-symphony-psalms",
@@ -2792,7 +3006,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Jagged E-minor orchestral stabs and churning double-reed ostinatos framing austere Latin chant.",
     "spotifyQuery": "Stravinsky Symphony of Psalms I",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Composed 'to the glory of God' for the Boston Symphony's 50th anniversary, Stravinsky omitted all violins and violas to give the orchestra an ancient, solemn sound."
   },
   {
     "id": "barber-op14-violin",
@@ -2805,7 +3020,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Soaring, warm G-major solo violin entering immediately without an orchestral introduction.",
     "spotifyQuery": "Samuel Barber Violin Concerto Op 14 Allegro",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Commissioned by a wealthy soap magnate for his protégé, the piece was rejected by the young violinist, who claimed the opening was too simple and the finale unplayable."
   },
   {
     "id": "martinu-sym4",
@@ -2818,7 +3034,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Sunlit, syncopated piano-and-string rhythms swirling with buoyant Moravian neo-Baroque energy.",
     "spotifyQuery": "Martinu Symphony No 4 I",
-    "startPositionMs": 30000
+    "startPositionMs": 30000,
+    "funFact": "Czech composer Bohuslav Martinů wrote this radiant, joyful symphony in America during the final weeks of World War II as Allied victory finally came into sight."
   },
   {
     "id": "walton-belshazzar-praise",
@@ -2831,7 +3048,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Wistful, syncopated A-minor solo viola spinning bittersweet Gershwin-meets-Elgar lyricism.",
     "spotifyQuery": "William Walton Viola Concerto Andante comodo",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Walton wrote this soulful concerto for top English violist Lionel Tertis, who turned it down—leaving fellow composer Paul Hindemith to triumph at the 1929 premiere."
   },
   {
     "id": "ligeti-musica-ricercata7",
@@ -2844,7 +3062,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Perpetual left-hand folk ostinato beneath a serene, singing right-hand melody built on limited pitches.",
     "spotifyQuery": "Ligeti Musica Ricercata 7",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Ligeti built Musica Ricercata as a strict musical puzzle, adding one new note per piece and limiting this gentle seventh movement to just eight different notes."
   },
   {
     "id": "reich-music-18",
@@ -2857,7 +3076,8 @@
     "difficultyLevel": 3,
     "stylisticClue": "Pulsing marimbas, pianos, and breath-length clarinets cycling through eleven shifting chords.",
     "spotifyQuery": "Steve Reich Music for 18 Musicians Pulses",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "With no conductor leading them, the 18 musicians cue each new section using gentle chimes and the natural length of a human breath on the bass clarinet."
   },
   {
     "id": "bach-bwv1060-oboe-violin",
@@ -2870,7 +3090,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Crisp C-minor unison ritornello launching tightly woven dialogue between oboe and violin.",
     "spotifyQuery": "Bach Concerto for Oboe and Violin BWV 1060 Allegro",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Bach's original score for this lively double concerto is lost; today's beloved version for oboe and violin was reconstructed from his arrangement for two harpsichords."
   },
   {
     "id": "handel-hwv40-dixit",
@@ -2883,7 +3104,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Blazing G-minor string moto perpetuo driving explosive five-part choral counterpoint.",
     "spotifyQuery": "Handel Dixit Dominus opening",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "A fiery 22-year-old Handel wrote this explosive choral work while visiting Rome, driving singers through relentless, breathless energy that still pushes choirs to their limits."
   },
   {
     "id": "buxtehude-buxwv137-chaconne",
@@ -2896,7 +3118,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Thundering pedal solo opening into bright manual fugues and a rolling ground-bass chaconne.",
     "spotifyQuery": "Buxtehude Praeludium in C major BuxWV 137",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Buxtehude's thrilling organ showpieces made him a legend in northern Germany; in 1705, a 20-year-old Bach famously walked over 250 miles just to hear him play."
   },
   {
     "id": "rameau-platée-overture",
@@ -2909,7 +3132,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Dotted French-overture majesty giving way to croaking, witty Baroque woodwind comedy.",
     "spotifyQuery": "Rameau Platee Overture",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Written for a royal wedding at Versailles, Rameau's satirical comedy stars a vain swamp frog tricked into believing Jupiter loves her—a risky joke about the bride's looks."
   },
   {
     "id": "vivaldi-rv565-op3no11",
@@ -2922,7 +3146,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Interlocking solo violins and cello building a fiery Baroque fugue over driving continuo.",
     "spotifyQuery": "Vivaldi Concerto Grosso Op 3 No 11 RV 565",
-    "startPositionMs": 30000
+    "startPositionMs": 30000,
+    "funFact": "Published in 1711, Vivaldi's L'estro armonico became a European sensation; J.S. Bach admired this fiery D-minor concerto so much that he arranged it for solo organ."
   },
   {
     "id": "bach-bwv243-magnificat",
@@ -2935,7 +3160,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Jubilant D-major Baroque trumpets and swirling woodwind runs launching five-part chorus.",
     "spotifyQuery": "Bach Magnificat BWV 243 opening",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Bach first wrote this radiant Magnificat for his debut Christmas in Leipzig with extra festive hymns tucked inside, before polishing it into this brighter version later."
   },
   {
     "id": "couperin-barricades",
@@ -2948,7 +3174,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Hypnotic lutenist style brisé arpeggios interlocking smoothly across overlapping keyboard voices.",
     "spotifyQuery": "Couperin Les Barricades Mysterieuses",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Scholars still debate what 'The Mysterious Barricades' means—from eyelashes or corsets to wine barrels—making this hypnotic harpsichord gem one of music's favorite riddles."
   },
   {
     "id": "stradella-san-giovanni",
@@ -2961,7 +3188,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Antiphonal interplay between a delicate concertino trio and full Baroque string ripieno.",
     "spotifyQuery": "Stradella Sinfonia",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "When Stradella premiered his oratorio San Giovanni Battista in Rome in 1675, a 22-year-old Arcangelo Corelli played violin in the orchestra and absorbed his bold style."
   },
   {
     "id": "beethoven-op111-sonata32",
@@ -2974,7 +3202,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Hushed C-major hymn transforming through accelerating subdivisions into proto-boogie-woogie.",
     "spotifyQuery": "Beethoven Piano Sonata No 32 Op 111 Arietta",
-    "startPositionMs": 45000
+    "startPositionMs": 45000,
+    "funFact": "In his very last piano sonata, a nearly deaf Beethoven wrote a set of variations whose wildly bouncing rhythm sounds startlingly like early jazz or ragtime."
   },
   {
     "id": "mozart-k466-piano20",
@@ -2987,7 +3216,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Restless syncopated strings and ominous double-bass rumblings before a pleading solo piano entry.",
     "spotifyQuery": "Mozart Piano Concerto No 20 K 466 Allegro",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Mozart finished this stormy, dramatic concerto the day before its 1785 premiere with the ink barely dry, creating a dark favorite of both Beethoven and Brahms."
   },
   {
     "id": "haydn-hob21-creation",
@@ -3000,7 +3230,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Shocking, tonally unmoored C-minor unison and shifting chromatic sighs resolving into light.",
     "spotifyQuery": "Haydn The Creation Representation of Chaos",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Inspired by hearing Handel's grand choral works in London, Haydn opened The Creation with eerie, unsettled chaos before a blinding burst proclaims 'Let there be light!'"
   },
   {
     "id": "beethoven-op47-kreutzer",
@@ -3013,7 +3244,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Solo violin quadruple-stops in A major shifting to A minor before a furious presto duel.",
     "spotifyQuery": "Beethoven Kreutzer Sonata Op 47 Presto",
-    "startPositionMs": 60000
+    "startPositionMs": 60000,
+    "funFact": "Beethoven wrote this ferocious sonata for mixed-race virtuoso George Bridgetower, then rededicated it to Rodolphe Kreutzer—who refused to play it—after a quarrel over a woman."
   },
   {
     "id": "mozart-k388-windserenade",
@@ -3026,7 +3258,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Dark, symphonic C-minor unison for paired oboes, clarinets, bassoons, and horns.",
     "spotifyQuery": "Mozart Wind Serenade K 388 Allegro",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Instead of writing breezy outdoor party music, Mozart cast this eight-player wind serenade in dark, brooding C minor with all the drama of a symphony."
   },
   {
     "id": "boccherini-g324-musica",
@@ -3039,7 +3272,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Guitar-like rasgueado string strumming, church bells, and Spanish night-watchman marches.",
     "spotifyQuery": "Boccherini Musica Notturna delle Strade di Madrid",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Living in Spain, Boccherini vividly captured Madrid's noisy nightlife—from church bells and blind singers to strumming guitars—even asking cellists to hold their instruments like guitars."
   },
   {
     "id": "schubert-d810-death",
@@ -3052,7 +3286,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Fierce D-minor triplet hammer-strokes alternating with tender, lyrical Schubertian melody.",
     "spotifyQuery": "Schubert Death and the Maiden Allegro",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Facing a fatal illness at 27, Schubert borrowed the melody of his own earlier song about a young girl pleading with Death for this gripping quartet."
   },
   {
     "id": "gluck-iphigenie-overture",
@@ -3065,7 +3300,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Unison C-minor lament leading into martial Classical energy and poignant oboe pleas.",
     "spotifyQuery": "Gluck Iphigenie en Aulide Overture",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Determined to reform French opera, Gluck designed this stormy overture to plunge straight into the opening scene without pausing for applause; Wagner later adapted it."
   },
   {
     "id": "mahler-sym2-finale",
@@ -3078,7 +3314,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Fierce tremolando violins shattered by snarling cello-and-bass funeral march figures.",
     "spotifyQuery": "Mahler Symphony No 2 Allegro maestoso",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Mahler struggled for six years to finish his Second Symphony until a choir singing a resurrection poem at conductor Hans von Bülow's funeral sparked his breakthrough."
   },
   {
     "id": "strauss-op28-till",
@@ -3091,7 +3328,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Sly French-horn rondo motif tumbling through cheeky E-flat clarinet cackles and brass mischief.",
     "spotifyQuery": "Richard Strauss Till Eulenspiegel",
-    "startPositionMs": 25000
+    "startPositionMs": 25000,
+    "funFact": "Strauss brings the mischievous German folk trickster Till Eulenspiegel to life with cheeky horn calls and screeching clarinets, ending with his comical trial and hanging."
   },
   {
     "id": "brahms-op115-clarinet",
@@ -3104,7 +3342,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Wistful third-interval violin sighs opening onto warm, autumnal clarinet arpeggios.",
     "spotifyQuery": "Brahms Clarinet Quintet Op 115 Allegro",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Brahms had actually retired from composing in 1890 until clarinetist Richard Mühlfeld's expressive playing coaxed him back to write four late masterpieces, starting with this quintet."
   },
   {
     "id": "tchaikovsky-op49-manfred",
@@ -3117,7 +3356,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Crushing bassoons and bass clarinet intoning a tormented, chromatic Romantic motto.",
     "spotifyQuery": "Tchaikovsky Manfred Symphony Lento lugubre",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Based on Lord Byron's brooding Alpine poem, this sweeping symphony was pitched to Tchaikovsky by fellow Russian composer Mily Balakirev, who sent a detailed scene-by-scene outline."
   },
   {
     "id": "chopin-op23-ballade1",
@@ -3130,7 +3370,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Mysterious Neapolitan-sixth unison opening onto a bittersweet waltz-like narrative that erupts.",
     "spotifyQuery": "Chopin Ballade No 1 Op 23",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Living in Parisian exile while Russia ruled Poland, Chopin pioneered a dramatic new solo-piano storytelling form here, later featured prominently in the film The Pianist."
   },
   {
     "id": "elgar-op55-sym1",
@@ -3143,7 +3384,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Stately, nobilmente woodwind and viola march theme colliding with restless D-minor drama.",
     "spotifyQuery": "Elgar Symphony No 1 Andante",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "After its 1908 Manchester premiere, Elgar's Symphony No. 1 became an instant global hit, racking up nearly a hundred performances across three continents in its first year."
   },
   {
     "id": "dvorak-op104-cello",
@@ -3156,7 +3398,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Clarinet-introduced heroic theme crowned by noble horn fanfares before a fiery solo cello entry.",
     "spotifyQuery": "Dvorak Cello Concerto Op 104 Allegro",
-    "startPositionMs": 45000
+    "startPositionMs": 45000,
+    "funFact": "Dvořák wrote this beloved concerto in New York while homesick for Bohemia and grieving his sister-in-law Josefina, weaving her favorite song of his into the music."
   },
   {
     "id": "wolf-italian-serenade",
@@ -3169,7 +3412,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Sparkling, witty pizzicato and dancing solo viola spinning Mediterranean comedy.",
     "spotifyQuery": "Hugo Wolf Italian Serenade",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Inspired by a romantic German novella about a wandering violinist, Hugo Wolf dashed off this sunny, witty string quartet miniature in just three days in May 1887."
   },
   {
     "id": "ravel-m72-valse",
@@ -3182,7 +3426,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Murky double-bass rumble slowly coalescing into glittering, increasingly unhinged Viennese waltzes.",
     "spotifyQuery": "Ravel La Valse",
-    "startPositionMs": 30000
+    "startPositionMs": 30000,
+    "funFact": "Beginning like a glamorous tribute to Vienna, Ravel's waltz spirals into a terrifying whirlpool reflecting post-WWI Europe; ballet impresario Diaghilev rejected it as unstageable."
   },
   {
     "id": "debussy-l122-gigues",
@@ -3195,7 +3440,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Sparkling, polyrhythmic French spring dances weaving a folk tune through dazzling woodwinds.",
     "spotifyQuery": "Debussy Rondes de printemps",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Inspired by May Day celebrations and Botticelli's Primavera, Debussy wove traditional French children's round dances into a dazzling, sunlit kaleidoscope of orchestral color."
   },
   {
     "id": "bax-november-woods",
@@ -3208,7 +3454,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Sweeping harp gusts and turbulent chromatic strings evoking an autumn gale in the forest.",
     "spotifyQuery": "Arnold Bax November Woods",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Though billed as an autumn nature scene, Bax admitted this stormy tone poem reflected the emotional turmoil of his secret affair with pianist Harriet Cohen."
   },
   {
     "id": "schmitt-tragedie-salome",
@@ -3221,7 +3468,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Sumptuous, menacing Orientalist brass and swirling strings anticipating Stravinsky's color.",
     "spotifyQuery": "Florent Schmitt La Tragedie de Salome",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Written in 1907 as a dramatic dance for modern-dance pioneer Loïe Fuller, Schmitt's expanded orchestral score thrilled Stravinsky and helped inspire The Rite of Spring."
   },
   {
     "id": "respighi-vetrate-sanmichele",
@@ -3234,7 +3482,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Shattering brass battle calls, organ pedal thunder, and blazing tam-tam crashes.",
     "spotifyQuery": "Respighi Church Windows St Michael the Archangel",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Respighi began Church Windows as quiet piano pieces on medieval chants, later orchestrating them and naming this thunderous movement after St. Michael battling the dragon."
   },
   {
     "id": "lili-boulanger-du-fond",
@@ -3247,7 +3496,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Dark, cavernous low brass and organ supporting anguished, modal French choral harmonies.",
     "spotifyQuery": "Lili Boulanger Du fond de l'abime",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Bedridden with chronic illness during World War I, 23-year-old Lili Boulanger poured her grief into this towering psalm, dying a year later before hearing it."
   },
   {
     "id": "kodaly-hary-janos-intermezzo",
@@ -3260,7 +3510,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Languid solo clarinet verbunkos rhapsody erupting into fiery Hungarian string syncopations.",
     "spotifyQuery": "Kodaly Dances of Galanta",
-    "startPositionMs": 25000
+    "startPositionMs": 25000,
+    "funFact": "Kodály spent seven childhood years in the town of Galánta, where a local gypsy band gave him his first taste of live orchestral music, inspiring this fiery suite."
   },
   {
     "id": "janacek-taras-bulba",
@@ -3273,7 +3524,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "English horn and organ weaving passionate, jagged Slavic speech-melody motifs.",
     "spotifyQuery": "Janacek Taras Bulba Death of Andrei",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Based on Nikolai Gogol's Cossack tale and finished as Czechoslovakia won independence in 1918, Janáček's gripping rhapsody opens with a doomed love story on the battlefield."
   },
   {
     "id": "berg-violin-concerto",
@@ -3286,7 +3538,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Harp and clarinet rising through open fifths into a heartbreakingly tonal twelve-tone row.",
     "spotifyQuery": "Alban Berg Violin Concerto Andante",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Berg paused his opera Lulu to write this deeply moving concerto 'To the memory of an angel'—Alma Mahler's 18-year-old daughter Manon, who had just died of polio."
   },
   {
     "id": "shostakovich-op107-cello1",
@@ -3299,7 +3552,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Gruff, four-note DSCH-derived solo cello motif locked in tense dialogue with solo French horn.",
     "spotifyQuery": "Shostakovich Cello Concerto No 1 Allegretto",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Written for cellist Mstislav Rostropovich, this razor-sharp concerto was memorized by him in just four days and stamps Shostakovich's four-note musical signature throughout the opening."
   },
   {
     "id": "stravinsky-symphony-3mvt",
@@ -3312,7 +3566,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Hammered orchestral piano ostinatos and jagged brass syncopations bursting with wartime energy.",
     "spotifyQuery": "Stravinsky Symphony in Three Movements I",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Stravinsky folded unused Hollywood film-score sketches into this wartime symphony, later admitting that newsreels of marching troops and Allied victory shaped its explosive energy."
   },
   {
     "id": "lutoslawski-concerto-orchestra",
@@ -3325,7 +3580,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Driving F-sharp pedal pulse in cellos and basses propelling folk-derived wind counterpoint.",
     "spotifyQuery": "Lutoslawski Concerto for Orchestra Intrada",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Written for Warsaw's rebuilt orchestra under strict Stalinist rules favoring folk music, Lutosławski transformed traditional Polish folk tunes into a dazzling modernist showcase."
   },
   {
     "id": "martinu-double-concerto",
@@ -3338,7 +3594,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Fierce, antiphonal string choirs driven by percussive piano and urgent timpani.",
     "spotifyQuery": "Martinu Double Concerto I",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Holed up in the Swiss mountains in 1938 as Nazi Germany threatened Czechoslovakia, Martinů anxiously listened to radio news and finished sketching this work the day Munich fell."
   },
   {
     "id": "honegger-pacific231",
@@ -3351,7 +3608,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Hissing string harmonics and accelerating brass rhythms imitating a massive steam locomotive.",
     "spotifyQuery": "Honegger Pacific 231",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "A lifelong train fanatic, Honegger named this chugging orchestral showpiece after a massive steam locomotive, saying he loved trains the way others love women or horses."
   },
   {
     "id": "penderecki-threnody",
@@ -3364,7 +3622,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Fifty-two solo strings screeching in quarter-tone clusters, percussive taps, and microtonal waves.",
     "spotifyQuery": "Penderecki Threnody for the Victims of Hiroshima",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Originally titled simply 8'37\" after its length, Penderecki renamed this harrowing piece for 52 screeching, knocking strings after hearing its devastating emotional power on tape."
   },
   {
     "id": "ligeti-atmospheres",
@@ -3377,7 +3636,8 @@
     "difficultyLevel": 4,
     "stylisticClue": "Motionless, shimmering sonic cloud woven from dozens of independently shifting chromatic lines.",
     "spotifyQuery": "Ligeti Atmospheres",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Stanley Kubrick used this eerie, melody-free soundscape for 2001: A Space Odyssey after licensing it through publishers—leaving Ligeti stunned when a friend congratulated him on the film."
   },
   {
     "id": "bach-bwv1079-musical-offering",
@@ -3390,7 +3650,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Chromatic royal theme spun into an austere, towering six-voice contrapuntal cathedral.",
     "spotifyQuery": "Bach Musical Offering Ricercar a 6",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "King Frederick the Great challenged Bach to improvise on a tricky royal theme; Bach later sent back this dazzling set of puzzles in print."
   },
   {
     "id": "gesualdo-moro-lasso",
@@ -3403,7 +3664,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Shocking chromatic chord slides alternating with brisk, anguished five-voice polyphony.",
     "spotifyQuery": "Gesualdo Moro lasso al mio duolo",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "An Italian nobleman infamous for murdering his unfaithful wife and her lover, Gesualdo poured shocking, bittersweet harmonies into this haunting 1611 vocal piece."
   },
   {
     "id": "frescobaldi-fiori-toccata",
@@ -3416,7 +3678,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Daring chromatic suspensions drifting contemplatively across antique mean-tone organ pipes.",
     "spotifyQuery": "Frescobaldi Toccata per l'Elevatione",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Intended to accompany the quietest moment of a Catholic Mass, this serene organ collection was so admired that Bach copied out the whole book by hand."
   },
   {
     "id": "schutz-swv369-musikalische",
@@ -3429,7 +3692,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Intimate soloists alternating with resonant six-part choir over bare, solemn continuo.",
     "spotifyQuery": "Heinrich Schutz Musikalische Exequien",
-    "startPositionMs": 25000
+    "startPositionMs": 25000,
+    "funFact": "Written during the Thirty Years' War for a German prince's funeral, the piece sets biblical comfort texts that the prince himself chose for his coffin."
   },
   {
     "id": "lully-armide-passacaille",
@@ -3442,7 +3706,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Stately four-bar bass repeating relentlessly beneath French winds, strings, and chorus.",
     "spotifyQuery": "Lully Armide Passacaille",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "A year after writing this grand French opera for King Louis XIV, Lully fatally struck his own foot with a heavy conducting staff."
   },
   {
     "id": "bach-bwv548-wedge",
@@ -3455,7 +3720,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Chromatic fugue subject expanding outward like an opening wedge into roaring pedal counterpoint.",
     "spotifyQuery": "Bach Prelude and Fugue BWV 548 Wedge Fugue",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Nicknamed 'The Wedge' because its opening melody steadily expands outward like an opening fan, this thrilling organ showpiece dates from Bach's Leipzig years."
   },
   {
     "id": "dandrieu-les-caracteres",
@@ -3468,7 +3734,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Swirling Baroque keyboard eddies spinning crisp French ornaments in rapid succession.",
     "spotifyQuery": "Dandrieu Les Tourbillons",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Titled 'The Whirlwinds,' this sparkling French harpsichord piece uses rapid, swirling fingerwork to paint gusts of wind sweeping across the keyboard."
   },
   {
     "id": "weiss-lute-tombeau",
@@ -3481,7 +3748,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Deeply intimate B-flat minor lute chords punctuated by poignant chromatic bass descents.",
     "spotifyQuery": "Sylvius Leopold Weiss Tombeau Comte de Logy",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "A close friend of Bach and Europe's foremost lutenist, Weiss wrote this deeply felt lament to mourn the death of fellow nobleman-lutenist Count Logy."
   },
   {
     "id": "beethoven-op106-hammerklavier",
@@ -3494,7 +3762,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Colossal trilled tenth leap launching a ferocious, uncompromising three-voice piano fugue.",
     "spotifyQuery": "Beethoven Hammerklavier Op 106 Fugue",
-    "startPositionMs": 25000
+    "startPositionMs": 25000,
+    "funFact": "Beethoven wrote this thunderous, exhausting sonata when he was almost completely deaf, declaring it would keep pianists busy fifty years into the future."
   },
   {
     "id": "mozart-k421-quartet",
@@ -3507,7 +3776,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Stark octave drop in first violin over pulsing D-minor accompaniment—Mozart at his darkest.",
     "spotifyQuery": "Mozart String Quartet K 421 Allegro moderato",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Legend says Mozart scribbled parts of this dark, restless quartet while his wife Constanze was in the next room giving birth to their first child."
   },
   {
     "id": "haydn-op77no2-quartet",
@@ -3520,7 +3790,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Witty asymmetrical phrasing and sudden remote-key shifts tossed effortlessly among four strings.",
     "spotifyQuery": "Haydn String Quartet Op 77 No 2 Allegro",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Written for Beethoven's patron Prince Lobkowitz in 1799, this spirited work proved to be the very last string quartet Haydn ever completed."
   },
   {
     "id": "kraus-vb142-cminor",
@@ -3533,7 +3804,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Brooding, Gluck-inspired C-minor introduction erupting into fiery Nordic Classical drama.",
     "spotifyQuery": "Joseph Martin Kraus Symphony in C minor",
-    "startPositionMs": 25000
+    "startPositionMs": 25000,
+    "funFact": "Nicknamed the 'Swedish Mozart,' German-born Kraus impressed Joseph Haydn so deeply with this stormy 1783 symphony that Haydn called him a true genius."
   },
   {
     "id": "beethoven-op120-diabelli",
@@ -3546,7 +3818,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Trivial Viennese waltz theme deconstructed into thirty-three cosmic transformations.",
     "spotifyQuery": "Beethoven Diabelli Variations Op 120",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Publisher Anton Diabelli asked fifty composers to write one variation each on his simple waltz; Beethoven refused at first, then wrote thirty-three himself."
   },
   {
     "id": "dussek-op61-elegie",
@@ -3559,7 +3832,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Rich, pedal-drenched F-sharp minor arpeggios bridging Mozart and Chopin decades early.",
     "spotifyQuery": "Dussek Elegie harmonique Op 61",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Bohemian virtuoso Dussek composed this fiercely grieving sonata after his close friend and patron, Prince Louis Ferdinand of Prussia, was killed fighting Napoleon."
   },
   {
     "id": "cherubini-requiem-cminor",
@@ -3572,7 +3846,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Stark tam-tam crash launching severe, Beethoven-admired choral unison and fugal thunder.",
     "spotifyQuery": "Cherubini Requiem in C minor Dies Irae",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Beethoven admired this dramatic Requiem—written for chorus and orchestra with no vocal soloists—so much that he planned to model his own after it."
   },
   {
     "id": "arriaga-quartet-1",
@@ -3585,7 +3860,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Mozartian polish infused with passionate Spanish-Classical minor-key urgency.",
     "spotifyQuery": "Arriaga String Quartet No 1 D minor Allegro",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Born fifty years to the day after Mozart, the brilliant Spanish prodigy Arriaga published this remarkable string quartet at just seventeen, shortly before his early death."
   },
   {
     "id": "brahms-op114-trio",
@@ -3598,7 +3874,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Lean, austere cello-and-clarinet unisons opening into dark, tightly compressed counterpoint.",
     "spotifyQuery": "Brahms Clarinet Trio Op 114 Allegro",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Brahms had nearly retired from composing in 1890 until hearing clarinetist Richard Mühlfeld play, which inspired him to write this warm autumn chamber piece."
   },
   {
     "id": "alkan-op39-symphony",
@@ -3611,7 +3888,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Orchestral-scale C-minor chords and relentless rhythmic drive played by a single pianist.",
     "spotifyQuery": "Alkan Symphony for Solo Piano Op 39",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Parisian recluse Charles-Valentin Alkan packed the sweep and drama of a four-movement orchestral symphony into ten fingers for a single heroic pianist."
   },
   {
     "id": "regers-op100-hiller",
@@ -3624,7 +3902,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Chromatic late-Romantic counterpoint piling onto Mozart's gentle A-major theme.",
     "spotifyQuery": "Max Reger Mozart Variations Op 132 Fugue",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Max Reger transformed the gentle, famous opening melody of Mozart's 'Turkish March' piano sonata into a huge, joyful showcase for full orchestra."
   },
   {
     "id": "busoni-piano-concerto-4",
@@ -3637,7 +3916,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Tarantella frenzy for solo piano and giant orchestra before a hidden male chorus enters.",
     "spotifyQuery": "Busoni Piano Concerto Op 39 All'Italiana",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Busoni jokingly called this massive, seventy-minute concerto his 'Skyscraper,' even bringing a hidden male choir onstage for the final movement after this fiery Italian dance."
   },
   {
     "id": "chausson-op21-concert",
@@ -3650,7 +3930,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Three-note cyclic motto crashing out in piano and quartet before a soaring violin line.",
     "spotifyQuery": "Chausson Concert Op 21 Decide",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Chausson created an unusual hybrid between a chamber piece and a concerto, pairing solo violin and piano against an accompanying string quartet."
   },
   {
     "id": "taneiev-sym4",
@@ -3663,7 +3944,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Ironclad Russian symphonic architecture fusing Tchaikovsky passion with Brahmsian counterpoint.",
     "spotifyQuery": "Taneyev Symphony No 4 Allegro molto",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Tchaikovsky's star pupil Sergei Taneyev wrote three earlier symphonies he kept locked in a drawer, making this fiery C-minor work his first published one."
   },
   {
     "id": "franck-quintet-fminor",
@@ -3676,7 +3958,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Stormy, obsessive strings interrupted by pleading, tender piano recitative.",
     "spotifyQuery": "Cesar Franck Piano Quintet F minor I",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "At its 1880 premiere, Camille Saint-Saëns disliked the work's passionate intensity so much that he stormed offstage, leaving the score behind on the piano."
   },
   {
     "id": "mahler-sym6-andante",
@@ -3689,7 +3972,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Grim, relentless military march in low strings punctuated by major-to-minor fate triads.",
     "spotifyQuery": "Mahler Symphony No 6 Allegro energico",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Nicknamed the 'Tragic,' this towering symphony includes distant cowbells echoing like alpine pastures—and devastating hammer blows later in the finale."
   },
   {
     "id": "bridge-enter-spring",
@@ -3702,7 +3986,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Radiant, bitonal brass fanfares and lush English string ecstasy heralding spring.",
     "spotifyQuery": "Frank Bridge Enter Spring",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Thirteen-year-old Benjamin Britten attended the 1927 premiere of this windswept landscape piece and was so dazzled that he soon became Bridge's private student."
   },
   {
     "id": "sorabji-gulistan",
@@ -3715,7 +4000,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Labyrinthine, perfumed nocturne woven from cascading, jewel-like chromatic piano filigree.",
     "spotifyQuery": "Sorabji Le Jardin parfume",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Inspired by a classic Arabic text, Sorabji wrote this hypnotic twenty-minute piano nocturne completely without bar lines, letting dreamy cascades flow freely."
   },
   {
     "id": "koechlin-jungle-book",
@@ -3728,7 +4014,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Bitonal, mocking wind chatter mocking twelve-tone rows amid lush jungle impressions.",
     "spotifyQuery": "Charles Koechlin Les Bandar-Log",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Inspired by Rudyard Kipling's chattering monkeys, Koechlin uses this playful Jungle Book movement to poke fun at trendy modernist composers copying each other."
   },
   {
     "id": "ravel-trois-poemes",
@@ -3741,7 +4028,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Glass-like string harmonics, piccolo, and celesta cradling hushed symbolist French poetry.",
     "spotifyQuery": "Ravel Trois Poemes de Stephane Mallarme Soupir",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "While sharing a Swiss lakeside retreat with Stravinsky in 1913, Ravel copied his friend's small ensemble setup—unknowingly setting the same poems Debussy chose that year."
   },
   {
     "id": "debussy-sonata-flute-viola-harp",
@@ -3754,7 +4042,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Weightless, archaic arabesques drifting between solo flute, muted viola, and crystalline harp.",
     "spotifyQuery": "Debussy Sonata for Flute Viola and Harp Pastorale",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Facing illness during World War I, Debussy planned six sonatas for unusual instrument pairings; he finished only three, including this twilight trio."
   },
   {
     "id": "szymanowski-sym3",
@@ -3767,7 +4056,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Opulent, Scriabin-meets-Ravel nocturnal orchestra enveloping solo tenor and wordless choir.",
     "spotifyQuery": "Szymanowski Symphony No 3 Song of the Night",
-    "startPositionMs": 30000
+    "startPositionMs": 30000,
+    "funFact": "Szymanowski drew on his Mediterranean travels to set mystical verses by the thirteenth-century Persian poet Rumi for glowing orchestra, tenor, and chorus."
   },
   {
     "id": "moeran-symphony-gminor",
@@ -3780,7 +4070,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Windswept, Sibelian G-minor string drive infused with lush modal English harmonies.",
     "spotifyQuery": "Moeran Symphony in G minor Allegro",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "English composer E. J. Moeran spent over a decade shaping this rugged symphony amid the wild mountains of Ireland and the coastal marshes of Norfolk."
   },
   {
     "id": "dutilleux-metaboles",
@@ -3793,7 +4084,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Piercing brass and woodwind chordal cries morphing organically across shimmering percussion.",
     "spotifyQuery": "Dutilleux Metaboles Incantatoire",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Conductor George Szell commissioned this vivid showcase for the Cleveland Orchestra's fortieth anniversary, letting different sections shine like shifting shapes in a kaleidoscope."
   },
   {
     "id": "webern-op21-symphony",
@@ -3806,7 +4098,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Pointillist Klangfarbenmelodie passing a symmetrical double canon note by note across instruments.",
     "spotifyQuery": "Webern Symphony Op 21 I",
-    "startPositionMs": 10000
+    "startPositionMs": 10000,
+    "funFact": "Austrian modernist Anton Webern stripped the symphony down to crystal-clear perfection, packing an entire symphonic world into barely ten minutes for a tiny orchestra."
   },
   {
     "id": "messiaen-turangalila-5",
@@ -3819,7 +4112,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Frenzied, ecstatic mambo-like brass, solo piano, and swooping ondes Martenot.",
     "spotifyQuery": "Messiaen Turangalila Joie du sang des etoiles",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Messiaen called this ecstatic, seventy-five-minute work a 'song of love,' pairing a full orchestra with a pioneering electronic instrument called the ondes Martenot."
   },
   {
     "id": "varèse-ameriques",
@@ -3832,7 +4126,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Thirteen percussionists unleashing sirens, anvils, snare drums, and piano clusters with zero melody.",
     "spotifyQuery": "Edgard Varese Ionisation",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Scored for thirteen percussionists, sirens, and even a lion's roar, this 1931 landmark became the first Western concert piece written entirely for percussion."
   },
   {
     "id": "carter-string-quartet1",
@@ -3845,7 +4140,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Independent polyrhythmic cello and upper-string lines locked in continuous metric modulation.",
     "spotifyQuery": "Elliott Carter String Quartet No 1 Fantasia",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Elliott Carter spent a year living quietly in the Arizona desert near Tucson to compose this groundbreaking quartet, inspired by shifting desert horizons."
   },
   {
     "id": "berio-sinfonia-3",
@@ -3858,7 +4154,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Mahler's Second Symphony scherzo turned into a dizzying river of spoken voices and quotes.",
     "spotifyQuery": "Luciano Berio Sinfonia III",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "Over a flowing river of Mahler's music, Berio weaves a whirlwind collage of spoken quotes and musical snippets from Bach to Stravinsky."
   },
   {
     "id": "xenakis-metastaseis",
@@ -3871,7 +4168,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Architectural hyperbolic paraboloids carved in sound by sixty-one sweeping string glissandi.",
     "spotifyQuery": "Xenakis Metastaseis",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Trained as an engineer and architect, Iannis Xenakis drafted this sweeping orchestral piece on graph paper, using mathematical curves he later adapted for a world's fair pavilion."
   },
   {
     "id": "takemitsu-flock-descends",
@@ -3884,7 +4182,8 @@
     "difficultyLevel": 5,
     "stylisticClue": "Delicate solo oboe floating through pentatonic mist and luminous, bell-like orchestral stillness.",
     "spotifyQuery": "Takemitsu A Flock Descends into the Pentagonal Garden",
-    "startPositionMs": 20000
+    "startPositionMs": 20000,
+    "funFact": "After seeing a photo of Marcel Duchamp with a star shaved into his hair, Takemitsu dreamed of birds descending into a five-sided garden and wrote this piece."
   },
   {
     "id": "ligeti-etude-escalier",
@@ -3897,6 +4196,7 @@
     "difficultyLevel": 5,
     "stylisticClue": "Demonic, rising chromatic Shepard-tone scales climbing endlessly across shifting accents.",
     "spotifyQuery": "Ligeti L'escalier du diable",
-    "startPositionMs": 15000
+    "startPositionMs": 15000,
+    "funFact": "Inspired by M. C. Escher's impossible staircases, Ligeti's frantic piano study creates the sonic illusion of endlessly climbing higher without ever reaching the top."
   }
 ]

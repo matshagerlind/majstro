@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Majstro — Application Architecture Overview</title>
+  <style>
+    :root {
+      --bg: #0b0e17;
+      --surface: #131826;
+      --surface-2: #1a2133;
+      --border: #28324b;
+      --text: #e8ecf4;
+      --muted: #9aa5be;
+      --gold: #d4af37;
+      --gold-soft: rgba(212, 175, 55, 0.14);
+      --blue: #60a5fa;
+      --blue-soft: rgba(96, 165, 250, 0.14);
+      --green: #34d399;
+      --green-soft: rgba(52, 211, 153, 0.14);
+      --purple: #a78bfa;
+      --purple-soft: rgba(167, 139, 250, 0.14);
+      --rose: #fb7185;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+      background: radial-gradient(circle at top right, #161d31 0%, var(--bg) 55%);
+      color: var(--text);
+      line-height: 1.55;
+      padding: 32px 20px 64px;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: var(--gold-soft);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 2.1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+      max-width: 820px;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      margin: 36px 0 14px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 18px;
+      border-radius: 2px;
+      background: var(--gold);
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 22px;
+    }
+
+    /* Interactive Diagram Toolbar & Layout */
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .flow-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .flow-btn {
+      background: var(--surface-2);
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 7px 12px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .flow-btn:hover {
+      color: var(--text);
+      border-color: #475577;
+    }
+
+    .flow-btn.active {
+      background: var(--gold-soft);
+      color: var(--gold);
+      border-color: rgba(212, 175, 55, 0.6);
+    }
+
+    .hint {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .diagram-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 310px;
+      gap: 16px;
+      align-items: start;
+    }
+
+    @media (max-width: 960px) {
+      .diagram-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .diagram-wrap {
+      overflow-x: auto;
+      background: #0d111c;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px;
+    }
+
+    .inspector {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .inspector-tag {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: var(--gold-soft);
+      color: var(--gold);
+    }
+
+    .inspector h3 {
+      margin: 0;
+      font-size: 1.08rem;
+      color: var(--text);
+    }
+
+    .inspector p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .inspector-meta {
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+      margin-top: 4px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 0.84rem;
+    }
+
+    .inspector-meta div strong {
+      color: var(--text);
+    }
+
+    .inspector-meta div span {
+      color: var(--muted);
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 12px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 3px;
+      display: inline-block;
+    }
+
+    /* SVG Interactive States */
+    .node {
+      cursor: pointer;
+      transition: opacity 0.2s ease, filter 0.2s ease;
+    }
+
+    .node rect.box {
+      transition: stroke-width 0.15s ease, filter 0.15s ease;
+    }
+
+    .node:hover rect.box {
+      filter: brightness(1.18);
+    }
+
+    .node.selected rect.box {
+      stroke-width: 2.8 !important;
+      filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.45));
+    }
+
+    .node.dimmed {
+      opacity: 0.24;
+    }
+
+    .edge {
+      transition: opacity 0.2s ease, stroke-width 0.2s ease;
+    }
+
+    .edge.dimmed {
+      opacity: 0.12;
+    }
+
+    .edge.highlighted path,
+    .edge.highlighted line {
+      stroke-width: 2.5 !important;
+      stroke-dasharray: 6 4;
+      animation: dashFlow 0.9s linear infinite;
+    }
+
+    @keyframes dashFlow {
+      to {
+        stroke-dashoffset: -20;
+      }
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 16px;
+    }
+
+    .layer-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .layer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .layer-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .pill {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .pill-gold { background: var(--gold-soft); color: var(--gold); }
+    .pill-blue { background: var(--blue-soft); color: var(--blue); }
+    .pill-green { background: var(--green-soft); color: var(--green); }
+    .pill-purple { background: var(--purple-soft); color: var(--purple); }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    li { margin-bottom: 6px; }
+    li strong { color: var(--text); font-weight: 600; }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.85em;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      padding: 1px 6px;
+      border-radius: 5px;
+      color: #f3e8c8;
+    }
+
+    .lifecycle {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .phase-box {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 14px;
+      min-width: 170px;
+      flex: 1;
+    }
+
+    .phase-box .name {
+      font-weight: 700;
+      color: var(--gold);
+      font-size: 0.92rem;
+      margin-bottom: 4px;
+    }
+
+    .phase-box .desc {
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .arrow {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    footer {
+      margin-top: 40px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.84rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="badge">Architecture Overview · com.majstro.tv</span>
+      <h1>Majstro Application Architecture</h1>
+      <p class="subtitle">
+        Majstro turns an Android tablet into a living-room classical music quiz host (like Jackbox).
+        Players join on their phones over Wi-Fi, the tablet plays music via Spotify Connect (or offline Demo Mode),
+        and one central game engine keeps every screen in sync.
+      </p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-top:18px;">
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:12px 14px;">
+          <div style="font-weight:700; color:var(--gold); font-size:0.9rem;">1. The Tablet = Host Screen</div>
+          <div style="color:var(--muted); font-size:0.86rem;">Displays the QR code, current clue, answer reveal, composer portrait, and scoreboard.</div>
+        </div>
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:12px 14px;">
+          <div style="font-weight:700; color:var(--purple); font-size:0.9rem;">2. Phones = Controllers</div>
+          <div style="color:var(--muted); font-size:0.86rem;">Players scan the QR code to open a web page hosted directly by the tablet—no app install needed.</div>
+        </div>
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:12px 14px;">
+          <div style="font-weight:700; color:var(--green); font-size:0.9rem;">3. One Brain in the Middle</div>
+          <div style="color:var(--muted); font-size:0.86rem;">A single game engine (<code>QuizEngine</code>) tracks scores and rounds, pushing live updates to the tablet and all phones at once.</div>
+        </div>
+      </div>
+    </header>
+
+    <h2>1. Interactive Architecture Explorer</h2>
+    <div class="card">
+      <div class="toolbar">
+        <div class="flow-buttons" role="group" aria-label="Architecture Flow Filters">
+          <button class="flow-btn active" data-flow="all">All Components</button>
+          <button class="flow-btn" data-flow="wiring">1. Startup &amp; Wiring</button>
+          <button class="flow-btn" data-flow="gameplay">2. Live Quiz Sync</button>
+          <button class="flow-btn" data-flow="playback">3. Audio Playback</button>
+          <button class="flow-btn" data-flow="oauth">4. Spotify OAuth PKCE</button>
+        </div>
+        <span class="hint">Click any box to inspect details</span>
+      </div>
+
+      <div class="diagram-layout">
+        <div class="diagram-wrap">
+          <svg id="arch-svg" viewBox="0 0 920 500" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Interactive Majstro Architecture Diagram">
+            <defs>
+              <marker id="arrow-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 1 L 10 5 L 0 9 z" fill="#7c8aa6" />
+              </marker>
+              <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 1 L 10 5 L 0 9 z" fill="#60a5fa" />
+              </marker>
+              <marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 1 L 10 5 L 0 9 z" fill="#a78bfa" />
+              </marker>
+              <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 1 L 10 5 L 0 9 z" fill="#34d399" />
+              </marker>
+              <marker id="arrow-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 1 L 10 5 L 0 9 z" fill="#d4af37" />
+              </marker>
+            </defs>
+
+            <!-- Zone Backgrounds -->
+            <rect x="14" y="10" width="666" height="476" rx="14" fill="#111624" stroke="#222c44" stroke-dasharray="5 4" />
+            <text x="28" y="30" fill="#6d7a96" font-size="11" font-weight="700" letter-spacing="0.06em">ANDROID TABLET HOST (com.majstro.tv)</text>
+
+            <rect x="698" y="10" width="208" height="476" rx="14" fill="#101420" stroke="#222c44" stroke-dasharray="5 4" />
+            <text x="712" y="30" fill="#6d7a96" font-size="11" font-weight="700" letter-spacing="0.06em">EXTERNAL / WI-FI</text>
+
+            <!-- EDGES -->
+            <!-- Wiring edges -->
+            <g class="edge" data-edge="wire-ui" data-flows="wiring" data-nodes="main,ui">
+              <path d="M 270 86 L 140 86 L 140 132" fill="none" stroke="#7c8aa6" stroke-width="1.5" marker-end="url(#arrow-muted)" />
+              <text x="150" y="79" fill="#9aa5be" font-size="10">renders</text>
+            </g>
+            <g class="edge" data-edge="wire-engine" data-flows="wiring" data-nodes="main,engine">
+              <line x1="395" y1="108" x2="395" y2="142" stroke="#d4af37" stroke-width="1.5" marker-end="url(#arrow-gold)" />
+              <text x="404" y="128" fill="#d4af37" font-size="10">wires</text>
+            </g>
+            <g class="edge" data-edge="wire-ktor" data-flows="wiring" data-nodes="main,ktor">
+              <path d="M 520 86 L 560 86 L 560 132" fill="none" stroke="#7c8aa6" stroke-width="1.5" marker-end="url(#arrow-muted)" />
+              <text x="530" y="79" fill="#9aa5be" font-size="10">starts :8080</text>
+            </g>
+
+            <!-- StateFlow / Gameplay edges -->
+            <g class="edge" data-edge="state-ui" data-flows="gameplay" data-nodes="engine,ui">
+              <line x1="275" y1="200" x2="225" y2="200" stroke="#60a5fa" stroke-width="1.6" marker-end="url(#arrow-blue)" />
+              <text x="250" y="191" text-anchor="middle" fill="#60a5fa" font-size="10">StateFlow</text>
+            </g>
+            <g class="edge" data-edge="state-ktor" data-flows="gameplay" data-nodes="engine,ktor">
+              <line x1="495" y1="200" x2="515" y2="200" stroke="#a78bfa" stroke-width="1.6" marker-end="url(#arrow-purple)" />
+            </g>
+            <g class="edge" data-edge="ktor-engine" data-flows="gameplay" data-nodes="ktor,engine">
+              <path d="M 515 224 L 495 224" fill="none" stroke="#a78bfa" stroke-width="1.6" marker-end="url(#arrow-purple)" />
+              <text x="505" y="239" text-anchor="middle" fill="#a78bfa" font-size="9.5">cmds</text>
+            </g>
+            <g class="edge" data-edge="ws-phones" data-flows="gameplay" data-nodes="ktor,phones">
+              <line x1="665" y1="186" x2="716" y2="186" stroke="#a78bfa" stroke-width="1.7" marker-end="url(#arrow-purple)" />
+              <text x="690" y="177" text-anchor="middle" fill="#a78bfa" font-size="10">WS /ws</text>
+            </g>
+            <g class="edge" data-edge="phones-ws" data-flows="gameplay" data-nodes="phones,ktor">
+              <line x1="716" y1="212" x2="665" y2="212" stroke="#a78bfa" stroke-width="1.7" marker-end="url(#arrow-purple)" />
+              <text x="690" y="226" text-anchor="middle" fill="#a78bfa" font-size="10">answers</text>
+            </g>
+
+            <!-- Data & Playback edges -->
+            <g class="edge" data-edge="engine-data" data-flows="gameplay,playback" data-nodes="engine,data">
+              <path d="M 330 282 L 330 315 L 180 315 L 180 342" fill="none" stroke="#34d399" stroke-width="1.5" marker-end="url(#arrow-green)" />
+              <text x="242" y="309" text-anchor="middle" fill="#34d399" font-size="10">RepertoireSource &amp; Generator</text>
+            </g>
+            <g class="edge" data-edge="engine-spotify" data-flows="playback" data-nodes="engine,spotify">
+              <line x1="435" y1="282" x2="435" y2="342" stroke="#34d399" stroke-width="1.7" marker-end="url(#arrow-green)" />
+              <text x="444" y="318" fill="#34d399" font-size="10">MusicPlayerGateway</text>
+            </g>
+            <g class="edge" data-edge="spotify-cloud" data-flows="playback,oauth" data-nodes="spotify,spotifyCloud">
+              <line x1="590" y1="400" x2="716" y2="400" stroke="#34d399" stroke-width="1.7" marker-end="url(#arrow-green)" />
+              <text x="653" y="391" text-anchor="middle" fill="#34d399" font-size="10">HTTPS / PKCE</text>
+            </g>
+
+            <!-- OAuth Setup edges -->
+            <g class="edge" data-edge="phones-oauth" data-flows="oauth" data-nodes="phones,ktor">
+              <path d="M 790 250 L 790 272 L 620 272 L 620 250" fill="none" stroke="#a78bfa" stroke-width="1.5" marker-end="url(#arrow-purple)" />
+              <text x="705" y="286" text-anchor="middle" fill="#a78bfa" font-size="10">GET /spotify</text>
+            </g>
+            <g class="edge" data-edge="ktor-spotify" data-flows="oauth" data-nodes="ktor,spotify">
+              <path d="M 575 250 L 575 315 L 515 315 L 515 342" fill="none" stroke="#34d399" stroke-width="1.5" marker-end="url(#arrow-green)" />
+              <text x="583" y="302" fill="#34d399" font-size="10">SpotifyAuthSession</text>
+            </g>
+
+            <!-- NODES -->
+            <g class="node" data-id="main" tabindex="0">
+              <rect class="box" x="270" y="50" width="250" height="58" rx="10" fill="#1a2133" stroke="#d4af37" stroke-width="1.6" />
+              <text x="395" y="74" text-anchor="middle" fill="#d4af37" font-size="13" font-weight="700">MainActivity</text>
+              <text x="395" y="92" text-anchor="middle" fill="#9aa5be" font-size="11">Composition Root &amp; Lifecycle</text>
+            </g>
+
+            <g class="node" data-id="ui" tabindex="0">
+              <rect class="box" x="32" y="136" width="190" height="124" rx="10" fill="#131826" stroke="#60a5fa" stroke-width="1.6" />
+              <text x="127" y="160" text-anchor="middle" fill="#60a5fa" font-size="13" font-weight="700">MajstroTvApp</text>
+              <text x="127" y="177" text-anchor="middle" fill="#e8ecf4" font-size="10.5">Jetpack Compose Host UI</text>
+              <text x="127" y="198" text-anchor="middle" fill="#9aa5be" font-size="10.5">Lobby · Question</text>
+              <text x="127" y="214" text-anchor="middle" fill="#9aa5be" font-size="10.5">Reveal · GameOver</text>
+              <text x="127" y="236" text-anchor="middle" fill="#60a5fa" font-size="10">QR Join &amp; Spotify Modal</text>
+            </g>
+
+            <g class="node" data-id="engine" tabindex="0">
+              <rect class="box" x="275" y="144" width="220" height="138" rx="10" fill="#181f30" stroke="#d4af37" stroke-width="2" />
+              <text x="385" y="168" text-anchor="middle" fill="#d4af37" font-size="14" font-weight="700">QuizEngine</text>
+              <text x="385" y="186" text-anchor="middle" fill="#e8ecf4" font-size="11">Pure Kotlin State Machine</text>
+              <text x="385" y="204" text-anchor="middle" fill="#9aa5be" font-size="10">LOBBY → QUESTION →</text>
+              <text x="385" y="218" text-anchor="middle" fill="#9aa5be" font-size="10">REVEAL → GAME_OVER</text>
+              <rect x="290" y="232" width="190" height="38" rx="6" fill="#0b0e17" stroke="#28324b" />
+              <text x="385" y="248" text-anchor="middle" fill="#d4af37" font-size="10" font-weight="600">Domain Ports</text>
+              <text x="385" y="261" text-anchor="middle" fill="#9aa5be" font-size="9.5">Repertoire · Generator · Player</text>
+            </g>
+
+            <g class="node" data-id="ktor" tabindex="0">
+              <rect class="box" x="515" y="136" width="150" height="114" rx="10" fill="#131826" stroke="#a78bfa" stroke-width="1.6" />
+              <text x="590" y="160" text-anchor="middle" fill="#a78bfa" font-size="12.5" font-weight="700">KtorControllerServer</text>
+              <text x="590" y="177" text-anchor="middle" fill="#e8ecf4" font-size="10.5">Embedded CIO :8080</text>
+              <text x="590" y="198" text-anchor="middle" fill="#9aa5be" font-size="10">GET / (Phone HTML)</text>
+              <text x="590" y="214" text-anchor="middle" fill="#9aa5be" font-size="10">GET /spotify (OAuth)</text>
+              <text x="590" y="230" text-anchor="middle" fill="#9aa5be" font-size="10">WS /ws (Live Sync)</text>
+            </g>
+
+            <g class="node" data-id="data" tabindex="0">
+              <rect class="box" x="45" y="346" width="240" height="106" rx="10" fill="#131826" stroke="#34d399" stroke-width="1.6" />
+              <text x="165" y="372" text-anchor="middle" fill="#34d399" font-size="13" font-weight="700">Repertoire &amp; Questions</text>
+              <text x="165" y="393" text-anchor="middle" fill="#e8ecf4" font-size="10.5">InMemoryRepertoireSource</text>
+              <text x="165" y="409" text-anchor="middle" fill="#9aa5be" font-size="10">25 works · 5 difficulty tiers</text>
+              <text x="165" y="430" text-anchor="middle" fill="#e8ecf4" font-size="10.5">DefaultQuestionGenerator</text>
+            </g>
+
+            <g class="node" data-id="spotify" tabindex="0">
+              <rect class="box" x="330" y="346" width="260" height="106" rx="10" fill="#131826" stroke="#34d399" stroke-width="1.6" />
+              <text x="460" y="372" text-anchor="middle" fill="#34d399" font-size="13" font-weight="700">SpotifySession</text>
+              <text x="460" y="392" text-anchor="middle" fill="#e8ecf4" font-size="10.5">MusicPlayerGateway + SpotifyAuthSession</text>
+              <text x="460" y="411" text-anchor="middle" fill="#9aa5be" font-size="10">OAuth 2.0 PKCE · Spotify Connect</text>
+              <text x="460" y="428" text-anchor="middle" fill="#9aa5be" font-size="10">Demo Mode Fallback · SharedPrefs</text>
+            </g>
+
+            <g class="node" data-id="phones" tabindex="0">
+              <rect class="box" x="720" y="136" width="166" height="114" rx="10" fill="#161b2a" stroke="#a78bfa" stroke-width="1.5" />
+              <text x="803" y="164" text-anchor="middle" fill="#e8ecf4" font-size="13" font-weight="700">Phone Browsers</text>
+              <text x="803" y="184" text-anchor="middle" fill="#9aa5be" font-size="10.5">Players on same Wi-Fi</text>
+              <text x="803" y="203" text-anchor="middle" fill="#9aa5be" font-size="10.5">Join via QR code</text>
+              <text x="803" y="222" text-anchor="middle" fill="#a78bfa" font-size="10">Write-in / Multiple Choice</text>
+            </g>
+
+            <g class="node" data-id="spotifyCloud" tabindex="0">
+              <rect class="box" x="720" y="346" width="166" height="106" rx="10" fill="#161b2a" stroke="#34d399" stroke-width="1.5" />
+              <text x="803" y="374" text-anchor="middle" fill="#e8ecf4" font-size="13" font-weight="700">Spotify Cloud</text>
+              <text x="803" y="395" text-anchor="middle" fill="#9aa5be" font-size="10.5">accounts.spotify.com</text>
+              <text x="803" y="413" text-anchor="middle" fill="#9aa5be" font-size="10.5">api.spotify.com</text>
+              <text x="803" y="431" text-anchor="middle" fill="#34d399" font-size="10">Token &amp; Connect Playback</text>
+            </g>
+          </svg>
+        </div>
+
+        <aside class="inspector" id="inspector" aria-live="polite">
+          <span class="inspector-tag" id="ins-tag">Architecture Overview</span>
+          <h3 id="ins-title">Select a component or flow</h3>
+          <p id="ins-desc">
+            Use the flow buttons above to trace how startup wiring, live WebSocket gameplay, audio playback, and Spotify OAuth PKCE work together—or click any box in the diagram to inspect its files and responsibilities.
+          </p>
+          <div class="inspector-meta" id="ins-meta">
+            <div><strong>Pattern:</strong> <span>Ports &amp; Adapters (Hexagonal)</span></div>
+            <div><strong>Single Source of Truth:</strong> <span>QuizEngine.state (StateFlow)</span></div>
+            <div><strong>Local Host Port:</strong> <span>8080 (Ktor CIO)</span></div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="legend">
+        <div class="legend-item"><span class="dot" style="background: var(--gold);"></span> Core Engine &amp; Entry</div>
+        <div class="legend-item"><span class="dot" style="background: var(--blue);"></span> Compose Tablet UI</div>
+        <div class="legend-item"><span class="dot" style="background: var(--purple);"></span> LAN Server &amp; Phone Clients</div>
+        <div class="legend-item"><span class="dot" style="background: var(--green);"></span> Data &amp; Playback Adapters</div>
+      </div>
+    </div>
+
+    <h2>2. Architectural Layers &amp; Key Modules</h2>
+    <div class="grid">
+      <div class="layer-card">
+        <div class="layer-header">
+          <span class="layer-title">Domain Core</span>
+          <span class="pill pill-gold">Pure Kotlin</span>
+        </div>
+        <ul>
+          <li><code>QuizEngine</code>: Mutex-guarded state machine exposing <code>StateFlow&lt;GameState&gt;</code>; handles player registration, lobby config, scoring, and round transitions.</li>
+          <li><code>Ports.kt</code>: Defines <code>RepertoireSource</code>, <code>QuestionGenerator</code>, and <code>MusicPlayerGateway</code>.</li>
+          <li><code>Models.kt</code>: Immutable data models — <code>ClassicalWork</code>, <code>QuizQuestion</code>, <code>Player</code>, <code>WrittenAnswer</code>, <code>RoundAward</code>, <code>PlaybackStatus</code>, and <code>GameState</code>.</li>
+        </ul>
+      </div>
+
+      <div class="layer-card">
+        <div class="layer-header">
+          <span class="layer-title">Data &amp; Question Generation</span>
+          <span class="pill pill-green">Adapters</span>
+        </div>
+        <ul>
+          <li><code>InMemoryRepertoireSource</code>: Curated 25-work classical repertoire across 5 difficulty levels (5 works per level) with composition years and stylistic clues.</li>
+          <li><code>DefaultQuestionGenerator</code>: Selects works nearest to the target difficulty and builds 4-option prompts across <code>QuestionCategory</code> values.</li>
+        </ul>
+      </div>
+
+      <div class="layer-card">
+        <div class="layer-header">
+          <span class="layer-title">Playback &amp; Spotify Auth</span>
+          <span class="pill pill-green">Deep Module</span>
+        </div>
+        <ul>
+          <li><code>SpotifySession</code>: Implements both <code>MusicPlayerGateway</code> and <code>SpotifyAuthSession</code>.</li>
+          <li>Owns OAuth 2.0 PKCE setup, token refresh/persistence via <code>SpotifyAuthStore</code> &amp; <code>SharedPrefsKeyValueStore</code>, Spotify Connect playback, and zero-config <strong>Demo Mode</strong> fallback.</li>
+        </ul>
+      </div>
+
+      <div class="layer-card">
+        <div class="layer-header">
+          <span class="layer-title">Embedded LAN Server</span>
+          <span class="pill pill-purple">Ktor CIO :8080</span>
+        </div>
+        <ul>
+          <li><code>KtorControllerServer</code>: Hosts the Jackbox-style mobile web controller on the Tablet's LAN IP.</li>
+          <li>Pushes <code>PhoneGameState</code> snapshots over <code>WS /ws</code> whenever <code>QuizEngine.state</code> changes, and routes phone commands back to <code>QuizEngine</code>.</li>
+          <li>Serves <code>/spotify</code> for phone-based Spotify Client ID &amp; OAuth PKCE linking.</li>
+        </ul>
+      </div>
+
+      <div class="layer-card">
+        <div class="layer-header">
+          <span class="layer-title">Tablet Host UI</span>
+          <span class="pill pill-blue">Jetpack Compose</span>
+        </div>
+        <ul>
+          <li><code>MainActivity</code>: Edge-to-edge immersive host activity wiring dependencies and resolving the LAN IPv4 address.</li>
+          <li><code>MajstroTvApp</code>: Collects <code>engine.state</code> and animates between <code>LobbyScreen</code>, <code>QuestionScreen</code>, <code>RevealScreen</code>, and <code>GameOverScreen</code>.</li>
+          <li><code>QrCodeBitmap</code> &amp; <code>SpotifySetupDialog</code>: ZXing QR generation for instant phone join and Spotify setup.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>3. Quiz Match Lifecycle</h2>
+    <div class="card">
+      <div class="lifecycle">
+        <div class="phase-box">
+          <div class="name">1. LOBBY</div>
+          <div class="desc">Players join via QR/LAN URL; host sets round count (1–25), difficulty (1–5), and mode (<code>WRITE_IN</code> or <code>MULTIPLE_CHOICE</code>).</div>
+        </div>
+        <div class="arrow">→</div>
+        <div class="phase-box">
+          <div class="name">2. QUESTION</div>
+          <div class="desc"><code>MusicPlayerGateway.play()</code> starts audio; players submit multiple-choice picks or free-text Composer, Piece, and Year guesses.</div>
+        </div>
+        <div class="arrow">→</div>
+        <div class="phase-box">
+          <div class="name">3. REVEAL</div>
+          <div class="desc">Auto-scores Multiple Choice (+2) or pre-selects Closest Year (+1) in Write-In mode with live manual judging toggles (+1 Composer, +2 Piece).</div>
+        </div>
+        <div class="arrow">→</div>
+        <div class="phase-box">
+          <div class="name">4. GAME_OVER</div>
+          <div class="desc">Displays sorted final leaderboard with options to play again or return to Lobby keeping connected players.</div>
+        </div>
+      </div>
+    </div>
+
+    <h2>4. Embedded Ktor Endpoints &amp; WebSocket Protocol</h2>
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th>Endpoint</th>
+            <th>Purpose</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>GET /</code></td>
+            <td>Phone Controller UI</td>
+            <td>Serves self-contained HTML/JS Jackbox-style controller for players on the same Wi-Fi.</td>
+          </tr>
+          <tr>
+            <td><code>GET /spotify</code></td>
+            <td>Spotify Setup Page</td>
+            <td>Displays Client ID form, dynamic Redirect URI, and connection status.</td>
+          </tr>
+          <tr>
+            <td><code>POST /spotify/connect</code><br/><code>GET /spotify/callback</code><br/><code>POST /spotify/disconnect</code></td>
+            <td>OAuth 2.0 PKCE Flow</td>
+            <td>Starts authorization with Spotify Accounts, exchanges auth code for tokens, or clears stored credentials.</td>
+          </tr>
+          <tr>
+            <td><code>WS /ws</code></td>
+            <td>Real-Time Game Sync</td>
+            <td>Broadcasts <code>PhoneGameState</code> JSON; accepts <code>join</code>, <code>setConfig</code>, <code>answer</code>, <code>writeAnswer</code>, <code>toggleAward</code>, <code>start</code>, <code>reveal</code>, <code>next</code>, and <code>lobby</code>.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <footer>
+      <span>Generated from <code>com.majstro.tv</code> source files</span>
+      <span>Tech Stack: Kotlin · Jetpack Compose · Ktor 2.3.12 · OkHttp 4.12 · Kotlinx Serialization · ZXing</span>
+    </footer>
+  </div>
+
+  <script>
+    const NODE_INFO = {
+      main: {
+        tag: "Entry & Composition Root",
+        title: "MainActivity",
+        desc: "Android entry point that enables edge-to-edge fullscreen mode, resolves the tablet's LAN IPv4 address, wires all adapters into QuizEngine, starts KtorControllerServer, and renders MajstroTvApp.",
+        meta: [
+          ["File", "MainActivity.kt"],
+          ["Creates", "SpotifySession, QuizEngine, KtorControllerServer"],
+          ["Lifecycle", "Stops Ktor server onDestroy()"]
+        ]
+      },
+      ui: {
+        tag: "Tablet Host UI",
+        title: "MajstroTvApp (Jetpack Compose)",
+        desc: "Observes QuizEngine.state as Compose State and animates transitions across LobbyScreen, QuestionScreen, RevealScreen, and GameOverScreen. Generates QR codes via ZXing for instant phone joining.",
+        meta: [
+          ["Files", "MajstroTvApp.kt, ui/screens/*, QrCodeBitmap.kt"],
+          ["Observes", "StateFlow<GameState>"],
+          ["Actions", "startGame, revealAnswer, nextRound, togglePlayerAward"]
+        ]
+      },
+      engine: {
+        tag: "Domain Core",
+        title: "QuizEngine & Domain Ports",
+        desc: "Pure Kotlin state machine protected by a Mutex. Drives the LOBBY → QUESTION → REVEAL → GAME_OVER lifecycle without any Android, Ktor, or Spotify dependencies.",
+        meta: [
+          ["Files", "QuizEngine.kt, Ports.kt, Models.kt"],
+          ["Ports", "RepertoireSource, QuestionGenerator, MusicPlayerGateway"],
+          ["Scoring", "+1 Composer, +2 Piece, +1 Closest Year (Write-In) / +2 Multiple Choice"]
+        ]
+      },
+      ktor: {
+        tag: "LAN Web & WebSocket Server",
+        title: "KtorControllerServer (:8080)",
+        desc: "Embedded Ktor CIO server listening on 0.0.0.0:8080. Serves the phone HTML controller, handles Spotify OAuth PKCE redirects, and broadcasts PhoneGameState over WebSockets.",
+        meta: [
+          ["File", "KtorControllerServer.kt"],
+          ["HTTP Routes", "GET /, GET /spotify, POST /spotify/connect, GET /spotify/callback"],
+          ["WebSocket", "WS /ws (join, setConfig, answer, writeAnswer, toggleAward, start, reveal, next, lobby)"]
+        ]
+      },
+      data: {
+        tag: "Data Adapters",
+        title: "InMemoryRepertoireSource & DefaultQuestionGenerator",
+        desc: "Supplies 25 curated classical works across 5 difficulty levels (5 works per level) and builds randomized 4-option questions across Composer & Style, Era & Form, and Work Identification.",
+        meta: [
+          ["Files", "InMemoryRepertoireSource.kt, DefaultQuestionGenerator.kt"],
+          ["Implements", "RepertoireSource, QuestionGenerator"],
+          ["Work Fields", "title, composer, era, yearWritten, stylisticClue, spotifyQuery"]
+        ]
+      },
+      spotify: {
+        tag: "Playback & Auth Adapter",
+        title: "SpotifySession",
+        desc: "Deep module owning Spotify OAuth 2.0 PKCE, token persistence/refresh, Spotify Connect playback via OkHttp, and zero-config Demo Mode fallback when unlinked.",
+        meta: [
+          ["Files", "SpotifySession.kt, SpotifyAuthStore.kt"],
+          ["Implements", "MusicPlayerGateway, SpotifyAuthSession"],
+          ["Storage", "SharedPrefsKeyValueStore"]
+        ]
+      },
+      phones: {
+        tag: "Wi-Fi Players",
+        title: "Phone Browsers",
+        desc: "Any phone or desktop browser on the same Wi-Fi scans the QR code on the tablet to open http://<tablet-ip>:8080 and play in real time over WebSockets.",
+        meta: [
+          ["Protocol", "HTTP + WebSocket (WS /ws)"],
+          ["Modes", "Everyone Writes (free-text) & Multiple Choice"],
+          ["Extra", "Can also open /spotify to link Spotify Premium"]
+        ]
+      },
+      spotifyCloud: {
+        tag: "External Service",
+        title: "Spotify Accounts & Web API",
+        desc: "Handles OAuth 2.0 PKCE authorization and token exchange, track search, and Spotify Connect playback control on the active Spotify device.",
+        meta: [
+          ["Auth Host", "accounts.spotify.com"],
+          ["API Host", "api.spotify.com"],
+          ["Fallback", "Demo Mode works completely offline without Spotify"]
+        ]
+      }
+    };
+
+    const FLOW_INFO = {
+      all: {
+        tag: "Architecture Overview",
+        title: "All Components",
+        desc: "Majstro separates pure game logic (QuizEngine) from adapters (Compose UI, Ktor LAN server, InMemoryRepertoireSource, and SpotifySession). Click any node to inspect its details.",
+        meta: [
+          ["Pattern", "Ports & Adapters (Hexagonal)"],
+          ["Single Source of Truth", "QuizEngine.state (StateFlow)"],
+          ["Local Host Port", "8080 (Ktor CIO)"]
+        ]
+      },
+      wiring: {
+        tag: "Flow 1 · Startup",
+        title: "Startup & Dependency Wiring",
+        desc: "MainActivity acts as the composition root: it instantiates SpotifySession, injects it and the data adapters into QuizEngine, starts KtorControllerServer on port 8080, and mounts MajstroTvApp.",
+        meta: [
+          ["Trigger", "MainActivity.onCreate()"],
+          ["Key Step", "Resolves LAN IPv4 address for QR codes"],
+          ["Cleanup", "ktorServer.stop() in onDestroy()"]
+        ]
+      },
+      gameplay: {
+        tag: "Flow 2 · Real-Time Sync",
+        title: "Live Quiz & WebSocket Sync",
+        desc: "Phone browsers send answers over WS /ws to KtorControllerServer, which calls QuizEngine. QuizEngine updates its StateFlow<GameState>, automatically updating both MajstroTvApp and all connected phones.",
+        meta: [
+          ["Inbound", "join, answer, writeAnswer, toggleAward, start, reveal, next"],
+          ["Outbound", "PhoneGameState JSON broadcast to all WS sessions"],
+          ["Concurrency", "QuizEngine uses Mutex for state transitions"]
+        ]
+      },
+      playback: {
+        tag: "Flow 3 · Audio",
+        title: "Audio Playback & Demo Mode",
+        desc: "When a round starts, QuizEngine calls MusicPlayerGateway.play(work). SpotifySession plays the track via Spotify Connect if linked, or simulates playback status in Demo Mode.",
+        meta: [
+          ["Interface", "MusicPlayerGateway (status, play, pause)"],
+          ["Live Mode", "Spotify Connect via api.spotify.com"],
+          ["Fallback", "Demo Mode (zero config, offline-friendly)"]
+        ]
+      },
+      oauth: {
+        tag: "Flow 4 · Authentication",
+        title: "Spotify OAuth 2.0 PKCE Setup",
+        desc: "A phone or tablet opens GET /spotify, submits a Client ID to POST /spotify/connect, authorizes on accounts.spotify.com, and returns to GET /spotify/callback where SpotifySession exchanges the code for tokens.",
+        meta: [
+          ["Security", "OAuth 2.0 PKCE (S256 code challenge)"],
+          ["Persistence", "SpotifyAuthStore via SharedPreferences"],
+          ["Endpoints", "/spotify, /spotify/connect, /spotify/callback"]
+        ]
+      }
+    };
+
+    const nodes = document.querySelectorAll("#arch-svg .node");
+    const edges = document.querySelectorAll("#arch-svg .edge");
+    const flowBtns = document.querySelectorAll(".flow-btn");
+
+    const insTag = document.getElementById("ins-tag");
+    const insTitle = document.getElementById("ins-title");
+    const insDesc = document.getElementById("ins-desc");
+    const insMeta = document.getElementById("ins-meta");
+
+    function renderInspector(info) {
+      insTag.textContent = info.tag;
+      insTitle.textContent = info.title;
+      insDesc.textContent = info.desc;
+      insMeta.innerHTML = info.meta
+        .map(([k, v]) => `<div><strong>${k}:</strong> <span>${v}</span></div>`)
+        .join("");
+    }
+
+    function selectFlow(flow) {
+      flowBtns.forEach(btn => btn.classList.toggle("active", btn.dataset.flow === flow));
+      nodes.forEach(n => n.classList.remove("selected", "dimmed"));
+      edges.forEach(e => e.classList.remove("highlighted", "dimmed"));
+
+      if (flow === "all") {
+        renderInspector(FLOW_INFO.all);
+        return;
+      }
+
+      const activeNodes = new Set();
+      edges.forEach(edge => {
+        const flows = edge.dataset.flows.split(",");
+        if (flows.includes(flow)) {
+          edge.classList.add("highlighted");
+          edge.dataset.nodes.split(",").forEach(id => activeNodes.add(id));
+        } else {
+          edge.classList.add("dimmed");
+        }
+      });
+
+      nodes.forEach(node => {
+        if (!activeNodes.has(node.dataset.id)) {
+          node.classList.add("dimmed");
+        }
+      });
+
+      renderInspector(FLOW_INFO[flow]);
+    }
+
+    function selectNode(nodeId) {
+      flowBtns.forEach(btn => btn.classList.remove("active"));
+      const connectedNodes = new Set([nodeId]);
+
+      edges.forEach(edge => {
+        const edgeNodes = edge.dataset.nodes.split(",");
+        if (edgeNodes.includes(nodeId)) {
+          edge.classList.add("highlighted");
+          edge.classList.remove("dimmed");
+          edgeNodes.forEach(id => connectedNodes.add(id));
+        } else {
+          edge.classList.remove("highlighted");
+          edge.classList.add("dimmed");
+        }
+      });
+
+      nodes.forEach(node => {
+        const id = node.dataset.id;
+        node.classList.toggle("selected", id === nodeId);
+        node.classList.toggle("dimmed", !connectedNodes.has(id));
+      });
+
+      if (NODE_INFO[nodeId]) {
+        renderInspector(NODE_INFO[nodeId]);
+      }
+    }
+
+    flowBtns.forEach(btn => {
+      btn.addEventListener("click", () => selectFlow(btn.dataset.flow));
+    });
+
+    nodes.forEach(node => {
+      node.addEventListener("click", () => selectNode(node.dataset.id));
+      node.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          selectNode(node.dataset.id);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

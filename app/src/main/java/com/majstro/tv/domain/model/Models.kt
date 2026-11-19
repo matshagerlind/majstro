@@ -47,6 +47,7 @@ data class ClassicalWork(
     val yearWritten: Int,
     val difficultyLevel: Int = 2,
     val stylisticClue: String,
+    val funFact: String = "",
     val spotifyQuery: String,
     val startPositionMs: Long = 30_000L
 )
