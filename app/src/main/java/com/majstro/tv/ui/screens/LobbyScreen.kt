@@ -32,6 +32,7 @@ import androidx.compose.ui.unit.sp
 import com.majstro.tv.R
 import com.majstro.tv.domain.model.AnswerMode
 import com.majstro.tv.domain.model.GameState
+import com.majstro.tv.domain.model.QuizCategory
 import com.majstro.tv.ui.components.ChampagnePillButton
 import com.majstro.tv.ui.components.EditorialSectionLabel
 import com.majstro.tv.ui.components.PlayerRosterRow
@@ -41,19 +42,32 @@ import com.majstro.tv.ui.theme.CormorantGaramondFamily
 import com.majstro.tv.ui.theme.InterFamily
 import com.majstro.tv.ui.theme.MajstroColors
 
-private fun difficultyLabel(level: Int): String = when (level) {
-    1 -> "Iconic Classics"
-    2 -> "Concert Favorites"
-    3 -> "Standard Repertoire"
-    4 -> "Musician"
-    5 -> "Virtuoso"
-    else -> "Level $level"
-}
+private fun difficultyLabel(level: Int, category: QuizCategory): String =
+    if (category == QuizCategory.MOVIE_MUSIC) {
+        when (level) {
+            1 -> "Blockbuster Icons"
+            2 -> "Beloved Soundtracks"
+            3 -> "Cinema Classics"
+            4 -> "Score Aficionado"
+            5 -> "Film Music Buff"
+            else -> "Level $level"
+        }
+    } else {
+        when (level) {
+            1 -> "Iconic Classics"
+            2 -> "Concert Favorites"
+            3 -> "Standard Repertoire"
+            4 -> "Musician"
+            5 -> "Virtuoso"
+            else -> "Level $level"
+        }
+    }
 
-/** 2-zone editorial lobby with classical hero, warm parchment QR, and borderless setup canvas. */
+/** 2-zone editorial lobby with category hero, warm parchment QR, and borderless setup canvas. */
 @Composable
 fun LobbyScreen(
     state: GameState,
+    onSelectCategory: (QuizCategory) -> Unit,
     onSelectRoundCount: (Int) -> Unit,
     onSelectDifficulty: (Int) -> Unit,
     onSelectAnswerMode: (AnswerMode) -> Unit,
@@ -87,13 +101,21 @@ fun LobbyScreen(
                 )
                 Spacer(modifier = Modifier.height(18.dp))
                 Text(
-                    text = "An Evening of\nClassical Masterworks",
+                    text = if (state.selectedCategory == QuizCategory.MOVIE_MUSIC) {
+                        "An Evening of\nCinema Soundtracks"
+                    } else {
+                        "An Evening of\nClassical Masterworks"
+                    },
                     style = MaterialTheme.typography.headlineLarge,
                     color = MajstroColors.WarmIvory
                 )
                 Spacer(modifier = Modifier.height(6.dp))
                 Text(
-                    text = "25 curated works  ·  5 difficulty tiers",
+                    text = if (state.selectedCategory == QuizCategory.MOVIE_MUSIC) {
+                        "100 curated scores  ·  5 difficulty tiers"
+                    } else {
+                        "300 curated works  ·  5 difficulty tiers"
+                    },
                     style = MaterialTheme.typography.bodyMedium,
                     color = MajstroColors.CoolMuted
                 )
@@ -154,6 +176,23 @@ fun LobbyScreen(
                     .weight(1f)
                     .verticalScroll(rememberScrollState())
             ) {
+                EditorialSectionLabel("CATEGORY")
+                Spacer(modifier = Modifier.height(8.dp))
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    QuizCategory.entries.forEach { category ->
+                        TonalSegmentedChip(
+                            label = category.label,
+                            selected = state.selectedCategory == category,
+                            onClick = { onSelectCategory(category) },
+                            modifier = Modifier.weight(1f)
+                        )
+                    }
+                }
+
+                Spacer(modifier = Modifier.height(20.dp))
                 EditorialSectionLabel("PROGRAM LENGTH")
                 Spacer(modifier = Modifier.height(8.dp))
                 Row(
@@ -172,7 +211,7 @@ fun LobbyScreen(
 
                 Spacer(modifier = Modifier.height(20.dp))
                 EditorialSectionLabel(
-                    "DIFFICULTY  ·  ${state.selectedDifficulty} — ${difficultyLabel(state.selectedDifficulty)}"
+                    "DIFFICULTY  ·  ${state.selectedDifficulty} — ${difficultyLabel(state.selectedDifficulty, state.selectedCategory)}"
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Row(

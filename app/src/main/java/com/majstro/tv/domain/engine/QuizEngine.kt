@@ -4,6 +4,7 @@ import com.majstro.tv.domain.model.AnswerMode
 import com.majstro.tv.domain.model.AwardField
 import com.majstro.tv.domain.model.GameState
 import com.majstro.tv.domain.model.Player
+import com.majstro.tv.domain.model.QuizCategory
 import com.majstro.tv.domain.model.QuizPhase
 import com.majstro.tv.domain.model.QuizQuestion
 import com.majstro.tv.domain.model.RoundAward
@@ -50,6 +51,14 @@ class QuizEngine(
         _state.update { it.copy(joinUrl = joinUrl, spotifySetupUrl = spotifySetupUrl) }
     }
 
+    /** Updates the repertoire category (Classical or Movie Music) while in the lobby. */
+    fun setCategory(category: QuizCategory) {
+        _state.update { current ->
+            if (current.phase != QuizPhase.LOBBY) current
+            else current.copy(selectedCategory = category)
+        }
+    }
+
     /** Updates the number of songs for the next match while in the lobby. */
     fun setRoundCount(count: Int) {
         val clamped = count.coerceIn(MIN_ROUND_COUNT, MAX_ROUND_COUNT)
@@ -93,13 +102,15 @@ class QuizEngine(
         return registered
     }
 
-    /** Starts a fresh match from the lobby using the selected song count, difficulty, and mode. */
+    /** Starts a fresh match from the lobby using the selected category, song count, difficulty, and mode. */
     suspend fun startGame(
         roundCount: Int = _state.value.selectedRoundCount,
-        difficultyLevel: Int = _state.value.selectedDifficulty
+        difficultyLevel: Int = _state.value.selectedDifficulty,
+        category: QuizCategory = _state.value.selectedCategory
     ) = mutex.withLock {
-        val works = repertoireSource.loadWorks()
-        require(works.isNotEmpty()) { "RepertoireSource must provide at least one classical work." }
+        val allWorks = repertoireSource.loadWorks()
+        val works = allWorks.filter { it.category == category }.ifEmpty { allWorks }
+        require(works.isNotEmpty()) { "RepertoireSource must provide at least one work." }
 
         val targetCount = roundCount.coerceIn(MIN_ROUND_COUNT, MAX_ROUND_COUNT)
         val targetDifficulty = difficultyLevel.coerceIn(MIN_DIFFICULTY, MAX_DIFFICULTY)
@@ -130,6 +141,7 @@ class QuizEngine(
 
             current.copy(
                 phase = QuizPhase.QUESTION,
+                selectedCategory = category,
                 selectedRoundCount = generated.size,
                 selectedDifficulty = targetDifficulty,
                 players = activePlayers,

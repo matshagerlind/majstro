@@ -2,6 +2,13 @@ package com.majstro.tv.domain.model
 
 import kotlinx.serialization.Serializable
 
+/** Top-level quiz repertoire category selectable in the lobby. */
+@Serializable
+enum class QuizCategory(val label: String) {
+    CLASSICAL("Classical"),
+    MOVIE_MUSIC("Movie Music")
+}
+
 /** Historical classical music periods used for categorization and quiz prompts. */
 @Serializable
 enum class MusicalEra(val label: String, val years: String) {
@@ -49,7 +56,8 @@ data class ClassicalWork(
     val stylisticClue: String,
     val funFact: String = "",
     val spotifyQuery: String,
-    val startPositionMs: Long = 30_000L
+    val startPositionMs: Long = 30_000L,
+    val category: QuizCategory = QuizCategory.CLASSICAL
 )
 
 /** A single round question derived from a [ClassicalWork]. */
@@ -132,6 +140,7 @@ enum class QuizPhase {
 @Serializable
 data class GameState(
     val phase: QuizPhase = QuizPhase.LOBBY,
+    val selectedCategory: QuizCategory = QuizCategory.CLASSICAL,
     val selectedRoundCount: Int = 5,
     val selectedDifficulty: Int = 2,
     val selectedAnswerMode: AnswerMode = AnswerMode.WRITE_IN,

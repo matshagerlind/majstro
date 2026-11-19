@@ -38,6 +38,7 @@ import com.majstro.tv.domain.model.AnswerMode
 import com.majstro.tv.domain.model.AwardField
 import com.majstro.tv.domain.model.GameState
 import com.majstro.tv.domain.model.Player
+import com.majstro.tv.domain.model.QuizCategory
 import com.majstro.tv.ui.rememberComposerPortrait
 import com.majstro.tv.ui.components.ChampagnePillButton
 import com.majstro.tv.ui.components.EditorialClueQuote
@@ -190,10 +191,11 @@ fun RevealScreen(
                 EditorialSectionLabel(
                     if (isWriteIn) "CONFIRM SCORING" else "SCOREBOARD"
                 )
+                val workTitleLabel = if (work.category == QuizCategory.MOVIE_MUSIC) "Movie" else "Piece"
                 if (isWriteIn) {
                     Spacer(modifier = Modifier.height(4.dp))
                     Text(
-                        text = "Tap pills to award Composer (+1), Piece (+2), and Closest Year (+1).",
+                        text = "Tap pills to award Composer (+1), $workTitleLabel (+2), and Closest Year (+1).",
                         style = MaterialTheme.typography.bodyMedium,
                         color = MajstroColors.CoolMuted
                     )
@@ -205,6 +207,7 @@ fun RevealScreen(
                         PlayerJudgeRow(
                             player = player,
                             trueYear = work.yearWritten,
+                            workTitleLabel = workTitleLabel,
                             onToggleAward = { field -> onToggleAward(player.id, field) }
                         )
                     } else {
@@ -228,6 +231,7 @@ fun RevealScreen(
 private fun PlayerJudgeRow(
     player: Player,
     trueYear: Int,
+    workTitleLabel: String,
     onToggleAward: (AwardField) -> Unit
 ) {
     val written = player.writtenAnswer
@@ -279,7 +283,7 @@ private fun PlayerJudgeRow(
         Spacer(modifier = Modifier.height(4.dp))
         if (written != null) {
             Text(
-                text = "Composer: ${written.composerGuess.ifBlank { "—" }}   ·   Piece: ${written.pieceGuess.ifBlank { "—" }}   ·   Year: $yearDiffText",
+                text = "Composer: ${written.composerGuess.ifBlank { "—" }}   ·   $workTitleLabel: ${written.pieceGuess.ifBlank { "—" }}   ·   Year: $yearDiffText",
                 style = MaterialTheme.typography.bodyMedium,
                 color = MajstroColors.CoolMuted
             )
@@ -303,7 +307,7 @@ private fun PlayerJudgeRow(
                 modifier = Modifier.weight(1f)
             )
             AwardTogglePill(
-                label = "Piece +2",
+                label = "$workTitleLabel +2",
                 awarded = player.roundAward.pieceCorrect,
                 onClick = { onToggleAward(AwardField.PIECE) },
                 modifier = Modifier.weight(1f)

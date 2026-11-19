@@ -111,7 +111,8 @@ fun QuestionScreen(
                     Spacer(modifier = Modifier.height(10.dp))
                     Text(
                         text = if (isWriteIn) {
-                            "Composer +1 pt   ·   Piece +2 pts   ·   Closest Year +1 pt"
+                            val titleLabel = if (question.work.category == com.majstro.tv.domain.model.QuizCategory.MOVIE_MUSIC) "Movie" else "Piece"
+                            "Composer +1 pt   ·   $titleLabel +2 pts   ·   Closest Year +1 pt"
                         } else {
                             "Select one option on your phone or below on the tablet."
                         },

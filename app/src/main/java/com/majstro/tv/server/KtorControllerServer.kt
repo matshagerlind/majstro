@@ -6,6 +6,7 @@ import com.majstro.tv.domain.model.AwardField
 import com.majstro.tv.domain.model.GameState
 import com.majstro.tv.domain.model.PlaybackStatus
 import com.majstro.tv.domain.model.Player
+import com.majstro.tv.domain.model.QuizCategory
 import com.majstro.tv.domain.model.QuizPhase
 import com.majstro.tv.spotify.SpotifyAuthSession
 import io.ktor.http.ContentType
@@ -158,6 +159,7 @@ class KtorControllerServer(
                 quizEngine.registerPlayer(playerId, msg.name.orEmpty())
             }
             "setConfig" -> {
+                msg.category?.let { quizEngine.setCategory(it) }
                 msg.roundCount?.let { quizEngine.setRoundCount(it) }
                 msg.difficultyLevel?.let { quizEngine.setDifficultyLevel(it) }
                 msg.answerMode?.let { quizEngine.setAnswerMode(it) }
@@ -201,6 +203,7 @@ class KtorControllerServer(
         val isReveal = state.phase == QuizPhase.REVEAL
         val view = PhoneGameState(
             phase = state.phase,
+            selectedCategory = state.selectedCategory,
             selectedRoundCount = state.selectedRoundCount,
             selectedDifficulty = state.selectedDifficulty,
             selectedAnswerMode = state.selectedAnswerMode,
@@ -236,6 +239,7 @@ class KtorControllerServer(
         val roundCount: Int? = null,
         val difficultyLevel: Int? = null,
         val answerMode: AnswerMode? = null,
+        val category: QuizCategory? = null,
         val composerGuess: String? = null,
         val pieceGuess: String? = null,
         val yearGuess: Int? = null,
@@ -246,6 +250,7 @@ class KtorControllerServer(
     @Serializable
     private data class PhoneGameState(
         val phase: QuizPhase,
+        val selectedCategory: QuizCategory,
         val selectedRoundCount: Int,
         val selectedDifficulty: Int,
         val selectedAnswerMode: AnswerMode,
@@ -480,16 +485,22 @@ class KtorControllerServer(
                       draftComposer = submitted ? (submitted.composerGuess || "") : "";
                       draftPiece = submitted ? (submitted.pieceGuess || "") : "";
                       draftYear = (submitted && submitted.yearGuess != null) ? String(submitted.yearGuess) : "";
+                      const isMovie = state.selectedCategory === "MOVIE_MUSIC";
+                      const titleLabel = isMovie ? "Movie" : "Piece";
+                      const compPlaceholder = isMovie ? "e.g. John Williams" : "e.g. Mozart";
+                      const titlePlaceholder = isMovie ? "e.g. Jurassic Park" : "e.g. Symphony No. 40";
+                      const yearPlaceholder = isMovie ? "e.g. 1993" : "e.g. 1788";
+                      const yearLabel = isMovie ? "Release Year (+1 pt closest)" : "Year Written (+1 pt closest)";
                       root.innerHTML =
                         '<div class="card">' +
                           '<div style="color:var(--gold);font-size:0.85rem;font-weight:600;">SONG ' + state.roundNumber + ' / ' + state.totalRounds + ' · WRITE-IN</div>' +
                           '<div class="clue">' + escapeHtml(state.stylisticClue) + '</div>' +
                           '<label>Composer (+1 pt)</label>' +
-                          '<input id="inComposer" placeholder="e.g. Mozart" value="' + escapeHtml(draftComposer) + '" oninput="draftComposer=this.value" />' +
-                          '<label>Piece (+2 pts)</label>' +
-                          '<input id="inPiece" placeholder="e.g. Symphony No. 40" value="' + escapeHtml(draftPiece) + '" oninput="draftPiece=this.value" />' +
-                          '<label>Year Written (+1 pt closest)</label>' +
-                          '<input id="inYear" type="number" inputmode="numeric" placeholder="e.g. 1788" value="' + escapeHtml(draftYear) + '" oninput="draftYear=this.value" />' +
+                          '<input id="inComposer" placeholder="' + compPlaceholder + '" value="' + escapeHtml(draftComposer) + '" oninput="draftComposer=this.value" />' +
+                          '<label>' + titleLabel + ' (+2 pts)</label>' +
+                          '<input id="inPiece" placeholder="' + titlePlaceholder + '" value="' + escapeHtml(draftPiece) + '" oninput="draftPiece=this.value" />' +
+                          '<label>' + yearLabel + '</label>' +
+                          '<input id="inYear" type="number" inputmode="numeric" placeholder="' + yearPlaceholder + '" value="' + escapeHtml(draftYear) + '" oninput="draftYear=this.value" />' +
                           '<button class="primary" onclick="submitWritten()">Submit Guess</button>' +
                           '<div id="writeStatus" style="font-size:0.85rem;color:var(--muted);margin-top:6px;">' + statusLine + '</div>' +
                         '</div>' +
@@ -534,7 +545,7 @@ class KtorControllerServer(
                         '<div style="font-size:0.85rem;color:var(--muted);">' + guessLine + '</div>' +
                         '<div class="judge-row">' +
                           '<button class="' + cCls + '" onclick="send({type:\'toggleAward\', targetPlayerId:\'' + escapeHtml(p.id) + '\', awardField:\'COMPOSER\'})">Composer +1</button>' +
-                          '<button class="' + pCls + '" onclick="send({type:\'toggleAward\', targetPlayerId:\'' + escapeHtml(p.id) + '\', awardField:\'PIECE\'})">Piece +2</button>' +
+                          '<button class="' + pCls + '" onclick="send({type:\'toggleAward\', targetPlayerId:\'' + escapeHtml(p.id) + '\', awardField:\'PIECE\'})">' + (state.selectedCategory === "MOVIE_MUSIC" ? "Movie +2" : "Piece +2") + '</button>' +
                           '<button class="' + yCls + '" onclick="send({type:\'toggleAward\', targetPlayerId:\'' + escapeHtml(p.id) + '\', awardField:\'CLOSEST_YEAR\'})">Year +1</button>' +
                         '</div>' +
                       '</div>';

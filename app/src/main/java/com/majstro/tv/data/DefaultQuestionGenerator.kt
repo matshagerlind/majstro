@@ -2,6 +2,7 @@ package com.majstro.tv.data
 
 import com.majstro.tv.domain.model.ClassicalWork
 import com.majstro.tv.domain.model.QuestionCategory
+import com.majstro.tv.domain.model.QuizCategory
 import com.majstro.tv.domain.model.QuizQuestion
 import com.majstro.tv.domain.port.QuestionGenerator
 import kotlin.math.abs
@@ -37,14 +38,7 @@ class DefaultQuestionGenerator(
 
         return selectedWorks.mapIndexed { index, work ->
             val category = categories[index % categories.size]
-            val prompt = when (category) {
-                QuestionCategory.COMPOSER_AND_STYLE ->
-                    "Identify the composer & era of this ${work.styleOrForm}:"
-                QuestionCategory.ERA_AND_FORM ->
-                    "Listen to the orchestration & style — which piece and era is playing?"
-                QuestionCategory.WORK_IDENTIFICATION ->
-                    "Which masterwork matches this musical fingerprint?"
-            }
+            val prompt = formatPrompt(work, category)
 
             val correctLabel = formatOption(work, category)
             val distractors = works
@@ -72,14 +66,47 @@ class DefaultQuestionGenerator(
         }
     }
 
-    private fun formatOption(work: ClassicalWork, category: QuestionCategory): String = when (category) {
-        QuestionCategory.COMPOSER_AND_STYLE ->
-            "${work.composer} · ${work.era.label}"
-        QuestionCategory.ERA_AND_FORM ->
-            "${work.era.label} · ${work.styleOrForm} (${work.composer.substringAfterLast(' ')})"
-        QuestionCategory.WORK_IDENTIFICATION ->
-            "${work.composer.substringAfterLast(' ')} — ${work.title}"
-    }
+    private fun formatPrompt(work: ClassicalWork, category: QuestionCategory): String =
+        if (work.category == QuizCategory.MOVIE_MUSIC) {
+            when (category) {
+                QuestionCategory.COMPOSER_AND_STYLE ->
+                    "Identify the composer & genre of this ${work.styleOrForm}:"
+                QuestionCategory.ERA_AND_FORM ->
+                    "Listen to the score — which movie & composer is playing?"
+                QuestionCategory.WORK_IDENTIFICATION ->
+                    "Which film score is playing?"
+            }
+        } else {
+            when (category) {
+                QuestionCategory.COMPOSER_AND_STYLE ->
+                    "Identify the composer & era of this ${work.styleOrForm}:"
+                QuestionCategory.ERA_AND_FORM ->
+                    "Listen to the orchestration & style — which piece and era is playing?"
+                QuestionCategory.WORK_IDENTIFICATION ->
+                    "Which masterwork matches this musical fingerprint?"
+            }
+        }
+
+    private fun formatOption(work: ClassicalWork, category: QuestionCategory): String =
+        if (work.category == QuizCategory.MOVIE_MUSIC) {
+            when (category) {
+                QuestionCategory.COMPOSER_AND_STYLE ->
+                    "${work.composer} · ${work.styleOrForm}"
+                QuestionCategory.ERA_AND_FORM ->
+                    "${work.title} (${work.yearWritten}) · ${work.composer.substringAfterLast(' ')}"
+                QuestionCategory.WORK_IDENTIFICATION ->
+                    "${work.composer.substringAfterLast(' ')} — ${work.title}"
+            }
+        } else {
+            when (category) {
+                QuestionCategory.COMPOSER_AND_STYLE ->
+                    "${work.composer} · ${work.era.label}"
+                QuestionCategory.ERA_AND_FORM ->
+                    "${work.era.label} · ${work.styleOrForm} (${work.composer.substringAfterLast(' ')})"
+                QuestionCategory.WORK_IDENTIFICATION ->
+                    "${work.composer.substringAfterLast(' ')} — ${work.title}"
+            }
+        }
 
     companion object {
         private const val OPTION_COUNT = 4
